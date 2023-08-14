@@ -1,12 +1,12 @@
 Nuestra idea es hacer una Web de una hamburgueseria de la Zona que vende en su local y por delivery. Su nombre es Burger Store. La propuesta apunta a todo el publico en general. Esta haburgueseria por el momento solo ofrece distintas variedades de hamburguesas y las combina con papas fritas. Hay hamburguesas pre-armadas pero tambien se pueden agregar extras y armarla a gusto. Se ofreceran las opciones de comer en el local, take-away, delivery propio y Pedidos-ya.
 
 Se usaron como inspiracion las siguientes paginas web:
-https://deananddennys.com/
-https://www.bigpons.com.ar/
-https://www.centralburgers.es/
-https://tiktakhouse.es/categoria-producto/hamburguesas/
-https://www.noshup.com.ar/
-https://kravejerky.com/pages/shop
+- https://deananddennys.com/
+- https://www.bigpons.com.ar/
+- https://www.centralburgers.es/
+- https://tiktakhouse.es/categoria-producto/hamburguesas/
+- https://www.noshup.com.ar/
+- https://kravejerky.com/pages/shop
 
 Los integrantes del Equipo somos: 
 - Mi nombre es Marina Deregibus, soy profe de inglés y jefa de departamento. Soy fan de los autos y la Fórmula 1, pero también me gusta mucho la ciencia ficción, los cómics, mangas y animes. En mis tiempos libres me gusta jugar videojuegos, hobby que me llevó a interesarme por la programación.
