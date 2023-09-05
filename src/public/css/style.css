@@ -156,6 +156,38 @@ div.brand, li.shop{
 .social-media-navbar i:hover{
     color: var(--black-mate);
 }
+
+/*Detalle del producto*/
+.producto {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding-top: 5%;
+}
+
+.descripcion {
+    max-width: 500px;
+    padding-left: 20px;
+    padding-top: 5%;
+}
+
+.agregar {
+    padding: 10px;
+    padding-left: 75px;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.boton{
+    background-color: #F3AD2B;
+    border-color: #F3AD2B;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5%;
+}
+.extras {
+    padding-left: 4%;
+}
+
 @media (min-width: 768px) {  
     .registration-form{
         width: 520px;
