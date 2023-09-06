@@ -26,14 +26,11 @@ app.get('/product-detail', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/detalleDelProducto.html'));
 })
 
-/*  DESCOMENTAR CUANDO ESTE LISTO EL MERGE
-
 app.get('/login', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/login.html'));
 })
-*/
 
-/*  DESCOMENTAR CUANDO ESTE LISTO
+/*  DESCOMENTAR CUANDO ESTE SUBIDO X SONIA
 
 app.get('/cart', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/carrito.html'));
