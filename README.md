@@ -6,12 +6,12 @@
 
 Nuestra idea es hacer una Web de una hamburgueseria de la Zona que vende en su local y por delivery. Su nombre es Burger Store. La propuesta apunta a todo el publico en general. Esta haburgueseria por el momento solo ofrece distintas variedades de hamburguesas y las combina con papas fritas. Hay hamburguesas pre-armadas pero tambien se pueden agregar extras y armarla a gusto. Se ofreceran las opciones de comer en el local, take-away, delivery propio y Pedidos-ya.
 ## Ejecutar aplicación
-- Si es la primera vez que usar, seguir las instrucciones:
+- Si es la primera vez que se va a usar la aplicación ejecutar los siguentes comandos:
 ```
 npm install
 npm start
 ```
-- Para ejecutar la version __developer__ ejecutar:
+- Para ejecutar la versión __developer__ ejecutar:
 ```
 npm run test
 ```
