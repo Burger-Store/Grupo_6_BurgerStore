@@ -2,20 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale =1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Carrito de compras </title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/burger-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="https://kit.fontawesome.com/a0a201f32f.js" crossorigin="anonymous"></script>
     
 </head>
 <body> 
+    <div class="cart-container">
         <div class="top">
                 <p class="miPedido"> Mi pedido </p> 
                 <button class="cerrar" type="reset"> Cerrar </button>           
         </div>
 
         <div class="pedido">          
-            <img src="\img\cheeseburguer_triple.jpg" alt="">
+            <img src="/img/cheeseburger_triple.jpg" alt="Cheeseburger Triple">
             <p class="descripcion">Lorem ipsum, dolor sit amet consectetur </p>
             <button class="menos" type="button"><i class="fa-solid fa-minus"></i></button>
             <input class="sumaresta" type="text">
@@ -26,24 +30,24 @@
             </div>     
         </div>
 
-    <div class="totales">
-        <div class="sub">
-            <p class="subtotal"> Subtotal </p> <p precio2>$0</p>
+        <div class="totales">
+            <div class="sub">
+                <p class="subtotal"> Subtotal </p> <p precio2>$0</p>
+            </div>
+            <div class="tot">
+                <p class="total">Total</p> <p class="precio3">$0</p> 
+            </div>
         </div>
-        <div class="tot">
-            <p class="total">Total</p> <p class="precio3">$0</p> 
+
+        <div class="comentarios">
+            <p> Comentarios</p>
+            <textarea name="espacio" id="espacio" cols="20" rows="6"></textarea>
+        </div>
+
+        <div class="bottom">
+            <button type="button" class="agregar"> Agregar pedido</button>
+            <button type="button" class="confirmar"> Confirmar</button>
         </div>
     </div>
-
-    <div class="comentarios">
-        <p> Comentarios</p>
-        <textarea name="espacio" id="espacio" cols="20" rows="6"></textarea>
-    </div>
-
-    <div class="bottom">
-        <button type="button" class="agregar"> Agregar pedido</button>
-        <button type="button" class="confirmar"> Confirmar</button>
-    </div>
-            
 </body>
 </html>

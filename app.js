@@ -14,25 +14,27 @@ app.use(express.static(path.resolve(__dirname, './src/public')));
     res.sendFile(path.join(__dirname,'/src/views/index.html'));
 })*/
 
+//Ruta a Menu
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/menu.html'));
 })
 
+//Ruta a Registro
 app.get('/signup', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/signup.html'));
 })
 
+//Ruta a Detalle de Producto
 app.get('/product-detail', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/detalleDelProducto.html'));
 })
 
+//Ruta a Login
 app.get('/login', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/login.html'));
 })
 
-/*  DESCOMENTAR CUANDO ESTE SUBIDO X SONIA
-
+//Ruta a Carrito
 app.get('/cart', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/carrito.html'));
 })
-*/

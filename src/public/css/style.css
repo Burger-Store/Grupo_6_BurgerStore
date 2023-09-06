@@ -202,7 +202,7 @@ div.brand, li.shop{
     padding-top: 5%;
 }
 
-.agregar {
+main .agregar {
     padding: 10px;
     padding-left: 75px;
     font-weight: 700;
@@ -231,6 +231,7 @@ main{
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .product{
@@ -249,32 +250,33 @@ main{
 }
 
 .product-name{
+    display: flex;
+    padding-left: 57%;
     font-size: 100%;
-    font-weight: 700;
-    width: 150%;
+    font-weight: 900;
+    width: 100%;
     margin-top: -25%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .price{
+    display: flex;
+    padding-left: 57%;
     font-size: 100%;
     font-weight: 900;
-    width: 150%;
+    width: 100%;
     margin: 10px 0;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .description{
     display: flex;
-    margin-top: 20%;
+    margin-top: 19%;
     margin-bottom: 4%;
-    margin-left: 2%;
+    margin-left: 6%;
     margin-right: 2%;
 }
 
 .button{
+    display: flex;
     border-radius: 5px;
     font-weight: 700;
     font-size: xx-large;
@@ -282,10 +284,16 @@ main{
     border-color: #F3AD2B;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 3%;
+    margin-left: 15%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 /*Cart*/
-body .top, .pedido, .totales, .comentarios, .bottom{
+
+.cart-container{
     width: 100%;
     height: 100vh;
     margin: 0%;
@@ -333,7 +341,7 @@ img{
     border-radius: 13%;
 }
 
-.descripcion{
+.pedido .descripcion{
     width: 35%;
     text-align: left;
     padding: 5px;
@@ -383,7 +391,6 @@ img{
     flex-direction: column;    
     width: 100%;
     padding: 5%;
-    
 }
 
 .sub{
@@ -437,15 +444,11 @@ img{
     padding: 10px;
 }
 
-.confirmar{
+.confirmar, .agregar{
     font-weight: bold;
     margin: auto;
 }
 
-.agregar{
-    font-weight: bold;
-    margin: auto;
-}
 
 
 @media (min-width: 768px) {  
@@ -492,9 +495,9 @@ img{
     }
 
     /*Cart*/
-    body{
+    .cart-container{
         width: 40%;
-        height: 70vh;
+        height: 100vh;
     }
 
     /*Register*/
