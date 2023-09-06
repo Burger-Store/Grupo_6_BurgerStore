@@ -284,6 +284,170 @@ main{
     margin-bottom: 3%;
 }
 
+/*Cart*/
+body .top, .pedido, .totales, .comentarios, .bottom{
+    width: 100%;
+    height: 100vh;
+    margin: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+.cerrar{
+    margin: 30px;
+    border-radius: 5%; 
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    align-items: center;  
+    height: 12%;
+    justify-content: space-between;
+    background-color: orange;
+}
+
+.miPedido{
+    padding-left: 10px;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: black; 
+}
+
+.pedido{
+    width: 100%;
+    margin-top: 0%;
+    display: flex;
+    flex-wrap: nowrap;
+    height: auto;
+    padding: 5px;
+}
+
+img{
+    width: 35%;
+    padding: 5px;
+    border-radius: 13%;
+}
+
+.descripcion{
+    width: 35%;
+    text-align: left;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.menos, .mas{
+    height: 20px;
+    margin-top: 30px;
+    width: 20px;
+    text-align: center;
+    padding: 0%;
+}
+
+.sumaresta{
+    width: 20px;
+    height: 20px;
+    margin-top: 30px;}
+
+.elPrecio{
+    width: 35%;
+    padding: 10px;
+}
+
+.precio{    
+    font-weight: bold; 
+    text-align: right; 
+    padding-right: 5px;
+}
+
+.custom-icon{
+    text-align: center;
+    font-size: 15px; 
+    margin: 0; 
+}
+
+.quitar{
+    border-radius: 50%; 
+    width: 20px; 
+    height: 20px; 
+    padding: 0;   
+    margin-left: 20px;
+}
+
+.totales{
+    display: flex;
+    flex-direction: column;    
+    width: 100%;
+    padding: 5%;
+    
+}
+
+.sub{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid orange;
+    border-top: 1px solid orange;
+}
+
+.sub.total{
+    width: 100%;    
+}
+
+.tot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid orange;
+}
+
+.total{
+    width: 100%;
+    font-weight: bold;
+}
+
+.comentarios{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.comentarios, .p{
+    font-weight: bold;
+}
+
+#espacio{
+    width: 90%;
+    margin: auto;
+    height: 80%;
+    border-color: black;
+}
+
+.bottom{
+    display: flex;
+    background-color: orange;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+}
+
+.confirmar{
+    font-weight: bold;
+    margin: auto;
+}
+
+.agregar{
+    font-weight: bold;
+    margin: auto;
+}
+
+
 @media (min-width: 768px) {  
 
     .registration-form{
@@ -325,6 +489,12 @@ main{
     /*Menu*/
     .product{
         max-width: 40%;
+    }
+
+    /*Cart*/
+    body{
+        width: 40%;
+        height: 70vh;
     }
 
     /*Register*/
