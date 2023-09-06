@@ -3,6 +3,7 @@
     --black-mate: #333;
     --gray-border: #d2d2d7;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -12,24 +13,29 @@
     font-weight: 700;
     /* Roboto 400 700 900 */
 }
+
 html{
     font-size: 16px; /*Para usar rem o en*/
 }
+
 header {
     z-index: 999;
     width: 100%;
     height: 75px;
     background-color: black;
 }
+
 nav{
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 nav ul{
     align-items: center;
 }
+
 ul{
     list-style: none;
     margin: 0;
@@ -37,42 +43,52 @@ ul{
     display: flex;
     flex-direction: row;
 }
+
 a{
     text-decoration: none;
     color: white;
 }
 
 /*Navbar*/
+
 .brand img{
     width: 45px;
 }
+
 .hamburger-icon i, .sign i, .shop i, .mobile-brand i{
     color:white;
     font-size: 22px;
 }
+
 .hamburger-icon i:hover, .sign i:hover,
 .shop i:hover, .mobile-brand i:hover, .registration-form h1{
     color:var(--main-colour);
 }
+
 .navbar{
     justify-content: space-between;
     padding: 0 25px;
 }
+
 .nav-menu{
     display: none;
 }
+
 div.brand, li.shop{
     margin-right: 15px;
 }
+
 .navbar .hamburger-icon{
     display: flex;
 }
 
 /*Register*/
+
 .main{
     display: flex;
     flex-direction: column;
 }
+
 .container{
     display: flex;
     justify-content: center;
@@ -81,36 +97,43 @@ div.brand, li.shop{
     width: auto;
     width: 100%;
 }
+
 .container form{
     display: flex;
     flex-direction: column;
     align-items: start;
 }
+
 .container form label, .container form input{
     margin-bottom: 10px;
 }
 
-/*form*/
+/*Form*/
+
 .registration-form{
     width: 70%;
 }
+
 .registration-form input{
     border-radius: 5px;
     border: 1px solid var(--gray-border);
     height: 36px;
     width: 100%;
 }
+
 .registration-form label{
     font-size: 16px;
     font-weight: 400;
     color: #333;
 }
+
 .registration-form h1{
     font-size: 48px;
     text-align: center;
     width: 100%;
     font-weight: 900;
 }
+
 .registration-form button{
     height: 42px;
     width: 100%;
@@ -120,6 +143,7 @@ div.brand, li.shop{
     border: none;
     margin: 20px 0;
 }
+
 .registration-form button:hover{
     background-color: white;
     color: var(--main-colour); 
@@ -127,6 +151,7 @@ div.brand, li.shop{
 }
 
 /*Footer*/
+
 .footer-style{
     margin-top: 70px;
     background-color: var(--main-colour);
@@ -137,27 +162,32 @@ div.brand, li.shop{
     font-size: 18px;
     font-weight: 400;  
 }
+
 .text-brand{
     font-size: 52px;
     font-weight: 900;
     text-align: center;
     color: black;
 }
+
 .footer-menu ul{
     text-align: center;
     color: white;
     margin: 15px 0;
 }
+
 .social-media-navbar i{
     color: white;
     font-size: 32px;
     margin: 0 15px;
 }
+
 .social-media-navbar i:hover{
     color: var(--black-mate);
 }
 
 /*Detalle del producto*/
+
 .producto {
     display: flex;
     width: fit-content;
@@ -184,44 +214,123 @@ div.brand, li.shop{
     font-family: 'Roboto', sans-serif;
     border-radius: 5%;
 }
+
 .extras {
     padding-left: 4%;
 }
 
+/*Menu*/
+
+main{
+    margin: auto;
+}
+
+.section-main{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product{
+    margin-top: 7%;
+    width: 100%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product img{
+    width: 50%;
+    margin-left: 5%;
+    border-radius: 10%;
+    display: block;
+}
+
+.product-name{
+    font-size: 100%;
+    font-weight: 700;
+    width: 150%;
+    margin-top: -25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price{
+    font-size: 100%;
+    font-weight: 900;
+    width: 150%;
+    margin: 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description{
+    display: flex;
+    margin-top: 20%;
+    margin-bottom: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.button{
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: xx-large;
+    background-color: #F3AD2B;
+    border-color: #F3AD2B;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 3%;
+}
+
 @media (min-width: 768px) {  
+
     .registration-form{
         width: 520px;
     }
+
     .brand img{
         width: 60px;
     }
+
     .hamburger-icon i, .sign i, .shop i, .mobile-brand i,.item{
         font-size: 28px;
     }
+
     .navbar .hamburger-icon{
         display: none;
     }
+
     .nav-menu{
         display: flex;
     }
+
     .navbar .item a{
         margin: 0 15px;
         padding: 0 10px;
         background-color: var(--main-colour);
     }
+
     .navbar .item a:hover{
         background-color: white;
         color: var(--main-colour);
     }
+
     .navbar{
         max-width: 1200px;
         margin: auto;
+    }
+
+    /*Menu*/
+    .product{
+        max-width: 40%;
     }
 
     /*Register*/
     .registration-form h1{
         font-size: 58px;
     }
+
     .registration-form button{
         margin: 52px 0;
     }
@@ -232,10 +341,12 @@ div.brand, li.shop{
         display: flex;
         justify-content:space-around;
     }
+
     .footer-style ul{
         max-width: 200px; 
         flex-wrap: wrap;
     }
+
     .footer-style span{
         max-width: 160px;
     }
