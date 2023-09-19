@@ -1,18 +1,21 @@
 const express = require('express');
+const morgan = require('morgan');
 const path = require('path');
 const app = express();
 
-//Server
-app.listen(3000, () => console.info('Server arriba'));
+//Router module
+const pageRouter = require('./router/pageRouter');
+const productRouter = require('./router/productRouter');
+const userRouter = require('./router/userRouter');
 
 //Cargar los archivos estaticos
-app.use(express.static(path.resolve(__dirname, './src/public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
-//Rutas de acceso a web
+//Morgan
+app.use(morgan('dev'));
 
-/*app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname,'/src/views/index.html'));
-})*/
+//view engine
+app.set('view engine', 'ejs');
 
 //Ruta a Menu
 app.get('/', (req,res) => {
@@ -38,3 +41,5 @@ app.get('/login', (req,res) => {
 app.get('/cart', (req,res) => {
     res.sendFile(path.join(__dirname,'/src/views/carrito.html'));
 })
+
+module.exports = app;
