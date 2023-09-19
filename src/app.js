@@ -8,6 +8,7 @@ const loginRoute = require ('./routes/loginRoute')
 const signupRoute = require ('./routes/signupRoute')
 const detalleRoute = require ('./routes/detalleRoute')
 const carritoRoute = require ('./routes/carritoRoute')
+const adminRoute = require ('./routes/adminRoute')
 
 server.set ('views' , path.join ( __dirname, 'views'))
 // const menuRoutes = require ('./routes/menuRoutes')
@@ -21,6 +22,9 @@ server.set('view engine', 'ejs');
 server.use(express.static('public'));
 
 //Rutas de acceso a web
+
+//Ruta al Admin
+server.use (adminRoute)
 // Ruta al Home
 server.use (homeRoute)
 //Ruta a Login
