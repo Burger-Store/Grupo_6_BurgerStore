@@ -1,15 +1,9 @@
-La dinamica del grupo fue buena.
+Hasta el momento la dinamica del grupo fue muy buena. En algunas oportunidades se nos complicó coordinar los horarios de las reuniones pero finalmente estuvimos todos presentes y las mismas fuereon muy productivas. 
 
-Se nos complica coordinar los horarios para realizar las reuniones por lo que aprovechamos el tiempo que tenemos juntos lo mas posible. 
+Se pudo coordinar el reparto de tareas sin dificultades. Todos participamos y logramos cumplir con los plazos de entrega. Muy buena predisposición para ayudar a los que tenían dudas o algún inconveniente.
 
-Y nos coordinamos muy bien en el reparto de tareas cada uno trabajo correctamente con la parte que le toco realizar, sin demoras y nos pudimos ayudar en las dudas que surgieron,
-con buena predisposicion.
+Para las próximas etapas nos proponemos tener reuniones con más frecuencia y trabajar más integrados en el proyecto en sí.
 
-Lograr tener reuniones mas frecuentemente.
+Creemos que es importante evitar hacer git commit /push por cada cambio y comprometernos a realizar los commit/push a medida que vayamos agregando funcionalidades al proyecto.
 
-Organizarnos y trabajar mas integrados en el proyecto en si, e interrelacionar las distintas tareas de cada uno. Que cada integrante genere la estructura del código de forma 
-individual ponernos de acuerdo con la organización del mismo.
-
-Incorparamos un nuevo integrante, tenemos que actualizarlo y hacerlo sentir bienvenido. 
-
-Debemos evitar hacer git commit /push por cada cambio y comprometernos a realizar los commit/push a medida que vayamos agregando funcionalidades al proyecto.
+Se incorporó un nuevo integrante por lo que tedremos que ponerlo al día con el proyecto y hacerlo sentir bienvenido. 
