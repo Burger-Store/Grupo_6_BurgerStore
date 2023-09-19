@@ -1,45 +1,37 @@
 const express = require('express');
-const morgan = require('morgan');
+const morgan = require ('morgan')
 const path = require('path');
-const app = express();
+const server = express();
+const homeRoute = require ('./routes/homeRoute')
+const menuRoute = require ('./routes/menuRoute')
+const loginRoute = require ('./routes/loginRoute')
+const signupRoute = require ('./routes/signupRoute')
+const detalleRoute = require ('./routes/detalleRoute')
+const carritoRoute = require ('./routes/carritoRoute')
 
-//Router module
-const pageRouter = require('./router/pageRouter');
-const productRouter = require('./router/productRouter');
-const userRouter = require('./router/userRouter');
+server.set ('views' , path.join ( __dirname, 'views'))
+// const menuRoutes = require ('./routes/menuRoutes')
+
+server.use(morgan('dev'));
+
+//Configurar EJS
+server.set('view engine', 'ejs');
 
 //Cargar los archivos estaticos
-app.use(express.static(path.join(__dirname, '../public')));
+server.use(express.static('public'));
 
-//Morgan
-app.use(morgan('dev'));
-
-//view engine
-app.set('view engine', 'ejs');
-
-//Ruta a Menu
-app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname,'/src/views/menu.html'));
-})
-
-//Ruta a Registro
-app.get('/signup', (req,res) => {
-    res.sendFile(path.join(__dirname,'/src/views/signup.html'));
-})
-
-//Ruta a Detalle de Producto
-app.get('/product-detail', (req,res) => {
-    res.sendFile(path.join(__dirname,'/src/views/detalleDelProducto.html'));
-})
-
+//Rutas de acceso a web
+// Ruta al Home
+server.use (homeRoute)
 //Ruta a Login
-app.get('/login', (req,res) => {
-    res.sendFile(path.join(__dirname,'/src/views/login.html'));
-})
+server.use (loginRoute)
+// Ruta a Menu
+server.use(menuRoute); 
+// Ruta Registro
+server.use(signupRoute);
+// Ruta a Detalle del Producto
+server.use(detalleRoute); 
+// Ruta Carrito
+server.use(carritoRoute);
 
-//Ruta a Carrito
-app.get('/cart', (req,res) => {
-    res.sendFile(path.join(__dirname,'/src/views/carrito.html'));
-})
-
-module.exports = app;
+module.exports = server;
