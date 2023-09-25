@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": {
+          "firstname": "john",
+          "lastname": "doe"
+        },
+        "email": "john@gmail.com",
+        "password": "m38rmF$",
+        "country": "Argentina",
+        "address": "Av.Siempreviva 123",
+        "dpto":"12B",
+        "city":"Bs As",
+        "partido": "San Miguel",
+        "CP":"1663"
+      },
+      {
+        "id": 1,
+        "name": {
+          "firstname": "Juana",
+          "lastname": "Banana"
+        },
+        "email": "JUANABANANA@gmail.com",
+        "password": "123456",
+        "country": "Argentina",
+        "address": "Av.Siempreviva 123",
+        "dpto":"12B",
+        "city":"Bs As",
+        "partido": "San Miguel",
+        "CP":"1663"
+      }
+]

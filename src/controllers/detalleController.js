@@ -1,7 +1,5 @@
-const detalleController = {
-    detalle: (req, res) => {
-        res.render('detalleDelProducto');
-    }
+const detalleController = (req,res) => {
+    res.render('detalleDelProducto');
 };
 
 

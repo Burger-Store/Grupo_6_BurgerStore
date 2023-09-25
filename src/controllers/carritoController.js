@@ -1,8 +1,5 @@
-const carritoController = {
-    carrito: (req, res) => {
-        res.render('carrito');
-    }
+const carritoController = (req,res) => {
+    res.render('carrito');
 };
-
 
 module.exports = carritoController;

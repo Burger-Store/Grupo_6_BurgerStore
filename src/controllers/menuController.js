@@ -1,7 +1,5 @@
-const menuController = {
-    menu: (req, res) => {
-        res.render('menu');
-    }
+const menuController = (req,res) => {
+    res.render('menu');
 };
 
 

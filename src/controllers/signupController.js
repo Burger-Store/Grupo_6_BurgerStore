@@ -1,7 +1,5 @@
-const signupController = {
-    signup: (req, res) => {
-        res.render('signup');
-    }
+const signupController = (req,res) => {
+    res.render('signup');
 };
 
 

@@ -1,7 +1,5 @@
-const homeController = {
-    home : (req, res) => {
-        res.render('index');
-    }
+const homeController = (req,res) => {
+    res.render('index');
 };
 
 

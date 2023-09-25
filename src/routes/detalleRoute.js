@@ -4,7 +4,7 @@ const router = express.Router();
 
 const detalleController = require('../controllers/detalleController');
 
-router.get('/detalle', detalleController.detalle);
+router.get('/detalle', detalleController);
 
 
 module.exports = router;

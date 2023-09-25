@@ -4,7 +4,7 @@ const router = express.Router();
 
 const menuController  = require('../controllers/menuController');
 
-router.get('/', menuController.menu);
+router.get('/', menuController);
 
 
 module.exports = router;
