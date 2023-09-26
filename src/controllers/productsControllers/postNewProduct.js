@@ -4,7 +4,7 @@ const path = require('path');
 
 const postNewProduct = (req,res) => {
     //res.send(req.body);
-    const { name, description, price, category, image } = req.body;
+    const { name, description, price, category } = req.body;
 
     const id = products[products.length - 1].id;    //tomo el ultimo id
 
@@ -16,7 +16,7 @@ const postNewProduct = (req,res) => {
         description,
         price,
         category,
-        image
+        image: req.file ? req.file.filename : ''
     };
     
     products.push(newProduct);

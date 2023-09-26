@@ -4,234 +4,25 @@
     <%- include('./partials/head') %>
 <body>
     <%- include('./partials/header') %>
-
     <main>
         <div class="section-main">
+            <% for(let i=0; i < allProducts.length; i++){%>
             <div class="product">
                 <div class="product-description">
-                    <img src="/img/american_simple.jpg" alt="American Simple">
-                    <div class="product-name">American Burger</div>
-                    <div class="price">$3000</div>
+                    <img src="/img/products/<%= allProducts[i].image %>" alt="img">
+                    <div class="product-name"><%= allProducts[i].name%></div>
+                    <div class="price"><%= allProducts[i].price %></div>
                     <div class="add-button">
                         <button class="button" type ="submit"> Agregar </button>
                     </div>
                     <section>
-                        <p class="description">Medallón de carne con Cheddar, Tomate, Lechuga y Cebolla</p>
+                        <p class="description"><%= allProducts[i].description %></p>
                     </section>
                 </div>
             </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/american_doble.jpg" alt="American Doble">
-                    <div class="product-name">American Doble</div>
-                    <div class="price">$3300</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">2 Medallones de carne con Doble Cheddar, Tomate, Lechuga y Cebolla</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/american_triple.jpg" alt="American Triple">
-                    <div class="product-name">American Triple</div>
-                    <div class="price">$3500</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">3 Medallones de carne con Triple Cheddar, Tomate, Lechuga y Cebolla</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/cheeseburger_simple.jpg" alt="Cheeseburger Simple">
-                    <div class="product-name">Cheeseburger</div>
-                    <div class="price">$2900</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">Medallón de carne con Cheddar</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/cheeseburger_doble.jpg" alt="Cheeseburger Doble">
-                    <div class="product-name">Cheese Doble</div>
-                    <div class="price">$3200</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">2 Medallones de carne con Doble Cheddar</p>
-                    </section>
-                    
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/cheeseburger_triple.jpg" alt="Cheeseburger Triple">
-                    <div class="product-name">Cheese Triple</div>
-                    <div class="price">$3400</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">3 Medallones de carne con Triple Cheddar</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/friedonion_simple.jpg" alt="Fried Onion">
-                    <div class="product-name">Fried Onion</div>
-                    <div class="price">$2900</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">Medallón de carne con Cheddar y Cebolla cocinada en el mismo medallón de carne</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/friedonion_doble.jpg" alt="Fried Onion Doble">
-                    <div class="product-name">Fried Onion Doble</div>
-                    <div class="price">$3300</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">2 Medallones de carne con Doble Cheddar y Cebolla cocinada en los mismos medallones de carne</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/royal_simple.jpg" alt="Royal Burger">
-                    <div class="product-name">Royal Burger</div>
-                    <div class="price">$3000</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">Medallón de carne con Cheddar, Cebolla Cocida, Pepinillos y Salsa Thousand Island</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/royal_doble.jpg" alt="Royal Doble">
-                    <div class="product-name">Royal Doble</div>
-                    <div class="price">$3300</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">2 Medallones de carne con Doble Cheddar, Cebolla Cocida, Pepinillos y Salsa Thousand Island</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/tastyonion_simple.jpg" alt="Tasty Onion">
-                    <div class="product-name">Tasty Onion</div>
-                    <div class="price">$2900</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">Medallón de carne con Cheddar, Cebolla Crispy y Salsa Tasty</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/tastyonion_doble.jpg" alt="Tasty Onion Doble">
-                    <div class="product-name">Tasty Onion Doble</div>
-                    <div class="price">$3300</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">2 Medallones de carne con Doble Cheddar, Cebolla Crispy y Salsa Tasty</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/bigraspy.jpg" alt="Big Raspy">
-                    <div class="product-name">Big Raspy</div>
-                    <div class="price">$4000</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">4 Medallones de carne de 120g con Cuadruple Cheddar y Panceta Ahumada</p>
-                    </section>
-                </div>
-            </div>
-
-            <div class="border"></div>
-
-            <div class="product">
-                <div class="product-description">
-                    <img src="/img/papas.jpg" alt="Papas">
-                    <div class="product-name">Cono de Papas</div>
-                    <div class="price">$500</div>
-                    <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
-                    </div>
-                    <section>
-                        <p class="description">Cono de papas Extra</p>
-                    </section>
-                </div>
-            </div>
-        </div>    
+            <%}%> 
+        </div>
     </main>
-
     <%- include('./partials/footer') %>
 </body>
 </html>

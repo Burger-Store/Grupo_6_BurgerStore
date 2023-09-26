@@ -6,7 +6,7 @@
     <%- include('./partials/header') %>
     <div class="main">
         <div class="container">
-            <form class="registration-form" action="/products" method="POST">
+            <form class="registration-form" action="/products" method="POST" enctype="multipart/form-data">
                 <h1>Panel de Administrador</h1>
                 <label for="name">Nombre del Producto:</label>
                 <input type="text" name="name" id="name" required>
@@ -17,7 +17,7 @@
                 <label for="category">Categoría:</label>
                 <input type="text" name="category" id="category" required>
                 <label for="image">Imagen:</label>
-                <input type="text" name="image" id="image"> 
+                <input type="file" name="image" accept="image/*" id="image">
                 <button type="submit">Crear Producto</button>
             </form>
         </div>

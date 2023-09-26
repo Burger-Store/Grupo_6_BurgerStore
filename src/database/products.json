@@ -1,1 +1,18 @@
-[{"id":1,"name":"hamburguesa 1","description":"sdasdsadadasdasd","price":10000,"category":"hamburguesa","image":"123"},{"id":2,"name":"hamburguesa 2","description":"sdasdsadadasdasd","price":15000,"category":"hamburguesa","image":"123"},{"id":3,"name":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","description":"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB","price":"1111111111111111111111111111111111111111111111111111","category":"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC","image":"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"},{"id":4,"name":"Nombre...","description":"Descripcion...","price":"12345678910","category":"Categoría...","image":"IMAGEEENNNNNNNNNNNNNNNNNN"}]
+[
+    {
+        "id": 1,
+        "name": "American Burger Simple",
+        "description": "Medallón de carne con cheddar, tomate, lechuga y cebolla",
+        "price": "2700",
+        "category": "Hamburguesa",
+        "image": "1695687360426_product.jpg"
+    },
+    {
+        "id": 2,
+        "name": "American Burger Doble",
+        "description": "2 Medallones de carne con doble cheddar, tomate, lechuga y cebolla",
+        "price": "3100",
+        "category": "Hamburguesa",
+        "image": "american_doble.jpg"
+    }
+]
