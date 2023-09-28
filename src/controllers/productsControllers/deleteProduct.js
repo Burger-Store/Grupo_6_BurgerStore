@@ -2,8 +2,8 @@ const products = require('../../database/products.json');
 const path = require('path');
 const fs = require('fs');
 
-
 const deleteProduct = (req,res) => {
+    
     const { id } = req.params;
 
     const newArrayProducts = products.filter((prod) => prod.id !== parseInt(id));

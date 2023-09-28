@@ -16,7 +16,7 @@ const storage = multer.diskStorage({        //para subir imagenes
 
 const uploadImgProduct = multer({ storage });
 
-const { getAllProducts, getProductById, formCreateProduct, postNewProduct, deleteProduct } = require('../controllers/productsControllers');
+const { getAllProducts, getProductById, formCreateProduct, postNewProduct, deleteProduct, editProduct } = require('../controllers/productsControllers');
 
 router.get('/products', getAllProducts);        // ACA PARA VER EL LISTADO DE PRODUCTOS
 router.get('/product/:id', getProductById);     // ACA PARA OBTENER UN PRODUCTO X ID
@@ -24,9 +24,9 @@ router.get('/product/:id', getProductById);     // ACA PARA OBTENER UN PRODUCTO 
 router.get('/products/create', formCreateProduct);    // ACA PARA CREAR PRODUCTOS
 router.post('/products', uploadImgProduct.single('image'), postNewProduct);       
 
-//get de edicion de productos (formulario de edicion del producto)
-//put de edicion de productos (a donde se envia el formulario)
+// router.get('/product/:id/edit', getProductById);        //get de edicion de productos
 
-router.delete('/product/delete/:id', deleteProduct);
+router.put('/product/:id/edit', uploadImgProduct.single('image'), editProduct);     //put de edicion de productos )
+router.delete('/product/:id/delete', deleteProduct);
 
 module.exports = router;

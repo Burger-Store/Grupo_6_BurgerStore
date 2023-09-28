@@ -1,4 +1,5 @@
 const products = require('../../database/products.json');
+const path = require('path');
 
 const getProductById = (req,res) => {
     const { id } = req.params;
@@ -9,8 +10,8 @@ const getProductById = (req,res) => {
         return res.send('Product not found');
     }
 
-    res.send(product);
+    const form = path.join(__dirname, '../../views/product')
+    res.render(form, { product });
 }
-
 
 module.exports = getProductById;

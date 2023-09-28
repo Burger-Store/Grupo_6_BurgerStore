@@ -5,13 +5,13 @@
         "description": "Medallón de carne con cheddar, tomate, lechuga y cebolla",
         "price": "2700",
         "category": "Hamburguesa",
-        "image": "1695687360426_product.jpg"
+        "image": "american_simple.jpg"
     },
     {
         "id": 2,
         "name": "American Burger Doble",
         "description": "2 Medallones de carne con doble cheddar, tomate, lechuga y cebolla",
-        "price": "3100",
+        "price": "3250",
         "category": "Hamburguesa",
         "image": "american_doble.jpg"
     }
