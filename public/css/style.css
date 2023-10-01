@@ -19,9 +19,9 @@ html{
 }
 
 header {
-    z-index: 999;
+    position: relative;
     width: 100%;
-    height: 75px;
+    height: 110px;
     background-color: black;
 }
 
@@ -52,34 +52,41 @@ a{
 /*Navbar*/
 
 .brand img{
-    width: 45px;
+    width: 90px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
-
-.hamburger-icon i, .sign i, .shop i, .mobile-brand i{
+.hamburger-icon i{font-size: 25px;
     color:#F3AD2B;
-    font-size: 22px;
+}
+ .sign i, .shop i, .mobile-brand i{
+    color:#F3AD2B;
+    
+    margin-right: 10px;
+    
+   
 }
 
 .hamburger-icon i:hover, .sign i:hover,
 .shop i:hover, .mobile-brand i:hover, .registration-form h1{
-    color:var(--main-colour);
+    color:white;
+    
 }
 
 .navbar{
     justify-content: space-between;
-    padding: 0 25px;
+    text-align: center;
 }
 
 .nav-menu{
     display: none;
 }
 
-div.brand, li.shop{
-    margin-right: 15px;
-}
-
 .navbar .hamburger-icon{
     display: flex;
+    margin-top: 50px;
+    
+
 }
 
 /*Register y Login*/
@@ -338,9 +345,9 @@ main{
     padding-left: 10px;
     justify-content: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
-    color: black; 
+    color: white; 
 }
 
 .pedido{
@@ -350,6 +357,12 @@ main{
     flex-wrap: nowrap;
     height: auto;
     padding: 5px;
+    
+}
+.descyagregar{display: flex;
+   flex-direction: row;
+   justify-content: center;
+    
 }
 
 img{
@@ -359,34 +372,39 @@ img{
 }
 
 .pedido .descripcion{
-    width: 35%;
-    text-align: left;
-    padding: 5px;
-    font-size: 10px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
+p.descripcion{width: 100%;
+max-height: max-content;}
 .menos, .mas{
     height: 20px;
-    margin-top: 30px;
     width: 20px;
-    text-align: center;
     padding: 0%;
 }
+.center{display: flex;
+    flex-direction: column;
+justify-content: space-between;}
 
 .sumaresta{
     width: 20px;
     height: 20px;
-    margin-top: 30px;}
+}
 
 .elPrecio{
     width: 35%;
-    padding: 10px;
+    padding-right: 18px;
+    padding-left: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: right;
 }
 
 .precio{    
     font-weight: bold; 
     text-align: right; 
-    padding-right: 5px;
+    
 }
 
 .custom-icon{
@@ -396,13 +414,15 @@ img{
 }
 
 .quitar{
-    border-radius: 50%; 
     width: 20px; 
     height: 20px; 
-    padding: 0;   
     margin-left: 20px;
+    margin-bottom: 100px;
+    border: none;
+    
 }
-
+i.fa-solid.fa-trash{color: #F3AD2B;}
+i.fa-solid.fa-trash:hover{color:black}
 .totales{
     display: flex;
     flex-direction: column;    
@@ -414,19 +434,22 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid orange;
-    border-top: 1px solid orange;
+    border-bottom: 1px solid #F3AD2B;
+    border-top: 1px solid #F3AD2B;
+    height: 50px;
 }
 
 .sub.total{
     width: 100%;    
+    
 }
 
 .tot{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #F3AD2B;
+    height: 50px;
 }
 
 .total{
@@ -449,61 +472,88 @@ img{
 #espacio{
     width: 90%;
     margin: auto;
-    height: 80%;
-    border-color: black;
+    border-color: rgb(128, 127, 127);
 }
 
 .bottom{
     display: flex;
-    background-color: orange;
-    justify-content: space-around;
+    flex-direction: column;
     width: 100%;
     padding: 10px;
 }
 
-.confirmar, .agregar{
-    font-weight: bold;
+.confirmar{
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+    padding: 5px;
     margin: auto;
+    background-color:#F3AD2B;
+    border-color:#F3AD2B;
 }
+.confirmar:hover{color:#F3AD2B;
+background-color: white;
+border-color: #cfcfcf;}
+.agregar{color: #F3AD2B;
+}
+.agregar:hover{color: black}
 
 
 
 @media (min-width: 768px) {  
+    header{ height: 200px;}
 
     .registration-form{
         width: 520px;
     }
 
     .brand img{
-        width: 60px;
+        width: 230px;
+        margin-left: 50px;
+         margin-top: 100px; 
+               
     }
+    
+    div.brand, li.shop{
+        margin-right: 0px;
+        
+        
+        
+    }
+    
 
     .hamburger-icon i, .sign i, .shop i, .mobile-brand i,.item{
-        font-size: 28px;
+        font-size: 25px;
+        
     }
-
+.sign i, .shop i{padding-right: 20px;}
     .navbar .hamburger-icon{
         display: none;
     }
 
     .nav-menu{
         display: flex;
+        
     }
 
     .navbar .item a{
         margin: 0 15px;
         padding: 0 10px;
-        background-color: var(--main-colour);
+        color: #F3AD2B;
+        font-weight: 500;
+       
+        
     }
-
-    .navbar .item a:hover{
-        background-color: white;
-        color: var(--main-colour);
-    }
+    ul.desktop-option{padding-right: 60px;}
+    a.hm:hover{color: white;}
+  
+    .item:hover{color: white;}
 
     .navbar{
-        max-width: 1200px;
-        margin: auto;
+        width: 100%;
+        
     }
 
     /*Menu*/
@@ -513,7 +563,7 @@ img{
 
     /*Cart*/
     .cart-container{
-        width: 40%;
+        width: 30%;
         height: 100vh;
     }
 
