@@ -1,6 +1,6 @@
 # Burger store
 
-![Home](src/public/asset/Home.png)
+![Home](public/asset/Home.png)
 
 ## Introducción
 
@@ -34,12 +34,12 @@ Los integrantes del Equipo somos:
 
 ## Interfaz
 ### Login
-![Home](src/public/asset/Login.png)
+![Home](public/asset/Login.png)
 ### Menu
-![Menu](src/public/asset/Menu.png)
+![Menu](public/asset/Menu.png)
 ### Registro
-![Registro](src/public/asset/Registro.png)
+![Registro](public/asset/Registro.png)
 ### Carrito
-![Sidebar](src/public/asset/Carrito-Right-Sidebar.png)
+![Sidebar](public/asset/Carrito-Right-Sidebar.png)
 ### Detalle de Productos
-![Detalle](src/public/asset/Detalle-de-producto.png)
+![Detalle](public/asset/Detalle-de-producto.png)
