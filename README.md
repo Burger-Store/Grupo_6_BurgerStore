@@ -32,7 +32,22 @@ Los integrantes del Equipo somos:
 - Mi nombre es Sonia Villafañe, vivo en San Miguel. Soy Terapista Ocupacional egresada de la UBA y me dedico a esta profesión hace más de 20 años. Me decidí a comenzar programación porque es algo pendiente desde que terminé el secundario y lo pienso a corto plazo como trabajo complementario al actual y a futuro quizás full time.
 - Mi nombre es  Matías Arévalo, vivo en San Miguel. Me gusta mucho la programación web y de software. Actualmente estoy estudiando en la Universidad General Sarmiento Licenciatura en sistema e Inglés en el instituto superior cultura Británica. Trabajo como soporte de aplicación en Volkswagen Pacheco. Me gusta cocinar, ver películas y escribir. Busco oportunidades que desafíen mi creatividad y mi profesionalismo.
 
+## Rutas
+### Consultas de productos
+```
+# Listado y eliminación de productos.
+/products
+
+# Formulario de edición de un producto.
+/products/:id
+
+# Crear un producto.
+/products/create
+
+```
+
 ## Interfaz
+
 ### Login
 ![Home](public/asset/Login.png)
 ### Menu
