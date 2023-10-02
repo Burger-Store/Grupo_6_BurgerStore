@@ -39,7 +39,7 @@ Los integrantes del Equipo somos:
 /products
 
 # Formulario de edición de un producto.
-/products/:id
+/product/:id
 
 # Crear un producto.
 /products/create
