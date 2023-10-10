@@ -9,7 +9,7 @@ const loginRoute = require ('./routes/loginRoute')
 const signupRoute = require ('./routes/signupRoute')
 const detalleRoute = require ('./routes/detalleRoute')
 const carritoRoute = require ('./routes/carritoRoute')
-//const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productsRoutes');
 
 server.set ('views' , path.join ( __dirname, 'views'))
@@ -47,7 +47,7 @@ server.use(carritoRoute);
 
 
 // Ruta a usuarios
-// server.use(userRoutes);
+server.use(userRoutes);
 // Ruta a productos
 server.use(productRoutes);
 

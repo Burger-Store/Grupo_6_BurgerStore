@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Profile</title>
+    <%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    <div class="main">
+        <div class="container">
+            <form class= "registration-form" action="/users/<%= users.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h1>Panel de Usuario</h1>
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" value="<%= users.name %>"readonly="readonly">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="<%= users.email %>">
+            <label for="password">Password:</label>
+            <input type="text" name="password" id="password" value="<%= users.password %>">
+            <label for="country">País:</label>
+            <input type="text" name="country" id="country" value="<%= users.country %>"readonly="readonly">
+            <label for="address">Dirección:</label>
+            <input type="text" name="address" id="address" value="<%= users.address %>">
+            <label for="lift">Departamento/Unidad:</label>
+            <input type="text" name="lift" id="lift" value="<%= users.lift %>">
+            <label for="city">Ciudad:</label>
+            <input type="text" name="city" id="city" value="<%= users.city %>"readonly="readonly">
+            <label for="state">Partido:</label>
+            <input type="text" name="state" id="state" value="<%= users.state %>">
+            <label for="zip-code">Código postal:</label>
+            <input type="number" name="zip-code" id="zip-code" value="<%= users.zip-code %>">
+            <!-- <label for="phone-number">Teléfono:</label>
+            <input type="number" name="phone-number" id="phone-number" value="<%= users.phone-number %>"> -->
+            <label for="image">Imagen:</label>
+            <input type="file" name="image" accept="image/*" id="image">
+            <button type="submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+<%- include('./partials/footer') %>
+</body>
+</html>
