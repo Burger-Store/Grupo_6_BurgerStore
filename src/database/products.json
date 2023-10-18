@@ -13,7 +13,7 @@
         "description": "2 medallones de carne con doble cheddar, tomate, lechuga y cebolla",
         "price": "3100",
         "category": "Hamburguesa",
-        "image": "american_doble.jpg"
+        "image": "1697643414367_product.jpg"
     },
     {
         "id": 10,
@@ -79,7 +79,6 @@
         "category": "hamburguesas",
         "image": "cheeseburger_triple.jpg"
     },
-    
     {
         "id": 11,
         "name": "Fried Onion Simple",

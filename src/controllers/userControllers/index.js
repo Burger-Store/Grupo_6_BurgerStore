@@ -1,11 +1,21 @@
 const getAllUsers = require('./getAllUsers');
 const getUserById = require('./getUserById');
-const editUsersById = require('./editUsersById');
-const formEditProfile = require('./formEditProfile');
+const editUser = require('./editUser');
+const login = require('./login');
+const register = require('./register');
+const postLogin = require('./postLogin');
+const postRegister = require('./postRegister');
+const profile = require ('./profile')
+const logout = require('./logout')
 
 module.exports = {
     getAllUsers,
     getUserById,
-    editUsersById,
-    formEditProfile
+    editUser,
+    login,
+    register,
+    postLogin,
+    postRegister,
+    logout,
+    profile
 }
