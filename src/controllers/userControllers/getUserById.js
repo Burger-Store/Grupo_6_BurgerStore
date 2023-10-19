@@ -1,33 +1,17 @@
 const users = require('../../database/users.json');
 const path = require('path');
-//req: request res: response
-const getUserById = (req,res) => {
-    
-    let ruta = path.join(__dirname,'../../views/userdetail');
 
+const getUserById = (req,res) => {
     const { id } = req.params;
-    
-    const user = users.find((user) => user.id == id);
+
+    const user = users.find((usuario) => usuario.id == id);
 
     if(!user){
-        //return res.send('User not found');
-        ruta = path.join(__dirname,'../../views/404notfound');
-        return res.render(ruta, {message: 'User not found'});
-    } 
-
-    const infoUser = {
-        id: user.id,
-        firstName: user.name.firstname,
-        lastName: user.name.lastname,
-        email: user.email,
-        phone: user.phone
+        return res.send('User not found');
     }
 
-   
-    
-    res.render(ruta,{ user: infoUser });
-    
-    //res.send(infoUser)
+    const form = path.join(__dirname, '../../views/editProfile')
+    res.render(form, { user });
 }
 
 module.exports = getUserById;

@@ -6,12 +6,13 @@ const editUser = (req, res) => {
 
     const { id } = req.params;
 
-    const { name, email, password, country, address, lift, city, state, zipcode } = req.body;
+    const { name, surname, email, password, country, address, lift, city, state, zipcode } = req.body;
 
     users.forEach((user)=>{
         if (user.id == id){
             user.id = parseInt(id);
             user.name = name;
+            user.surname = surname;
             user.email = email;
             user.password = password;
             user.country = country;
@@ -32,7 +33,7 @@ const editUser = (req, res) => {
         if (error){
             res.send(`Error: ${error}`);
         }else{
-            res.redirect('/users/:id')
+            res.redirect('/userProfile')
         }
     })
 }

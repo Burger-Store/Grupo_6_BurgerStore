@@ -10,9 +10,19 @@
             <form  class="registration-form" action="#" method="post">
                 <h1>Iniciar Sesion</h1>
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" required>
+                <input type="text" name="email" id="email" class="form-control">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+
                 <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" class="form-control">
+                <div class="invalid-feedback">
+                    
+                <label for="remember">Recordarme:</label>
+                <input type="checkbox" name="remember" id="remember">
                 <button type="submit">Ingresar</button>
             </form>
         </div>

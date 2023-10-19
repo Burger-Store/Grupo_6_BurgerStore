@@ -68,9 +68,13 @@ a{
 }
 
 .hamburger-icon i:hover, .sign i:hover,
-.shop i:hover, .mobile-brand i:hover, .registration-form h1{
+.shop i:hover, .mobile-brand i:hover{
     color:white;
     
+}
+
+.registration-form h1{
+    color:#F3AD2B
 }
 
 .navbar{

@@ -1,17 +1,12 @@
 const users = require('../../database/users.json');
-
-const infoUsers = users.map((user) => {
-    return {
-        id: user.id,
-        firstName: user.name.firstname,
-        lastName: user.name.lastname,
-        email: user.email,
-        phone: user.phone
-    }
-})
+const path = require('path');
 
 const getAllUsers = (req,res) => {
-    res.send(infoUsers);
+    
+    const ruta = path.join(__dirname,'../../views/users.ejs');
+    console.log(ruta);
+    res.render(ruta,{allUsers: users})
+    //res.send(users);
 }
 
 module.exports = getAllUsers;
