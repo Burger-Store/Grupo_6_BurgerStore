@@ -15,7 +15,7 @@
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="<%= user.email %>">
             <label for="password">Password:</label>
-            <input type="text" name="password" id="password" value="<%= user.password %>">
+            <input type="password" name="password" id="password" value="" onclick="alert('Este usuario ya tiene una contraseña, si quiere modificarla, ingrese la nueva contraseña, si no, envie el campo vacío');"> 
             <label for="country">País:</label>
             <input type="text" name="country" id="country" value="<%= user.country %>"readonly onmousedown="return false;" onclick="alert('No hacemos envios fuera del país.');">
             <label for="address">Dirección:</label>

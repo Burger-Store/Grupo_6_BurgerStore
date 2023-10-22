@@ -1,6 +1,7 @@
 const users = require('../../database/users.json');
 const fs = require('fs');
 const path = require ('path');
+const bcryptjs = require('bcryptjs');
 
 const editUser = (req, res) => {
 
@@ -14,7 +15,7 @@ const editUser = (req, res) => {
             user.name = name;
             user.surname = surname;
             user.email = email;
-            user.password = password;
+            user.password = password.length != 0 ? bcryptjs.hashSync(password, 10) : user.password;
             user.country = country;
             user.address = address;
             user.lift = lift;

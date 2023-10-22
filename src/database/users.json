@@ -1,1 +1,16 @@
-[{"id":1,"name":"Luciano","surname":"Bado","email":"luchobadox@gmail.com","password":"Holaaa","country":"Argentina","address":"Entre Rios 1137","lift":"-","city":"Bella Vista","state":"Buenos Aires","zipcode":"1661","image":"1697652991729_user.jpg"}]
+[
+    {
+        "id": 1,
+        "name": "Luciano",
+        "surname": "Bado",
+        "email": "luchobadox@gmail.com",
+        "password": "$2a$10$JePbTQJoKsFApHxdSaXLI.1l6dGfYYDqkbZSKd3DAJ7ZV2.JDzz7q",
+        "country": "Argentina",
+        "address": "Entre Rios 1137",
+        "lift": "-",
+        "city": "Bella Vista",
+        "state": "Buenos Aires",
+        "zipcode": "1661",
+        "image": "1697652991729_user.jpg"
+    }
+]
