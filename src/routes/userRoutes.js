@@ -11,9 +11,11 @@ const validations = require('../middlewares/validateRegisterMiddleware');
 const validateLogin = require ('../middlewares/validateLogin');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
+const userEditMiddleware = require('../middlewares/UserEditMiddleware');
 
-router.get('/users', getAllUsers);      //ruta a vista de todos los usuarios
-router.get('/users/:id', getUserById);      //ruta a editar un usuario (profile)
+router.get('/users', adminMiddleware, getAllUsers);      // ADMIN ruta a vista de todos los usuarios
+router.get('/users/:id', adminMiddleware, getUserById);      // ADMIN ruta a editar un usuario (profile)
 
 // Formulario de registro
 router.get('/signup', guestMiddleware, register);
@@ -29,6 +31,9 @@ router.post('/login', validateLogin, postLogin);
 
 // Perfil de Usuario
 router.get('/userProfile', authMiddleware, profile);
+
+// Edicion de propio usuario
+router.get('/user/:id', authMiddleware, userEditMiddleware, getUserById);   
 
 // Logout
 router.get('/logout/', logout);

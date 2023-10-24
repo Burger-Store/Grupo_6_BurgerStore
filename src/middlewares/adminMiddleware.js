@@ -1,12 +1,8 @@
-const isUser = (req, res, next) => {
-    
-    const isuser = true;
-
-    if(!isuser){
-        res.send('Debe ser usuario administrador');
-    } 
-
-    next();
+function authMiddleware(req, res, next) {
+	if (!req.session.userLogged || req.session.userLogged.id !== 0) {
+		return res.redirect('/login');
+	}
+	next();
 }
 
-module.exports = isUser;
+module.exports = authMiddleware;
