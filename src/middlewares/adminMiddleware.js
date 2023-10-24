@@ -1,4 +1,4 @@
-const isUser = (req,res,next) => {
+const isUser = (req, res, next) => {
     
     const isuser = true;
 

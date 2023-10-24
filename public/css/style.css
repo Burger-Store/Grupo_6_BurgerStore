@@ -73,7 +73,7 @@ a{
     
 }
 
-.registration-form h1{
+h1{
     color:#F3AD2B
 }
 
@@ -139,7 +139,7 @@ a{
     color: #333;
 }
 
-.registration-form h1{
+h1{
     font-size: 48px;
     text-align: center;
     width: 100%;
@@ -160,6 +160,12 @@ a{
     background-color: white;
     color: var(--main-colour); 
     border: solid 1px var(--gray-border);
+}
+
+
+.remember-checkbox{
+    max-width: 20px;
+    margin-left: 30%;
 }
 
 /*Footer*/
@@ -363,10 +369,10 @@ main{
     padding: 5px;
     
 }
-.descyagregar{display: flex;
-   flex-direction: row;
-   justify-content: center;
-    
+.descyagregar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 img{
@@ -387,9 +393,11 @@ max-height: max-content;}
     width: 20px;
     padding: 0%;
 }
-.center{display: flex;
+.center{
+    display: flex;
     flex-direction: column;
-justify-content: space-between;}
+    justify-content: space-between;
+}
 
 .sumaresta{
     width: 20px;
@@ -407,8 +415,7 @@ justify-content: space-between;}
 
 .precio{    
     font-weight: bold; 
-    text-align: right; 
-    
+    text-align: right;  
 }
 
 .custom-icon{
@@ -422,11 +429,13 @@ justify-content: space-between;}
     height: 20px; 
     margin-left: 20px;
     margin-bottom: 100px;
-    border: none;
-    
+    border: none; 
 }
+
 i.fa-solid.fa-trash{color: #F3AD2B;}
+
 i.fa-solid.fa-trash:hover{color:black}
+
 .totales{
     display: flex;
     flex-direction: column;    
@@ -445,7 +454,6 @@ i.fa-solid.fa-trash:hover{color:black}
 
 .sub.total{
     width: 100%;    
-    
 }
 
 .tot{
@@ -497,11 +505,13 @@ i.fa-solid.fa-trash:hover{color:black}
     background-color:#F3AD2B;
     border-color:#F3AD2B;
 }
+
 .confirmar:hover{color:#F3AD2B;
 background-color: white;
 border-color: #cfcfcf;}
-.agregar{color: #F3AD2B;
-}
+
+.agregar{color: #F3AD2B;}
+
 .agregar:hover{color: black}
 
 
@@ -572,7 +582,7 @@ border-color: #cfcfcf;}
     }
 
     /*Register*/
-    .registration-form h1{
+    h1{
         font-size: 58px;
     }
 

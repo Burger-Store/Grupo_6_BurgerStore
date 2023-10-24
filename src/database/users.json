@@ -12,5 +12,19 @@
         "state": "Buenos Aires",
         "zipcode": "1661",
         "image": "1697652991729_user.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sofia",
+        "surname": "Verguilla",
+        "email": "sofiv@gmail.com",
+        "password": "$2a$10$siRbFhp64iY9sEaXhwm0h.oYkAnh19Y10xrLLFaZPLeyilGVY0CF6",
+        "country": "Argentina",
+        "address": "Entre Rios 1137",
+        "lift": "-",
+        "city": "Bella Vista",
+        "state": "Buenos Aires",
+        "zipcode": "1661",
+        "image": "1698107416298_user.jpg"
     }
 ]

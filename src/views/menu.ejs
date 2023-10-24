@@ -5,6 +5,7 @@
 <body>
     <%- include('./partials/header') %>
     <main>
+        <h1>Nuestras Burgers</h1>
         <div class="section-main">
             <% for(let i=0; i < allProducts.length; i++){%>
             <div class="product">
@@ -13,7 +14,7 @@
                     <div class="product-name"><%= allProducts[i].name%></div>
                     <div class="price"><%= allProducts[i].price %></div>
                     <div class="add-button">
-                        <button class="button" type ="submit"> Agregar </button>
+                        <a href="/"><button class="button" type ="submit">  Agregar  </button> </a>
                     </div>
                     <section>
                         <p class="description"><%= allProducts[i].description %></p>
