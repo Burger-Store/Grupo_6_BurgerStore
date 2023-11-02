@@ -1,8 +1,10 @@
-function authMiddleware(req, res, next) {
+const path = require ('path');
+
+function adminMiddleware(req, res, next) {
 	if (!req.session.userLogged || req.session.userLogged.id !== 0) {
-		return res.redirect('/login');
+		return res.send("Acceso solo para administradores.");
 	}
 	next();
 }
 
-module.exports = authMiddleware;
+module.exports = adminMiddleware;

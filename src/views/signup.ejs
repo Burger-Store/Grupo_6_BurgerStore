@@ -44,12 +44,12 @@
                     </div>
                 <% } %>
 
-                <label for="country">Pais:</label>
-                <input type="text" name="country" id="country" class="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.country : null %>">
-                <% if (locals.errors && errors.country) { %>
+                <label for="phone">Teléfono:</label>
+                <input type="number" name="phone" id="phone" class="form-control <%= locals.errors && errors.phone ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.phone : null %>">
+                <% if (locals.errors && errors.phone) { %>
                     <div class="text-danger">
-                        <%= errors.country.msg %>
+                        <%= errors.phone.msg %>
                     </div>
                 <% } %>
 

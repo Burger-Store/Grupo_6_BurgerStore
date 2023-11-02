@@ -7,7 +7,7 @@ const editUser = (req, res) => {
 
     const { id } = req.params;
 
-    const { name, surname, email, password, country, address, lift, city, state, zipcode } = req.body;
+    const { name, surname, email, password, phone, address, lift, city, state, zipcode } = req.body;
 
     users.forEach((user)=>{
         if (user.id == id){
@@ -16,7 +16,7 @@ const editUser = (req, res) => {
             user.surname = surname;
             user.email = email;
             user.password = password.length != 0 ? bcryptjs.hashSync(password, 10) : user.password;
-            user.country = country;
+            user.phone = phone;
             user.address = address;
             user.lift = lift;
             user.city = city;
