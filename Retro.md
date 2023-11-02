@@ -12,3 +12,10 @@
 - Los tiempos para coordinar y repartir las tareas se redujeron, se persive en el grupo un dinamismo y compromiso cada vez mas evidente a la hora de realizar el proyecto y esto nos permite pensar en las siguentes tareas o forma de mejorar BurgerStore.
 - Vamos a canalizar nuestra energia y entusiamos por este proyecto y mejorar el mismo, en vez de realizar trabajos que aún no fueron visto.
 - No pudimos ponernos de acuerdo para agregar otro dia más a la semana, para seguir con Burger Store.
+
+Sprint 5:
+1. Comenzar a hacer: Deberíamos empezar a interiorizarnos en lo que hace cada miembro del equipo cuando consignamos las tareas que le toca a cada uno, así estamos al tanto de cómo va todo sin tener que esperar a la meeting.
+2. Hacer más: En la medida en que vayamos avanzando con el proyecto deberíamos comenzar a tener reuniones más de una vez por semana.
+3. Continuar haciendo: Nuestro fuerte es estar siempre dispuestos a ayudar cuando alguien se encuentra con un inconveniente o con algo que no sabe resolver. Siempre alguna persona del grupo responde los mensajes y de ser necesario hacemos un meet para poder ayudarnos los que estén disponibles en ese momento y así entre todos lograr trabajar de forma colaborativa.
+4. Hacer menos: Podríamos intentar no apurarnos en terminar el sprint lo antes posible para tomarnos el tiempo de hacer las cosas más relajadas.
+5. Dejar de hacer: No debemos esperar a que se haya actualizado la rama Main para mantener actualizados nuestros repositorios locales, debemos estar atentos para poder hacer un pull cada vez que se hace un push así todos estamos al tanto de como van las cosas.
