@@ -3,7 +3,7 @@
     <title>Users</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header',{user: undefined}) %>
     <main>
         <div class="section-main">
             <% for(let i=0; i < allUsers.length; i++){%>

@@ -3,7 +3,7 @@ const { body } = require('express-validator');
 
 const router = express.Router();
 
-const { getAllUsers, getUserById, editUser, login, register, postLogin, postRegister, profile, logout } = require('../controllers/userControllers');
+const { getAllUsers, getUserById, editUser, login, register, postLogin, postRegister,profile, logout } = require('../controllers/userControllers');
 
 // Middlewares
 const uploadImgUser = require('../middlewares/multerUserMiddleware');

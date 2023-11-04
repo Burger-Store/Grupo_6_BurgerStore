@@ -3,24 +3,29 @@
     <title>Menu</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header', {user: undefined}) %>
+    <%- include('./partials/productDetails') %>
     <main>
-        <h1>Nuestras Burgers</h1>
+        <h1 class="main-title">Nuestras Burgers</h1>
         <div class="section-main">
             <% for(let i=0; i < allProducts.length; i++){%>
             <div class="product">
-                <div class="product-description">
+                <figure>
                     <img src="/img/products/<%= allProducts[i].image %>" alt="img">
+                    <figcaption>
+                        <span class="hide">Hambugesa con chedar</span>
+                    </figcaption>
+                </figure>
+                <div class="product-description">
                     <div class="product-name"><%= allProducts[i].name%></div>
-                    <div class="price"><%= allProducts[i].price %></div>
+                    <p class="description"><%= allProducts[i].description %></p>
+                    <div class="price">$ <%= allProducts[i].price %></div>
                     <div class="add-button">
-                        <a href="/"><button class="button" type ="submit">  Agregar  </button> </a>
+                        <button class="button" type ="submit">Agregar al pedido</button> 
                     </div>
-                    <section>
-                        <p class="description"><%= allProducts[i].description %></p>
-                    </section>
                 </div>
             </div>
+
             <%}%> 
         </div>
     </main>

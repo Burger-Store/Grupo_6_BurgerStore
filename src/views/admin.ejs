@@ -3,11 +3,12 @@
     <title>Panel de Administrador</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header',{user: undefined}) %>
     <div class="main">
         <div class="container">
+            <h1 class="main-title">Panel de Administrador</h1>
             <form class="registration-form" action="/products" method="POST" enctype="multipart/form-data">
-                <h1>Panel de Administrador</h1>
+                
                 <label for="name">Nombre del Producto:</label>
                 <input type="text" name="name" id="name" required>
                 <label for="description">Descripción:</label>

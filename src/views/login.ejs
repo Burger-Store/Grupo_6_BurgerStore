@@ -3,12 +3,13 @@
     <title>Log In</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header',{user: undefined}) %>
 
     <div class="main">
         <div class="container">
+            <h1 class="main-title">Iniciar Sesion</h1>
             <form  class="registration-form" action="#" method="post">
-                <h1>Iniciar Sesion</h1>
+                
                 <label for="email">Email:</label>
                 <input type="text" name="email" id="email" class="form-control">
                 <% if (locals.errors && errors.email) { %>

@@ -3,11 +3,11 @@
     <title>Sign Up</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header',{user: undefined}) %>
     <div class="main">
         <div class="container">
             <form  class="registration-form" action="#" method="post" enctype="multipart/form-data">
-                <h1>Registrarse</h1>
+                <h1 class="main-title">Registrarse</h1>
 
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" id="name" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"

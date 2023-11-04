@@ -3,11 +3,12 @@
     <title>Edicion de Usuario</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header',{user: undefined}) %>
     <div class="main">
         <div class="container">
+            <h1 class="main-title">Panel de Edicion de Usuario</h1>
             <form class= "registration-form" action="/users/<%= user.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-            <h1>Panel de Edicion de Usuario</h1>
+            
             <label for="name">Nombre:</label>
             <input type="text" name="name" id="name" value="<%= user.name %>">
             <label for="surname">Apellido:</label>

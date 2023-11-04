@@ -3,11 +3,12 @@
     <title>Product Detail</title>
     <%- include('./partials/head') %>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('./partials/header',{user: undefined}) %>
     <div class="main">
         <div class="container">
+            <h1 class="main-title">Panel de Edición de Producto</h1>
             <form class= "registration-form" action="/product/<%= product.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-            <h1>Panel de Edición de Producto</h1>
+            
             <label for="name">Name</label>
             <input type="text" name="name" id="name" value="<%= product.name %>">
             <label for="description">Description</label>
