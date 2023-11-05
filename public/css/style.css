@@ -85,25 +85,33 @@ a {
 /*
 * GLOBALES
 */
-
-
-.main-title{
-    font-size: 32px;
-    line-height: 1.07143;
-    font-weight: 900;
-    letter-spacing: .18rem;
+.errorAlert {
+  border: 0.1rem solid red !important;
+}
+.text-danger {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
-.second-title{
-    font-size: 1.9rem;
-    line-height: 1.21053;
-    font-weight: 400;
-    letter-spacing: 0rem;
+.main-title {
+  font-size: 32px;
+  line-height: 1.07143;
+  font-weight: 900;
+  letter-spacing: 0.18rem;
 }
 
-.hamburger-descriptions{
-
+.second-title {
+  font-size: 1.9rem;
+  line-height: 1.21053;
+  font-weight: 400;
+  letter-spacing: 0rem;
 }
+
+.full-button {
+  width: 100%;
+}
+
 h1 {
   color: var(--main-colour);
 }
@@ -120,13 +128,9 @@ h1 {
 
 /*Register y Login*/
 
-.main {
-  display: flex;
-  flex-direction: column;
-}
-
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -143,19 +147,33 @@ h1 {
 .container form input {
   margin-bottom: 10px;
 }
+.align-reminder {
+  align-items: center;
+}
 
 /*Form*/
-
+.indications{
+  font-size: 1.6rem;
+  color: #1b1b1b;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.super-link{
+  color: var(--main-colour);
+  font-weight: 400;
+}
+.super-link:hover{
+  text-decoration: underline;
+}
 .registration-form {
   width: 70%;
 }
 
-.registration-form input {
+.registration-form input  {
   border-radius: 5px;
   border: 1px solid var(--gray-border);
-  height: 36px;
+  height: 3.6rem;
   width: 100%;
-  background-color: rgb(212, 208, 208);
 }
 
 .registration-form label {
@@ -235,33 +253,35 @@ h1 {
   flex-direction: column;
 }
 
-.product-description, .add-button button, .detailsContent label{
-    font-size: 1.6rem;
+.product-description,
+.add-button button,
+.detailsContent label {
+  font-size: 1.6rem;
 }
-.detailsContent label{
-    margin-left: 1rem;
+.detailsContent label,
+.align-reminder .extras {
+  margin-left: 1rem;
 }
 
-.item{
-    display: flex;
+.item {
+  display: flex;
 }
-.detailsContent input{
-        cursor: pointer;
-        width: 18px;
-        height: 18px;
-        
-        -webkit-box-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        align-items: center;
-        background-size: 100%;
-        border: 1px solid rgb(88, 80, 101);
-        border-radius: 2px;
+.detailsContent input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-size: 100%;
+  border: 1px solid var(--main-colour);
+  border-radius: 2px;
 }
 
 .boton {
-  background-color: #f3ad2b;
-  border-color: #f3ad2b;
+  background-color: var(--main-colour);
+  border-color: var(--main-colour);
   font-family: "Roboto", sans-serif;
   border-radius: 5%;
 }
@@ -284,43 +304,46 @@ h1 {
   margin-bottom: 3rem;
 }
 
-.product img {
+.product img, .error404 img {
   width: 100%;
   padding: 0;
 }
 
-.product-name, .description, .price, .product img{
-    margin-bottom: 1rem;
+.product-name,
+.description,
+.price,
+.product img {
+  margin-bottom: 1rem;
 }
 /* Roboto 400 700 900 */
-.product-name{
-    font-size: 2rem;
-    font-weight: 700;
+.product-name {
+  font-size: 2rem;
+  font-weight: 700;
 }
-.description{
-    font-weight: 400;
-    color: var(--gray-border);
+.description {
+  font-weight: 400;
+  color: var(--gray-border);
 }
-.price{
-    font-weight: 400;
-    font-size: 2rem;
-}
-
-.add-button .button{
- width: 100%;
- height: 3.6rem;
- background-color: var(--main-colour);
- color: white;
- cursor: pointer;
- border-radius: .3rem;
- text-transform: uppercase;
- box-shadow: rgba(0,0,0,.3) 0 .5rem 1rem;
- border: none;
+.price {
+  font-weight: 400;
+  font-size: 2rem;
 }
 
-.button:hover{
-    color: var(--main-colour);
-    background-color: white;
+.add-button .button {
+  width: 100%;
+  height: 3.6rem;
+  background-color: var(--main-colour);
+  color: white;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0.5rem 1rem;
+  border: none;
+}
+
+.button:hover {
+  color: var(--main-colour);
+  background-color: white;
 }
 
 .delete-button {
@@ -389,8 +412,6 @@ h1 {
   flex-direction: row;
   justify-content: center;
 }
-
-
 
 .pedido .descripcion {
   font-size: 16px;
@@ -531,11 +552,10 @@ i.fa-solid.fa-trash:hover {
   border-color: #cfcfcf;
 }
 
-
 /*Menú emergente*/
 .hide {
-    display: none;
-  }
+  display: none;
+}
 
 .detailsContainer {
   background-color: white;
@@ -549,88 +569,86 @@ i.fa-solid.fa-trash:hover {
   position: relative;
   max-width: 95%;
   margin: auto;
- 
 }
 
-.detailsProductHead{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
+.detailsProductHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
 }
-.detailsProductHead i{
-    font-size: 2.5rem;
-    font-weight: 900;
-    cursor: pointer;
+.detailsProductHead i {
+  font-size: 2.5rem;
+  font-weight: 900;
+  cursor: pointer;
 }
-.detailsProductHead h1{
-    margin:0;
+.detailsProductHead h1 {
+  margin: 0;
 }
-.hamburger-icon{
-    margin-left: 1rem;
+.hamburger-icon {
+  margin-left: 1rem;
 }
-.img-details{
-    width: 100%;
-    margin-bottom: 2rem;
+.img-details {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-.details-text{
-    font-size: 19px;
-    line-height: 1.42;
-    font-weight: 600;
-    letter-spacing: .0001rem;
+.details-text {
+  font-size: 19px;
+  line-height: 1.42;
+  font-weight: 600;
+  letter-spacing: 0.0001rem;
 }
 
 /*Usuario logueado*/
 .login-avatar img {
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
 }
-.login-name{
-    color: var(--gray-border);
-    font-size: 1.8rem;
-    margin-right: 1rem;
-}
-
-.sign{
-    display: contents;
+.login-name {
+  color: var(--gray-border);
+  font-size: 1.8rem;
+  margin-right: 1rem;
 }
 
+.sign {
+  display: contents;
+}
 
 /*
 * DESKTOP 
 */
 @media (min-width: 768px) {
-    .main-title{
-        font-size: 48px;
-        line-height: 1.07143;
-        font-weight: 900;
-        letter-spacing: .18rem;
-    }
-    .second-title{
-        font-size: 2.4rem;
-        line-height: 1.21053;
-        font-weight: 400;
-        letter-spacing: 0rem;
-    }
+  .main-title {
+    font-size: 48px;
+    line-height: 1.07143;
+    font-weight: 900;
+    letter-spacing: 0.18rem;
+  }
+  .second-title {
+    font-size: 2.4rem;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: 0rem;
+  }
 
-/*Usuario logueado*/
-.login-avatar img {
+  /*Usuario logueado*/
+  .login-avatar img {
     width: 6rem;
     height: 6rem;
-}
-.login-name{
+  }
+  .login-name {
     font-size: 2.2rem;
-}
+  }
 
-/*Product details*/
-.detailsContainer{
+  /*Product details*/
+  .detailsContainer {
     max-width: 40rem;
-}
-header {
+  }
+  header {
     height: 200px;
-}
+  }
   .registration-form {
     width: 520px;
   }
@@ -725,27 +743,27 @@ header {
 * DESKTOP 
 */
 @media (min-width: 1200px) {
-    .main-title{
-        font-size: 56px;
-        line-height: 1.07143;
-        font-weight: 900;
-        letter-spacing: .18rem;
-    }
+  .main-title {
+    font-size: 56px;
+    line-height: 1.07143;
+    font-weight: 900;
+    letter-spacing: 0.18rem;
+  }
 
-    .second-title{
-        font-size: 2.8rem;
-        line-height: 1.21053;
-        font-weight: 400;
-        letter-spacing: 0rem;
-    }
-    /*Usuario logueado*/
-.login-avatar img {
+  .second-title {
+    font-size: 2.8rem;
+    line-height: 1.21053;
+    font-weight: 400;
+    letter-spacing: 0rem;
+  }
+  /*Usuario logueado*/
+  .login-avatar img {
     width: 7rem;
     height: 7rem;
-}
-.login-name{
+  }
+  .login-name {
     font-size: 2.8rem;
-    }
+  }
   .navbar {
     max-width: 150rem;
     margin: auto;

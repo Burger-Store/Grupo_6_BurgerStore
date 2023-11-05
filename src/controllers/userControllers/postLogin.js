@@ -18,11 +18,15 @@ const postLogin = (req,res) => {
 
 			return res.redirect('userProfile');
 		} 
-		
+	
+	
 	return res.render('login', {
 		errors: {
 			email: {
 				msg: 'Las credenciales son inválidas'
+			},
+			password:{
+				msg: 'La contraseña no es correcta'
 			}
 		}
 	});
@@ -32,6 +36,9 @@ const postLogin = (req,res) => {
 		errors: {
 			email: {
 				msg: 'No se encuentra este email en nuestra base de datos'
+			},
+			password:{
+				msg: 'El campo no debe estar vacio'
 			}
 		}
 	});

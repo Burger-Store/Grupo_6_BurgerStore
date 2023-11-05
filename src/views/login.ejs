@@ -4,33 +4,33 @@
     <%- include('./partials/head') %>
 <body>
     <%- include('./partials/header',{user: undefined}) %>
-
-    <div class="main">
         <div class="container">
             <h1 class="main-title">Iniciar Sesion</h1>
             <form  class="registration-form" action="#" method="post">
-                
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" class="form-control">
+                <input type="text" name="email" id="email" class="form-control<%= locals.errors && errors.email ? ' errorAlert' : ''  %>" >
                 <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
-                        <%= errors.email.msg %>
-                    </div>
+                    <span class="text-danger"><%= errors.email.msg %></span> 
                 <% } %>
-
+                
                 <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" class="form-control">
-                <div class="invalid-feedback"></div>    
+                <input type="password" name="password" id="password" class="form-control<%= locals.errors && errors.password ? ' errorAlert' : ''  %>">
+                <% if (locals.errors && errors.password) { %>
+                    <span class="text-danger"><%= errors.password.msg %></span> 
+                <% } %>  
 
-                <div>
-                    <label for="remember">Recordarme:</label>
-                    <input class="remember-checkbox" type="checkbox" name="remember" id="remember"  value="remember">
+                <div class="item align-reminder">
+                    <input type="checkbox" name="extras" value="Extra 4">
+                    <label class="extras" for="checkbox1">Recuerdame</label>
                 </div>
 
-                <button type="submit">Ingresar</button>
+                <div class="add-button full-button">
+                    <button class="button" type ="submit">Iniciar sesión</button> 
+                </div>
             </form>
+            <h2 class="indications">Todavia no tenes usuario <a class="super-link" href="/signup">registrarse</a></h2>
+            <h2 class="indications">Olvidé mi contraseña <a class="super-link"  href="#">recuperar</a></h2>
         </div>
-    </div>
-    <%- include('./partials/footer') %>
+       <%- include('./partials/footer') %>
 </body>
 </html>
