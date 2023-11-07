@@ -12,11 +12,11 @@
         <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
       </li>
       <li class="sign">
-        <% if(user == undefined){ %>
+        <% if(!locals.isLogged){ %>
           <a href="/userProfile"><i class="fa-regular fa-user"></i></a>
           <%} else { %>
-            <span class="login-name"><%= user.name %></span>
-            <a class="login-avatar" href="/userProfile"><img src="/img/users/<%= user.image %>"></a>
+            <span class="login-name"><%= locals.userLogged.name %></span>
+            <a class="login-avatar" href="/userProfile"><img src="/img/users/<%= locals.userLogged.image %>"></a>
           <%}%>
       </li>
       <li class="hamburger-icon">

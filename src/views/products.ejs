@@ -17,7 +17,7 @@
                         <div class="price"><%= allProducts[i].price %></div>
                         <p class="description"><%= allProducts[i].description %></p>
                         <div class="add-button">
-                            <button class="button" type ="submit"> Agregar </button>
+                            <button class="button " type ="submit"> Agregar </button>
                         </div>
                     </section>
                     <form action="/product/<%= allProducts[i].id %>/delete?_method=DELETE" method="POST">
