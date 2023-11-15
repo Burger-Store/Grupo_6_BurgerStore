@@ -58,3 +58,12 @@ Los integrantes del Equipo somos:
 ![Sidebar](public/asset/Carrito-Right-Sidebar.png)
 ### Detalle de Productos
 ![Detalle](public/asset/Detalle-de-producto.png)
+
+## DATOS BD
+
+```
+"username": "root",
+"password": "123456780",
+"database": "Burger_db",
+"host": "127.0.0.1"
+```

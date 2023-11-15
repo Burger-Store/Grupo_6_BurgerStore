@@ -1,5 +1,6 @@
 const menu = document.querySelector('.shop');
 const detalles = document.querySelector('.descripcion')
+const iconClose = document.querySelector('.fa-xmark')
 const navegation = document.querySelector('.detailsContainer')
 document.addEventListener('DOMContentLoaded',()=>{
     eventos();
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 const eventos = () => {
     menu.addEventListener('click', abrirMenu);
     detalles.addEventListener('click', abrirDetalles);
+    iconClose.addEventListener('click', cerraDetalle);
 }
 
 const abrirMenu = () =>{
@@ -17,4 +19,7 @@ const abrirMenu = () =>{
 
 const abrirDetalles = () => {
     navegation.classList.remove('hide')
+}
+const cerraDetalle = () => {
+    navegation.innerHTML
 }
