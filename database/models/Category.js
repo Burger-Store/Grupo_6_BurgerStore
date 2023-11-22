@@ -14,6 +14,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "Category", //Opcional
         timestamps: false
     }
+
     const Category = sequelize.define(alias, cols, config);
+
+    Category.associate = function(models) {
+        Category.hasMany(models.Burger),{
+            as: "categories",
+            foreignKey: "category_id",
+        }
+    }
     return Category;
 }

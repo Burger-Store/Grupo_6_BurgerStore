@@ -27,6 +27,17 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
     const Burger = sequelize.define(alias, cols, config);
+
+    //Relationship
+    Burger.associate = function(models) {
+        Burger.belongsToMany(models.category),{
+            as: "categories",
+            through: "BurgerCategory",
+            foreignKey: "category_id",
+            otherKey: "burgerCategory_id",
+            timestamps: false,
+        }
+    }
     return Burger;
 }
 
