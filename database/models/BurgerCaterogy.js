@@ -7,10 +7,10 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         category: {
-            type: dataTypes.INT
+            type: dataTypes.INTEGER
         },
         burger: {
-            type: dataTypes.INT
+            type: dataTypes.INTEGER
         }
     };
     let config = {

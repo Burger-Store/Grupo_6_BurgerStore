@@ -4,7 +4,8 @@ module.exports = (sequelize, dataTypes) => {
         id:{
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name: {
             type: dataTypes.STRING
@@ -13,10 +14,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         price: {
-            type: dataTypes.INT
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         category: {
-            type: dataTypes.INT
+            type: dataTypes.INTEGER
         },
         image: {
             type: dataTypes.STRING
@@ -29,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
     const Burger = sequelize.define(alias, cols, config);
 
     //Relationship
-    Burger.associate = function(models) {
+    /*Burger.associate = function(models) {
         Burger.belongsToMany(models.category),{
             as: "categories",
             through: "BurgerCategory",
@@ -37,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "burgerCategory_id",
             timestamps: false,
         }
-    }
+    }*/
     return Burger;
 }
 

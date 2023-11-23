@@ -5,9 +5,8 @@ const session = require ('express-session');
 const cookies = require('cookie-parser');
 const path = require('path');
 const server = express();
-//const sequelize = require('sequelize');
-const Sequelize = require('sequelize');
-//const { sequelize } = require('../database/models');
+//const Sequelize = require('sequelize');
+const { Sequelize } = require('../database/models');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 server.set ('views' , path.join ( __dirname, 'views'))
@@ -15,14 +14,6 @@ server.set ('views' , path.join ( __dirname, 'views'))
 
 server.use(morgan('dev'));
 
-//Base de datos
-Sequelize.authenticate()
-    .then(()=>{
-        console.log('Conexión a la base de datos establecida.')
-    })
-    .catch(err =>{
-        console.log("Error: " + err);
-    })
 //Configurar EJS
 server.set('view engine', 'ejs');
 
