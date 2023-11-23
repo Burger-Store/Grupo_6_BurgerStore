@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "123456780",
+    "password": null,
     "database": "Burger_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
