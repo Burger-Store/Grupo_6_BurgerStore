@@ -7,6 +7,7 @@ const postLogin = require('./postLogin');
 const postRegister = require('./postRegister');
 const profile = require ('./profile')
 const logout = require('./logout')
+const deleteUser = require('./deleteUser');
 
 module.exports = {
     getAllUsers,
@@ -17,5 +18,6 @@ module.exports = {
     postLogin,
     postRegister,
     logout,
-    profile
+    profile,
+    deleteUser
 }

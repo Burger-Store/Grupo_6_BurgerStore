@@ -5,7 +5,7 @@
 <body>
     <%- include('./partials/header') %>
     <%- include('./partials/productDetails') %>
-    <%- include('./partials/carrito') %>
+    <%- include('./partials/cartDetails') %>
     <main>
         <h1 class="main-title">Nuestras Burgers</h1>
         <div class="section-main">
@@ -22,7 +22,7 @@
                     <p class="description"><%= allProducts[i].description %></p>
                     <div class="price">$ <%= allProducts[i].price %></div>
                     <div class="add-button">
-                        <button class="button descripcion" type ="submit">Detalles</button> 
+                        <button id="detailBtn" class="button descripcion" type ="submit">Detalles</button> 
                     </div>
                 </div>
             </div>

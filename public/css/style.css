@@ -304,7 +304,7 @@ h1 {
   margin-bottom: 3rem;
 }
 
-.product img, .error404 img, .pedido img {
+.product img, .error404 img {
   width: 100%;
   padding: 0;
 }
@@ -364,18 +364,16 @@ h1 {
 }
 
 /*Cart*/
-
-.cart-container {
-  width: 100%;
-  height: 100vh;
-  margin: 0%;
+.pedido{
   display: flex;
-  flex-wrap: wrap;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  align-items: center;
+  margin: 1.5rem 0;
 }
+.pedido img{
+  max-width: 140px;
+  margin-right: 12px;
 
+}
 .cerrar {
   margin: 30px;
   border-radius: 5%;
@@ -390,23 +388,23 @@ h1 {
   background-color: orange;
 }
 
-.miPedido {
-  padding-left: 10px;
+.detailsProductHead {
+  display: flex;
   justify-content: center;
-  font-weight: bold;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: white;
+  align-items: center;
+  width: 100%;
+  max-height: 40px;
+  margin: 1.5rem 0;
+}
+.detailsProductHead i {
+  font-size: 2.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.detailsProductHead h1 {
+  margin: 0;
 }
 
-.pedido {
-  width: 50%;
-  margin-top: 0%;
-  display: flex;
-  flex-wrap: nowrap;
-  height: auto;
-  padding: 5px;
-}
 .descyagregar {
   display: flex;
   flex-direction: row;
@@ -440,12 +438,8 @@ p.descripcion {
 }
 
 .elPrecio {
-  width: 35%;
-  padding-right: 18px;
-  padding-left: 10px;
   display: flex;
-  align-items: end;
-  justify-content: right;
+  flex-direction: column;
 }
 
 .precio {
@@ -463,9 +457,8 @@ p.descripcion {
 .quitar {
   width: 20px;
   height: 20px;
-  margin-left: 20px;
-  margin-bottom: 100px;
   border: none;
+  background-color: #fff;
 }
 
 .quitar i{
@@ -483,8 +476,7 @@ i.fa-solid.fa-trash:hover {
 .totales {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 5%;
+  border-top: 1px solid #f3ad2b;
 }
 
 .sub {
@@ -492,20 +484,13 @@ i.fa-solid.fa-trash:hover {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #f3ad2b;
-  border-top: 1px solid #f3ad2b;
   height: 50px;
+  font-size: 1.7rem;
+  font-weight: 400;
 }
 
 .sub.total {
   width: 100%;
-}
-
-.tot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #f3ad2b;
-  height: 50px;
 }
 
 .total {
@@ -515,21 +500,19 @@ i.fa-solid.fa-trash:hover {
 
 .comentarios {
   display: flex;
-  flex-direction: column;
-  padding: 5%;
-  width: 100%;
-  padding-bottom: 20px;
+    flex-direction: column;
+    margin: 2rem 0;
 }
 
-.comentarios,
-.p {
+.comentarios p {
   font-weight: bold;
+  margin-bottom: 0.7rem;
+  font-size: 1.7rem;
 }
 
 #espacio {
-  width: 90%;
-  margin: auto;
-  border-color: rgb(128, 127, 127);
+  width: 100%;
+  border-color: var(--main-colour)
 }
 
 .bottom {
@@ -562,12 +545,16 @@ i.fa-solid.fa-trash:hover {
   display: none;
 }
 
-.detailsContainer {
+.detailsContainer, .cartContainer {
   background-color: white;
   height: 100%;
   position: absolute;
   right: 0;
   border-left: 0.1rem var(--gray-border) solid;
+}
+
+.cartContainer{
+  padding: 0 1.2rem;
 }
 
 .detailsContent {
@@ -576,20 +563,7 @@ i.fa-solid.fa-trash:hover {
   margin: auto;
 }
 
-.detailsProductHead {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
-.detailsProductHead i {
-  font-size: 2.5rem;
-  font-weight: 900;
-  cursor: pointer;
-}
-.detailsProductHead h1 {
-  margin: 0;
-}
+
 .hamburger-icon {
   margin-left: 1rem;
 }
@@ -648,7 +622,7 @@ i.fa-solid.fa-trash:hover {
   }
 
   /*Product details*/
-  .detailsContainer {
+  .detailsContainer, .cartContainer {
     max-width: 40rem;
   }
   header {
@@ -712,11 +686,7 @@ i.fa-solid.fa-trash:hover {
     max-width: 45%;
   }
 
-  /*Cart*/
-  .cart-container {
-    width: 30%;
-    height: 100vh;
-  }
+
 
   /*Register*/
   h1 {
