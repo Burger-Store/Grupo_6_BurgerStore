@@ -66,7 +66,7 @@ server.use(carritoRoute);
 // Ruta a usuarios
 server.use(userRoutes);
 // Ruta a productos
-server.use(productRoutes);
+server.use('/product/',productRoutes);
 
 //middleware de error
 server.use((req,res,next) => {

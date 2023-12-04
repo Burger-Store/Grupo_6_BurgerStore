@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Panel de Administrador</title>
+    <%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header',{user: undefined}) %>
+    <div class="main">
+        <div class="container">
+            <h1 class="main-title">Editar producto</h1>
+            <form class="registration-form" action="/products" method="POST" enctype="multipart/form-data">
+                
+                <label for="name">Nombre del Producto:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="description">Descripción:</label>
+                <input type="text" name="description" id="description" required>
+                <label for="price">Precio:</label>
+                <input type="number" name="price" id="price" required>
+                <label for="category">Categoría:</label>
+                <input type="text" name="category" id="category" required>
+                <label for="image">Imagen:</label>
+                <input type="file" name="image" accept="image/*" id="image">
+                <button type="submit">Crear Producto</button>
+            </form>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+</html>
