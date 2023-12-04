@@ -1,23 +1,35 @@
 const express = require('express');
-const multer = require('multer');
-const path = require ('path');
-
 const router = express.Router();
 
-const adminMiddleware = require('../middlewares/adminMiddleware');
-const uploadImgProduct = require('../middlewares/multerProductMiddleware');
+/**
+ * Middleware
+ */
+const adminMiddleware = require('../middlewares/product/productDataValidations');
+const uploadImgProduct = require('../middlewares/product/uploadProductImage');
+const isUserAdmin = require('../middlewares/product/isUserAdmin');
+/**
+ * Controller
+ */
+const productList = require('../controllers/productsControllers/productList');
+const createProductForm = require('../controllers/productsControllers/createProductForm');
+const createProduct = require('../controllers/productsControllers/postNewProduct');
+const detailsProduct = require('../controllers/productsControllers/detailProduct');
+const editProductForm = require('../controllers/productsControllers/editProductForm');
+const editProduct = require('../controllers/productsControllers/editProduct');
+const deleteProduct = require('../controllers/productsControllers/deleteProduct');
 
-const { getAllProducts, getProductById, formCreateProduct, postNewProduct, deleteProduct, editProduct } = require('../controllers/productsControllers');
+//page
+router.get('/', isUserAdmin, productList);
 
-router.get('/products', adminMiddleware, getAllProducts);        // ACA PARA VER EL LISTADO DE PRODUCTOS
-router.get('/product/:id', adminMiddleware, getProductById);     // ACA PARA OBTENER UN PRODUCTO X ID
-
-router.get('/products/create', adminMiddleware, formCreateProduct);    // ACA PARA CREAR PRODUCTOS
-router.post('/products', adminMiddleware, uploadImgProduct.single('image'), postNewProduct);       
-
-// router.get('/product/:id/edit', getProductById);        //get de edicion de productos
-
-router.put('/product/:id/edit', adminMiddleware, uploadImgProduct.single('image'), editProduct);     //put de edicion de productos )
-router.delete('/product/:id/delete', adminMiddleware, deleteProduct);
+//Registrar CREAR
+router.get('/create', isUserAdmin, createProductForm);
+router.post('/create', adminMiddleware, uploadImgProduct.single('image'), createProduct)
+//Motrar los usuarios READ
+router.get('/details', detailsProduct);
+//Actualizar los datos del usuario UPDATE
+router.get('/update/:id', isUserAdmin, editProductForm);
+router.put('/update/:id', editProduct);
+//Eliminar producto DELETE
+router.delete(':id/delete/', isUserAdmin, deleteProduct)
 
 module.exports = router;

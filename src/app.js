@@ -5,10 +5,12 @@ const session = require ('express-session');
 const cookies = require('cookie-parser');
 const path = require('path');
 const server = express();
-
+//const Sequelize = require('sequelize');
+const { Sequelize } = require('../database/models');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 server.set ('views' , path.join ( __dirname, 'views'))
+// const menuRoutes = require ('./routes/menuRoutes')
 
 server.use(morgan('dev'));
 
@@ -64,7 +66,7 @@ server.use(carritoRoute);
 // Ruta a usuarios
 server.use(userRoutes);
 // Ruta a productos
-server.use(productRoutes);
+server.use('/product/',productRoutes);
 
 //middleware de error
 server.use((req,res,next) => {
