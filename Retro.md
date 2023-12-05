@@ -19,3 +19,10 @@ Sprint 5:
 3. Continuar haciendo: Nuestro fuerte es estar siempre dispuestos a ayudar cuando alguien se encuentra con un inconveniente o con algo que no sabe resolver. Siempre alguna persona del grupo responde los mensajes y de ser necesario hacemos un meet para poder ayudarnos los que estén disponibles en ese momento y así entre todos lograr trabajar de forma colaborativa.
 4. Hacer menos: Podríamos intentar no apurarnos en terminar el sprint lo antes posible para tomarnos el tiempo de hacer las cosas más relajadas.
 5. Dejar de hacer: No debemos esperar a que se haya actualizado la rama Main para mantener actualizados nuestros repositorios locales, debemos estar atentos para poder hacer un pull cada vez que se hace un push así todos estamos al tanto de como van las cosas.
+
+Sprint 6:
+1. Comenzar a hacer: Empezar a practicar y aplicar las últimas herramientas que fuimos aprendiendo en las últimas clases como localStorage, sessionStorage, fetch, etc
+2. Hacer más: Estar pendiente del progreso del compañero para saber en el momento si se encuentra estancado en alguna actividad o se le complica alguna implementación
+3. Continuar haciendo: Mantener el dialogo y la buena predisposición que nos caracteriza, esto nos ayuda en los momentos de mayor aspereza
+4. Hacer menos: Esto últimos tiempo notamos un relajamiento a la hora de abordar las tareas, ya que nos confiamos de que estabamos adelantado
+5. Dejar de hacer: Dejar para último momento las actividades, ya que los demás compañero cuantan con alguna implementación que deberia estar resulta.

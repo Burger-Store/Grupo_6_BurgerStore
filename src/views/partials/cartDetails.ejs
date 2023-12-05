@@ -5,7 +5,9 @@
             <h1 class="second-title">Carrito</h1>
         </div>
         <!--Productos-->
-        <% for (let i = 0; i < 5; i++) { %>
+        <% for (let i = 0; i < localStorage.length; i++) { %>
+            <% const key = localStorage.key(i)  %> <!--Nombre de la clave-->
+            <% const value = localStorage.getItem(key) %> <!--Valor en formato cadena-->
             <div class="pedido">     
             <div class="img-container">
                 <figure>
@@ -19,7 +21,7 @@
                 <p class="descripcion">Lorem ipsum, dolor sit amet consectetur </p>
                 <div class="descyagregar">
                     <button class="menos" type="button"><i class="fa-solid fa-minus"></i></button>
-                    <input class="sumaresta" type="text">
+                    <input class="sumaresta" type="text" value="1">
                     <button class="mas" type="button"><i class="fa-regular fa-plus"></i></button>
                 </div>
             </div>

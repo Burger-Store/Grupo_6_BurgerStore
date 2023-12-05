@@ -435,6 +435,9 @@ p.descripcion {
 .sumaresta {
   width: 20px;
   height: 20px;
+  margin: 0 0.4rem;
+  text-align: center;
+  font-weight: 900;
 }
 
 .elPrecio {

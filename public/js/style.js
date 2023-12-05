@@ -17,6 +17,8 @@ const actionBtnBurger = document.getElementById('detailBtn')
 document.addEventListener('DOMContentLoaded',()=>{
     eventos();
     descripcionHam();
+    //CART
+    let cart = JSON.parse(localStorage.getItem('cart') || [])
 });
 
 const eventos = () => {
@@ -48,5 +50,15 @@ const openBurgerDetails = () => {
     navegation.classList.remove('hide')
     cartNavegation.className += ' hide';
 }
-
-console.log(detailClose);
+/**
+ * Local storage para carrito
+ * 
+ * 1- Local storage va a guardar el ID de los productos a comprar
+ * 2- Cuando se renderize el carrito llamara a esos productos con el ID
+ * 
+ */
+function addCart(product){
+    cart.push(product)
+    updateLocalStorage();
+    viewCart();
+}
