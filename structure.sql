@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS `burgerstore_db`.`usertype` (
   `idusertype` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idusertype`))
-ENGINE = InnoDB;
-
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 -- -----------------------------------------------------
 -- Table `burgerstore_db`.`users`
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `burgerstore_db`.`users` (
   `image` VARCHAR(100) NOT NULL,
   `idusertype` INT NOT NULL,
   PRIMARY KEY (`idusers`),
-  INDEX `fk_users_usertype1_idx` (`idusertype` ASC) VISIBLE,
+  INDEX `fk_users_usertype1_idx` (`idusertype` ASC),
   CONSTRAINT `fk_users_usertype1`
     FOREIGN KEY (`idusertype`)
     REFERENCES `burgerstore_db`.`usertype` (`idusertype`)
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `burgerstore_db`.`orders` (
   `date` DATE NOT NULL,
   `total_price` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`idorders`),
-  INDEX `fk_orders_users1_idx` (`idusers` ASC) VISIBLE,
+  INDEX `fk_orders_users1_idx` (`idusers` ASC),
   CONSTRAINT `fk_orders_users1`
     FOREIGN KEY (`idusers`)
     REFERENCES `burgerstore_db`.`users` (`idusers`)
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `burgerstore_db`.`products` (
   `image` VARCHAR(100) NOT NULL,
   `idcategory` INT(11) NOT NULL,
   PRIMARY KEY (`idproducts`),
-  INDEX `fk_products_category1_idx` (`idcategory` ASC) VISIBLE,
+  INDEX `fk_products_category1_idx` (`idcategory` ASC),
   CONSTRAINT `fk_products_category1`
     FOREIGN KEY (`idcategory`)
     REFERENCES `burgerstore_db`.`category` (`idcategory`)
@@ -117,8 +117,8 @@ CREATE TABLE IF NOT EXISTS `burgerstore_db`.`pre_order` (
   `idproducts` INT(11) NOT NULL,
   `idorders` INT(11) NOT NULL,
   PRIMARY KEY (`idpre_order`),
-  INDEX `fk_products_has_orders_orders1_idx` (`idorders` ASC) VISIBLE,
-  INDEX `fk_products_has_orders_products1_idx` (`idproducts` ASC) VISIBLE,
+  INDEX `fk_products_has_orders_orders1_idx` (`idorders` ASC),
+  INDEX `fk_products_has_orders_products1_idx` (`idproducts` ASC),
   CONSTRAINT `fk_products_has_orders_orders1`
     FOREIGN KEY (`idorders`)
     REFERENCES `burgerstore_db`.`orders` (`idorders`)
