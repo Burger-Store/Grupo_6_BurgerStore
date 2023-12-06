@@ -14,27 +14,26 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const userEditMiddleware = require('../middlewares/UserEditMiddleware');
 
-
-
-router.get('/users', adminMiddleware, getAllUsers);      // ADMIN ruta a vista de todos los usuarios
-router.get('/users/:id', adminMiddleware, getUserById);      // ADMIN ruta a editar un usuario (profile)
+//localhost:3001/user/
+router.get('/', getAllUsers);      // ADMIN ruta a vista de todos los usuarios
+router.post('/:id', getUserById);      // ADMIN ruta a editar un usuario (profile)
 
 // Formulario de registro - CREATE
-router.get('/signup', guestMiddleware, register);
-router.post('/signup', uploadImgUser.single('image'), validations, postRegister);
+router.get('/register', register);
+router.post('/register', uploadImgUser.single('image'), validations, postRegister);
 
 // Formulario de login
 router.get('/login', guestMiddleware, login);
 router.post('/login', validateLogin, postLogin);
 
 // Perfil de Usuario - READ
-router.get('/userProfile', authMiddleware, profile);
+router.get('/profile', authMiddleware, profile);
 // Eliminar usuario - DELETE
 router.post('/delete/:id', deleteUser);
 
 // Edicion de propio usuario - UPDATE
-router.get('/user/:id', authMiddleware, userEditMiddleware, getUserById); 
-router.put('/users/:id/edit', uploadImgUser.single('image'), validations, editUser);       //put de edicion de un usuario
+router.get('/:id', authMiddleware, userEditMiddleware, getUserById); 
+router.put('/edit/:id', uploadImgUser.single('image'), validations, editUser);       //put de edicion de un usuario
 
 // Logout
 router.get('/logout/', logout);

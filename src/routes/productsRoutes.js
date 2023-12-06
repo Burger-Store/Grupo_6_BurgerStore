@@ -20,7 +20,6 @@ const deleteProduct = require('../controllers/productsControllers/deleteProduct'
 
 //page
 router.get('/', isUserAdmin, productList);
-
 //Registrar CREAR
 router.get('/create', isUserAdmin, createProductForm);
 router.post('/create', adminMiddleware, uploadImgProduct.single('image'), createProduct)

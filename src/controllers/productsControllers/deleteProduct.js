@@ -6,7 +6,7 @@ const deleteProduct = (req,res) => {
             id:req.params.id
         }
     })
-    res.redirect('/products');
+    res.redirect('/');
 }
 
 module.exports = deleteProduct;

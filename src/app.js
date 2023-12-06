@@ -64,7 +64,7 @@ server.use(detalleRoute);
 // Ruta Carrito
 server.use(carritoRoute);
 // Ruta a usuarios
-server.use(userRoutes);
+server.use('/user/',userRoutes);
 // Ruta a productos
 server.use('/product/',productRoutes);
 

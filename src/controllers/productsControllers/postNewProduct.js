@@ -10,6 +10,8 @@ const postNewProduct = (req,res) => {
         image: req.file.filename,
     })
     res.redirect('/products');
+    //10 products
+    //10 salto
 }
 
 module.exports = postNewProduct;

@@ -1,11 +1,16 @@
-const users = require('../../database/users.json');
-const path = require('path');
+const db = require('../../../database/models');
+//const users = require('../../database/users.json');
+
 
 const getAllUsers = (req,res) => {
-    
-    const ruta = path.join(__dirname,'../../views/users.ejs');
-    console.log(ruta);
-    res.render(ruta,{allUsers: users})
+    db.Users.findAll() //Limit 10 - salto 10
+    .then(function(usersList){
+        res.render('users',{users: usersList})
+    })
+
+    //const ruta = path.join(__dirname,'../../views/users.ejs');
+    //console.log(ruta);
+    //res.render(ruta,{allUsers: users})
     //res.send(users);
 }
 
