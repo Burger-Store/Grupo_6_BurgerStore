@@ -1,32 +1,28 @@
 USE burgerstore_db;
 
-DROP TABLE IF EXISTS usertype;
 INSERT INTO usertype (idusertype, type) VALUES
 (DEFAULT, 'admin'),
 (DEFAULT, 'user');
 
-DROP TABLE IF EXISTS users;
-INSERT INTO users ( idusers, name, surname, email, password, phone, address, lift, city, state, zipcode, idusertype) VALUES
-(DEFAULT, 'Admin', 'BurgerStore', 'admin@bstore.com', '1234' ,'1111111111', 'Burger Store', '', 'Bella Vista', 'Buenos Aires', '1661','1'),
-(DEFAULT, 'Ricardo', 'Bochini', 'bocha10@outlook.com', '1234' ,'1110101010', 'libertadores 5', '', 'Bella Vista', 'Buenos Aires', '1661','2'),
-(DEFAULT, 'Albeiro', 'Usuriaga', 'palomo@outlook.com', '1234' ,'1162147710', 'Bogota 1975', '7', 'San Miguel', 'Buenos Aires', '1663','2'),
-(DEFAULT, 'Gustavo', 'Lopez', 'gustavito7@outlook.com', '1177107777', 'Vigo 777', '', 'Bella Vista', 'Buenos Aires', '1661','2'),
-(DEFAULT, 'Lucrecia', 'Erico', 'lucerico@gmail.com', '1122225247', 'Visera 456', '', 'Muñiz', 'Buenos Aires', '1662','2'),
-(DEFAULT, 'Pablo', 'Rotchen', 'morronr@msm.com', '1125472232', 'Av. Central 1821', '', 'Bella Vista', 'Buenos Aires', '1661','2'),
-(DEFAULT, 'Carla', 'Bruni', 'brunita@mail.com', '1187445959', 'Italia 315', '', 'San Miguel', 'Buenos Aires', '1663','2'),
-(DEFAULT, 'Margarita', 'Barrios', 'maguiie@outlook.com', '1154586512', 'Urquiza 2587', '', 'San Miguel', 'Buenos Aires', '1663','2'),
-(DEFAULT, 'Pascual', 'Rambert', 'pascualito@gmail.com', '1119951994', 'Moine 1111', '', 'Bella Vista', 'Buenos Aires', '1661','2'),
-(DEFAULT, 'Omar', 'Pastoriza', 'patolibertadores@mail.com', '1101234567', 'Tokio 1983', '', 'Muñiz', 'Buenos Aires', '1662','2'),
-(DEFAULT, 'Agustina', 'Islas', 'agusmil@hotmail.com', '117451117', 'Irusta 3142', '', 'Bella Vista', 'Buenos Aires', '1661','2');
+INSERT INTO users ( idusers, name, surname, email, password, phone, address, lift, city, state, zipcode, image,idusertype) VALUES
+(DEFAULT, 'Admin', 'BurgerStore', 'admin@bstore.com', '1234','1111111111', 'Burger Store', '', 'Bella Vista', 'Buenos Aires', '1661', '','1'),
+(DEFAULT, 'Ricardo', 'Bochini', 'bocha10@outlook.com', '1234','1110101010', 'libertadores 5', '', 'Bella Vista', 'Buenos Aires', '1661', '','2'),
+(DEFAULT, 'Albeiro', 'Usuriaga', 'palomo@outlook.com', '1234','1162147710', 'Bogota 1975', '7', 'San Miguel', 'Buenos Aires', '1663', '','2'),
+(DEFAULT, 'Gustavo', 'Lopez', 'gustavito7@outlook.com', '1234','1177107777', 'Vigo 777', '', 'Bella Vista', 'Buenos Aires', '1661', '','2'),
+(DEFAULT, 'Lucrecia', 'Erico', 'lucerico@gmail.com', '1234','1122225247', 'Visera 456', '', 'Muñiz', 'Buenos Aires', '1662', '','2'),
+(DEFAULT, 'Pablo', 'Rotchen', 'morronr@msm.com', '1234','1125472232', 'Av. Central 1821', '', 'Bella Vista', 'Buenos Aires', '1661', '','2'),
+(DEFAULT, 'Carla', 'Bruni', 'brunita@mail.com','1234', '1187445959', 'Italia 315', '', 'San Miguel', 'Buenos Aires', '1663', '','2'),
+(DEFAULT, 'Margarita', 'Barrios', 'maguiie@outlook.com', '1234','1154586512', 'Urquiza 2587', '', 'San Miguel', 'Buenos Aires', '1663', '','2'),
+(DEFAULT, 'Pascual', 'Rambert', 'pascualito@gmail.com', '1234','1119951994', 'Moine 1111', '', 'Bella Vista', 'Buenos Aires', '1661', '','2'),
+(DEFAULT, 'Omar', 'Pastoriza', 'patolibertadores@mail.com', '1234','1101234567', 'Tokio 1983', '', 'Muñiz', 'Buenos Aires', '1662', '','2'),
+(DEFAULT, 'Agustina', 'Islas', 'agusmil@hotmail.com','1234', '117451117', 'Irusta 3142', '', 'Bella Vista', 'Buenos Aires', '1661', '','2');
 
-DROP TABLE IF EXISTS category;
-INSERT INTO category (id, category) VALUES
-(DEFAULT, "Hamburguesas"),
-(DEFAULT, "Bebidas");
+INSERT INTO category (idcategory, name) VALUES
+(DEFAULT, 'Hamburguesas'),
+(DEFAULT, 'Bebidas');
 
-DROP TABLE IF EXISTS products;
 INSERT INTO products (idproducts, name, description, price, idcategory, image) VALUES 
-(DEFAULT, "American Burger Simple", "Medallón de carne con cheddar, tomate, lechuga y cebolla", "2700", "1", "1695687360426_product.jpg"),
+(DEFAULT, 'American Burger Simple', 'Medallón de carne con cheddar, tomate, lechuga y cebolla', '2700', '1', '1695687360426_product.jpg'),
 (DEFAULT, "American Burger Doble", "2 medallones de carne con doble cheddar, tomate, lechuga y cebolla", "3100", "1", "american_doble.jpg"),
 (DEFAULT, "American Burger Triple", "3 medallones de carne con cheddar, tomate, lechuga y cebolla", "3600", "1", "american_triple.jpg"),
 (DEFAULT, "Royal Simple", "Medallón de carne, cheddar, cebolla cocida, pepinillos y salsa thousand island", "3000", "1", "royal_simple.jpg"),
