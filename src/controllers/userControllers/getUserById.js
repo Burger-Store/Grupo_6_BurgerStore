@@ -1,17 +1,21 @@
-const users = require('../../database/users.json');
+const db = require('../../../database/models')
+
 const path = require('path');
 
 const getUserById = (req,res) => {
     const { id } = req.params;
 
-    const user = users.find((usuario) => usuario.id == id);
+    const user = db.findByPk(req.params.id)
+    .then(function(user) {
+        if(!user){
+            return res.send('User not found');
+        }
+        res.render('userProfile', {
+          user: user  
+        });
+    })
 
-    if(!user){
-        return res.send('User not found');
-    }
-
-    const form = path.join(__dirname, '../../views/editProfile')
-    res.render(form, { user });
+    
 }
 
 module.exports = getUserById;

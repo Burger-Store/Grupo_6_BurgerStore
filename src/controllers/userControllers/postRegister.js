@@ -1,39 +1,27 @@
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const User = require('../../models/User');
+const db = require('../../../database/models');
+
 
 const postRegister = (req,res) => {
-    const resultValidation = validationResult(req);
-
-	if (resultValidation.errors.length > 0) {
-		return res.render('signup', {
-			errors: resultValidation.mapped(),
-			oldData: req.body
-		});
-	}
-
-	let userInDB = User.findByField('email', req.body.email);
-
-	if (userInDB) {
-		return res.render('signup', {
-			errors: {
-				email: {
-					msg: 'Este email ya está registrado'
-				}
-			},
-			oldData: req.body
-		});
-	}
-
-	let userToCreate = {
-		...req.body,
+    
+			db.Users.create({
+		name: req.body.name,
+		surname: req.body.surname,
+		email: req.body.email,
 		password: bcryptjs.hashSync(req.body.password, 10),
-		image: req.file.filename
-	}
+		phone: req.body.phone,
+		address: req.body.address,
+		lift: req.body.lift,
+		city: req.body.city,
+		state: req.body.state,
+		zipcode: req.body.zipcode,
+		image: req.file.filename,
+		idusertype: '2'
+	});
 
-	let userCreated = User.create(userToCreate);
 
-	return res.redirect('/login');
+	res.redirect('/login');
 }
 
 module.exports = postRegister;
