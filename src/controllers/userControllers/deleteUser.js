@@ -1,5 +1,4 @@
-const users = require('../../database/users.json');
-
+const db = require('../../../database/models');
 
 const deleteUser = (req, res) => {
     db.User.destroy({

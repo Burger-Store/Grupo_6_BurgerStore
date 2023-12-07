@@ -1,5 +1,5 @@
 function getUserByEmail(email) {
-    const users = require('../../database/users.json');
+    const db = require('../../../database/models');
     return users.find((user) => user.email == email);
 }
 module.exports = getUserByEmail;
