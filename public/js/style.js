@@ -6,15 +6,12 @@ const cerrarCarrito = document.querySelector('.detailsProductHead')
 const openDetailsBurger = document.getElementById('detailBtn');
 //Cerrar detalles de la hamburguesa
 const closeDetailsBurger = document.querySelector('.productEvent');
-
-const iconClose = document.querySelector('.fa-xmark')
 //Contenedor de detalle de producto 
 const navegation = document.querySelector('.detailsContainer')
 //Contenedor de carrito de compras
 const cartNavegation = document.querySelector('.cartContainer');
 //Btn "DETALLES" de las hamburgesa
 const actionBtnBurger = document.getElementById('detailBtn');
-
 
 //Local storage  productEvent
 const cartLocalStorage = window.localStorage;
@@ -38,15 +35,6 @@ const eventos = () => {
     //iconClose.addEventListener('click', closeCart)
 
 }
-
-/**
- * AbrirDetalles --> if isCartOpen ? cerrarCart : null;
-   cerrarDetalles
-
-   abrirCart --> if isDetalleOpen ? cerrarDetalles : null;
-   CerrarCart
- */
-
 
 //Navbar
 const openCart = () =>{

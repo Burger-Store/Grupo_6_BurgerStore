@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         zipcode: {
-            type: dataTypes.STRING,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         image: {

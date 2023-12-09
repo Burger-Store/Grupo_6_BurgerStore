@@ -1,6 +1,6 @@
-const User = require('../models/User');
+//const User = require('../models/User');
 
-function userLoggedMiddleware(req, res, next) {
+/*function userLoggedMiddleware(req, res, next) {
 	res.locals.isLogged = false;
 
 	let emailInCookie = req.cookies.userEmail;
@@ -18,4 +18,4 @@ function userLoggedMiddleware(req, res, next) {
 	next();
 }
 
-module.exports = userLoggedMiddleware;
+module.exports = userLoggedMiddleware;*/

@@ -34,13 +34,12 @@ server.use(session({
 //permite el uso de cookies para guardar sesion.
 server.use(cookies());
 
-server.use(userLoggedMiddleware);
+//server.use(userLoggedMiddleware);
 
 //reconoce put y delete como tal
 server.use(methodOverride('_method'));
 
-const homeRoute = require ('./routes/homeRoute')
-const menuRoute = require ('./routes/menuRoute')
+const storeRoute = require ('./routes/storeRoute')
 const loginRoute = require ('./routes/loginRoute')
 const signupRoute = require ('./routes/signupRoute')
 const detalleRoute = require ('./routes/detalleRoute')
@@ -52,11 +51,9 @@ const productRoutes = require('./routes/productsRoutes');
 
 //Rutas de acceso a web
 // Ruta al Home
-server.use (homeRoute)
+server.use ('/',storeRoute)
 //Ruta a Login
 server.use (loginRoute)
-// Ruta a Menu
-server.use(menuRoute); 
 // Ruta Registro
 server.use(signupRoute);
 // Ruta a Detalle del Producto

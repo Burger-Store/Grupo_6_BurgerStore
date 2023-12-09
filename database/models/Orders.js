@@ -12,11 +12,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         date: {
-            type: dataTypes.DATE,
+            type: dataTypes.DATEONLY,
             allowNull: false
         },
         total_price: {
-            type: dataTypes.FLOAT,
+            type: dataTypes.DECIMAL(10,2),
             allowNull: false
         }
     };

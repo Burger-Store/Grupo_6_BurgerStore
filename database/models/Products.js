@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         price: {
-            type: dataTypes.FLOAT,
+            type: dataTypes.DECIMAL(10,2),
             allowNull: false
         },
         image: {
@@ -24,7 +24,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         idcategory: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
     };
     let config = {
