@@ -1,10 +1,10 @@
 const db = require('../../../database/models')
-const path = require('path');
 
 const productList = (req,res) => {
-    db.Burger.findAll()
-        .then(function(burger){
-            res.render(productList,{allProducts: burger})
+    db.products.findAll()
+        .then(function(burgers){
+            console.log(burger);
+            res.render(menu,{burger: burgers})
         })
 }
 module.exports = productList;

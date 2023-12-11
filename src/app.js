@@ -65,6 +65,7 @@ server.use('/user/',userRoutes);
 // Ruta a productos
 server.use('/product/',productRoutes);
 
+
 //middleware de error
 server.use((req,res,next) => {
     res.render(path.join(__dirname,'./views/404notfound'), {message: 'Recurso no encontrado'});
