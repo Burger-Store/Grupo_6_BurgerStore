@@ -1,4 +1,3 @@
-//const products = require('../../database/products.json');
 const db = require('../../../database/models');
 
 const postNewProduct = (req,res) => {
@@ -6,10 +5,10 @@ const postNewProduct = (req,res) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        category: req.body.category,
+        idcategory: req.body.category,
         image: req.file.filename,
     })
-    res.redirect('/products');
+    res.redirect('/product');
     //10 products
     //10 salto
 }

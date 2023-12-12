@@ -19,14 +19,14 @@ const editProduct = require('../controllers/productsControllers/editProduct');
 const deleteProduct = require('../controllers/productsControllers/deleteProduct');
 
 //page
-router.get('/', isUserAdmin, productList);
+router.get('/', productList);
 //Registrar CREAR
-router.get('/create', isUserAdmin, createProductForm);
+router.get('/create', createProductForm);
 router.post('/create', adminMiddleware, uploadImgProduct.single('image'), createProduct)
 //Motrar los usuarios READ
 router.get('/details', detailsProduct);
 //Actualizar los datos del usuario UPDATE
-router.get('/update/:id', isUserAdmin, editProductForm);
+router.get('/update/:id', editProductForm);
 router.put('/update/:id', editProduct);
 //Eliminar producto DELETE
 router.delete(':id/delete/', isUserAdmin, deleteProduct)

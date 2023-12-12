@@ -3,7 +3,7 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({        //para subir imagenes
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../public/img/products'))
+        cb(null, path.join(__dirname, '../../../public/img/products'))
     },
     filename: (req, file, cb) => {
         // cb(null, file.originalname)                                         //crea con nombre original de la imagen

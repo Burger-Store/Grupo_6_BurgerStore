@@ -39,7 +39,7 @@ server.use(cookies());
 //reconoce put y delete como tal
 server.use(methodOverride('_method'));
 
-const storeRoute = require ('./routes/storeRoute')
+const storeRoute = require ('./controllers/productsControllers/productList')
 const loginRoute = require ('./routes/loginRoute')
 const signupRoute = require ('./routes/signupRoute')
 const detalleRoute = require ('./routes/detalleRoute')
