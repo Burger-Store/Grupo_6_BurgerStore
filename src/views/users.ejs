@@ -6,19 +6,19 @@
     <%- include('./partials/header',{user: undefined}) %>
     <main>
         <div class="section-main">
-            <% for(let i=0; i < allUsers.length; i++){%>
+            <% for(let i=0; i < users.length; i++){%>
             <div class="product">
                 <div class="product-description">
-                    <img src="/img/users/<%= allUsers[i].image %>" alt="img">
-                    <div><%= allUsers[i].name + ' ' + allUsers[i].surname %></div>    
-                    <div><%= allUsers[i].email %></div>
-                    <div><%= allUsers[i].country %></div>
-                    <div><%= allUsers[i].address %></div>
-                    <div><%= allUsers[i].lift %></div>
-                    <div><%= allUsers[i].city %></div>
-                    <div><%= allUsers[i].state %></div>
-                    <div><%= allUsers[i].zipcode %></div>
-                    <form action="/users/<%= allUsers[i].id %>/delete?_method=DELETE" method="POST">
+                    <img src="/img/users/<%= users[i].image %>" alt="img">
+                    <div><%= users[i].name + ' ' + users[i].surname %></div>    
+                    <div><%= users[i].email %></div>
+                    <div><%= users[i].country %></div>
+                    <div><%= users[i].address %></div>
+                    <div><%= users[i].lift %></div>
+                    <div><%= users[i].city %></div>
+                    <div><%= users[i].state %></div>
+                    <div><%= users[i].zipcode %></div>
+                    <form action="/users/<%= users[i].id %>/delete?_method=DELETE" method="POST">
                         <button class="delete-button" type="submit">Delete</button>
                     </form>
                 </div>

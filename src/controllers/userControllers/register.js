@@ -1,8 +1,5 @@
-const path = require('path');
-
 const register = (req,res) => {
-    const form = path.join(__dirname,'../../views/signup');
-    res.render(form);
+    res.render('register');
 }
 
 module.exports = register;

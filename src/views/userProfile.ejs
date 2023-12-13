@@ -3,24 +3,25 @@
 <%- include('partials/head'); %>
 <body>
 	<%- include('partials/header', {user: user}); %>
-	
 	<!-- Container -->
 	<div class="container" style="margin-top: 40px;">
 		<div class="row">
 			<h1 class="main-title">Usuario</h1>
 			<div class="col-md-3">
-				
-				<h2>Hola, <%= user.name %>. ¿Qué vas a pedir hoy? </h2>
+				<img src="/img/users/<%= users[i].image %>" alt="img">
+                    <div><%= users[i].name + ' ' + users[i].surname %></div>    
+                    <div><%= users[i].email %></div>
+                    <div><%= users[i].country %></div>
+                    <div><%= users[i].address %></div>
+                    <div><%= users[i].lift %></div>
+                    <div><%= users[i].city %></div>
+                    <div><%= users[i].state %></div>
+                    <div><%= users[i].zipcode %></div>
 				<img src="/img/users/<%= user.image %>">
-				<br>
-				<br>
-				<div class="alert alert-success"><%= user.email %> </div>
-				
 			</div>
 		</div>
 	</div>
 	<!-- //Container -->
-	
 	<%- include('partials/footer'); %>
 </body>
 </html>

@@ -22,7 +22,7 @@ router.post('/:id', guestMiddleware, getUserById);      // ADMIN ruta a editar u
 
 // Formulario de registro - CREATE
 router.get('/register', register);
-router.post('/register', uploadImgUser.single('image'), validations, userInDBMiddleware, postRegister);
+router.post('/register', uploadImgUser.single('image'), postRegister); // validations, userInDBMiddleware,
 
 // Formulario de login
 router.get('/login', guestMiddleware, login);
