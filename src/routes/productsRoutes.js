@@ -24,11 +24,11 @@ router.get('/', productList);
 router.get('/create', createProductForm);
 router.post('/create', adminMiddleware, uploadImgProduct.single('image'), createProduct)
 //Motrar los usuarios READ
-router.get('/details', detailsProduct);
+router.post('/details/:id', detailsProduct);
 //Actualizar los datos del usuario UPDATE
 router.get('/update/:id', editProductForm);
 router.put('/update/:id', editProduct);
 //Eliminar producto DELETE
-router.delete(':id/delete/', isUserAdmin, deleteProduct)
+router.delete('/delete/:id', isUserAdmin, deleteProduct)
 
 module.exports = router;

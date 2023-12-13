@@ -2,17 +2,26 @@
 <html lang="en">
     <title>Detalle de Producto</title>
     <%- include('./partials/head') %>
-
 <body>
     <%- include('./partials/header',{user: undefined}) %>
     <div class="main">
         <div class="container">
             <main>
                 <h1 class="main-title">Detalle del Producto</h1>
+                <h2><%= burger.name %></h2>
+                <p><%= burger.description %></p>
+                <hr>
+                <figure>
+                    <img src="/img/products/<%= burger.image %>" alt="">
+                    <figcaption>
+                        <span class="hide">Burger</span>
+                    </figcaption>
+                </figure>
+                <p><%= burger.idcategory %></p>
                 <span class="producto">
-                    <img src="/img/img.jpg" alt="">
+                    
                     <section>
-                        <p class="descripcion">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, ex dicta corporis cupiditate atque cum qui numquam alias fuga dolorem officiis enim et officia maxime esse quo exercitationem non fugiat!</p><br>
+                        <p class="descripcion">Extra pasión!</p><br>
                             <label class="extras" for="checkbox1">Extra 1</label>
                             <input type="checkbox" name="extras" value="Extra 1"><br>
 

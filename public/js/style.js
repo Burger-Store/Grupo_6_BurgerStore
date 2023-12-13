@@ -27,8 +27,8 @@ const eventos = () => {
     menu.addEventListener('click', openCart);
     cerrarCarrito.addEventListener('click', closeCart);
     //Detalle de la hamburguesa
-    openDetailsBurger.addEventListener('click',openBurgerDetails)
-    closeDetailsBurger.addEventListener('click', closeBurgerDetails)
+    //openDetailsBurger.addEventListener('click',openBurgerDetails)
+    //closeDetailsBurger.addEventListener('click', closeBurgerDetails)
 
     //detalles.addEventListener('click', abrirDetalles);
     //actionBtnBurger.addEventListener('click',openBurgerDetails);
