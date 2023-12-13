@@ -1,12 +1,18 @@
 const db = require('../../../database/models');
 
 const deleteProduct = (req,res) => {
+    console.log(req.params.id);
     db.Products.destroy({
         where:{
-            id:req.params.id
+            idproducts: req.params.id
         }
     })
-    res.redirect('/');
+    .then(function (){
+        res.redirect('/product');
+    })
+    .catch(function (e){
+        res.send(e);
+    })
 }
 
 module.exports = deleteProduct;

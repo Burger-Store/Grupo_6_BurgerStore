@@ -7,18 +7,17 @@
     <div class="main">
         <div class="container">
             <h1 class="main-title">Editar producto</h1>
-            <form class="registration-form" action="/product/update/<%- detail.idproducts %>" method="POST" enctype="multipart/form-data">
-                
+            <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" method="POST">
                 <label for="name">Nombre del Producto:</label>
-                <input type="text" name="name" id="name" value="<%- detail.name %>" required>
+                <input type="text" name="name" id="name" value="<%- burger.name %>" required>
                 <label for="description">Descripción:</label>
-                <input type="text" name="description" value="<%- detail.description %>" id="description" required>
+                <input type="text" name="description" value="<%- burger.description %>" id="description" required>
                 <label for="price">Precio:</label>
-                <input type="number" name="price" value="<%- detail.price %>" id="price" required>
+                <input type="number" name="price" value="<%- burger.price %>" id="price" required>
                 <label for="category">Categoría:</label>
-                <input type="text" name="category" id="category" value="<%- detail.idcategory %>"required>
+                <input type="text" name="category" id="category" value="<%- burger.idcategory %>"required>
                 <label for="image">Imagen:</label>
-                <input type="file" name="image" value="<%- detail.image %>" accept="image/*" id="image">
+                <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
                 
                 <button type="submit">Editar producto</button>
             </form>

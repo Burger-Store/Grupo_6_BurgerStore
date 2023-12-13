@@ -12,7 +12,7 @@ const editProduct = (req, res) => {
             id: req.params.id
         }
     })
-    res.redirect(`/products/${req.params.id}`)
+    res.redirect(`/update/${req.params.id}`)
 }
 
 module.exports = editProduct;

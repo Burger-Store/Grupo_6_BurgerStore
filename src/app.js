@@ -5,8 +5,6 @@ const session = require ('express-session');
 const cookies = require('cookie-parser');
 const path = require('path');
 const server = express();
-//const Sequelize = require('sequelize');
-const { Sequelize } = require('../database/models');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 server.set ('views' , path.join ( __dirname, 'views'))
@@ -39,7 +37,7 @@ server.use(cookies());
 //reconoce put y delete como tal
 server.use(methodOverride('_method'));
 
-const storeRoute = require ('./controllers/productsControllers/productList')
+const storeRoute = require ('./controllers/productsControllers/productListClient')
 const loginRoute = require ('./routes/loginRoute')
 const signupRoute = require ('./routes/signupRoute')
 const detalleRoute = require ('./routes/detalleRoute')
