@@ -51,7 +51,7 @@ const productRoutes = require('./routes/productsRoutes');
 
 //Rutas de acceso a web
 // Ruta al Home
-server.use ('/',storeRoute)
+server.use ('/home',storeRoute)
 //Ruta a Login
 server.use (loginRoute)
 // Ruta Registro

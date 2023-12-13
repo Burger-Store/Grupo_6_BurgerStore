@@ -18,8 +18,8 @@ const cartLocalStorage = window.localStorage;
 
 
 document.addEventListener('DOMContentLoaded',()=>{
-    eventos();
-    descripcionHam();
+    //eventos();
+    //descripcionHam();
 });
 
 const eventos = () => {

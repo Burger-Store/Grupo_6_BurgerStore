@@ -1,11 +1,8 @@
-const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require('../../../database/models');
 
-
 const postRegister = (req,res) => {
-    
-			db.Users.create({
+    db.Users.create({
 		name: req.body.name,
 		surname: req.body.surname,
 		email: req.body.email,
@@ -16,11 +13,9 @@ const postRegister = (req,res) => {
 		city: req.body.city,
 		state: req.body.state,
 		zipcode: req.body.zipcode,
-		image: req.file.filename,
-		idusertype: '2'
+		image: req.file.image,
+		idusertype: 2
 	});
-
-
 	res.redirect('/login');
 }
 

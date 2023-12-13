@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "users";
+    let alias = "Users";
     let cols = {
         idusers:{
             type: dataTypes.INTEGER,
@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
         name:{
             type: dataTypes.STRING(20),
             allowNull: false
-        } ,
+        },
         surname: {
             type: dataTypes.STRING(20),
             allowNull: false
@@ -55,12 +55,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         }
-        
     };
     let config = {
-        tableName: "users", //Opcional
+        tableName: "Users", //Opcional
         timestamps: false
     }
-    const User = sequelize.define(alias, cols,config);
-    return User;
+    const Users = sequelize.define(alias, cols,config);
+    return Users;
 }
