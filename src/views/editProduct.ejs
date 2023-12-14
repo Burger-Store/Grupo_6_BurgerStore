@@ -7,7 +7,7 @@
     <div class="main">
         <div class="container">
             <h1 class="main-title">Editar producto</h1>
-            <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" method="POST">
+            <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <label for="name">Nombre del Producto:</label>
                 <input type="text" name="name" id="name" value="<%- burger.name %>" required>
                 <label for="description">Descripción:</label>

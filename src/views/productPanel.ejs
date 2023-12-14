@@ -6,9 +6,17 @@
     <%- include('./partials/header') %>
     <%- include('./partials/productDetails') %>
     <main>
-        <h1 class="main-title">Nuestras Burgers</h1>
+        <h1 class="main-title">Panel de productos</h1>
         <div class="section-main">
-            
+            <p>Crear productos</p>
+            <div class="add-button">
+                <form action="/product/create/" method="get">
+                    <button id="detailBtn" class="button blue descripcion" type ="submit">Crear producto</button> 
+                </form>
+            </div>
+        </div>
+        
+        <div class="section-main">
             <% for(let i=0; i < burger.length; i++){ %>
             <div class="product">
                 <figure>
@@ -28,7 +36,7 @@
                         </div>
                         <div class="add-button">
                             <form action="/product/delete/<%= burger[i].idproducts %>?_method=DELETE" method="POST">
-                                <button id="detailBtn" class="button  red descripcion" type ="submit">Eliminar</button> 
+                                <button id="detailBtn" class="button red descripcion" type ="submit">Eliminar</button> 
                             </form>
                     </div>
                 </div>
