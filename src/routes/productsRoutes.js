@@ -17,6 +17,7 @@ const detailsProduct = require('../controllers/productsControllers/detailProduct
 const editProductForm = require('../controllers/productsControllers/editProductForm');
 const editProduct = require('../controllers/productsControllers/editProduct');
 const deleteProduct = require('../controllers/productsControllers/deleteProduct');
+const seekerProduct = require('../controllers/productsControllers/seekerProduct');
 
 //page
 router.get('/', productList);
@@ -30,5 +31,7 @@ router.get('/update/:id', editProductForm);
 router.put('/update/:id',uploadImgProduct.single('image'), editProduct);
 //Eliminar producto DELETE
 router.delete('/delete/:id', deleteProduct)
+//Buscador
+router.get('/search?' ,seekerProduct)
 
 module.exports = router;
