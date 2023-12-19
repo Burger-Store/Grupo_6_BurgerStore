@@ -7,7 +7,7 @@
     <div class="main">
         <div class="container">
             <h1 class="main-title">Registrarse</h1>
-            <form  class="registration-form" action="/user/register/" method="post" enctype="multipart/form-data">
+            <form  class="registration-form" action="/user/register" method="post" enctype="multipart/form-data">
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" id="name" class="form-control <%= locals.errors && errors.name ? ' errorAlert' : ''  %>"
                 value="<%= locals.oldData ? oldData.name : null %>">
@@ -75,7 +75,7 @@
                 <% } %>
 
                 <label for="state">Provincia:</label>
-                <input type="state" name="state" id="state" class="form-control <%= locals.errors && errors.state ? ' errorAlert' : ''  %>"
+                <input type="text" name="state" id="state" class="form-control <%= locals.errors && errors.state ? ' errorAlert' : ''  %>"
                 value="<%= locals.oldData ? oldData.state : null %>">
                 <% if (locals.errors && errors.state) { %>
                     <div class="text-danger">

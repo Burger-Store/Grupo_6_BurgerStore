@@ -19,8 +19,7 @@ if (userInDB) {
         },
         oldData: req.body
     });
-   
-}
+   }
 next();
 }
 module.exports= userInDBMiddleware

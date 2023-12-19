@@ -1,5 +1,5 @@
 const signupController = (req,res) => {
-    res.render('signup');
+    res.render('register');
 };
 
 

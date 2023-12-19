@@ -5,7 +5,7 @@ INSERT INTO usertype (idusertype, type) VALUES
 (DEFAULT, 'user');
 
 INSERT INTO users ( idusers, name, surname, email, password, phone, address, lift, city, state, zipcode, image,idusertype) VALUES
-(DEFAULT, 'Admin', 'BurgerStore', 'admin@bstore.com', '1234','1111111111', 'Burger Store', '', 'Bella Vista', 'Buenos Aires', '1661', '','1'),
+(DEFAULT, 'Admin', 'BurgerStore', 'admin@bstore.com', '010101','1111111111', 'Burger Store', '', 'Bella Vista', 'Buenos Aires', '1661', '','1'),
 (DEFAULT, 'Ricardo', 'Bochini', 'bocha10@outlook.com', '1234','1110101010', 'libertadores 5', '', 'Bella Vista', 'Buenos Aires', '1661', '','2'),
 (DEFAULT, 'Albeiro', 'Usuriaga', 'palomo@outlook.com', '1234','1162147710', 'Bogota 1975', '7', 'San Miguel', 'Buenos Aires', '1663', '','2'),
 (DEFAULT, 'Gustavo', 'Lopez', 'gustavito7@outlook.com', '1234','1177107777', 'Vigo 777', '', 'Bella Vista', 'Buenos Aires', '1661', '','2'),

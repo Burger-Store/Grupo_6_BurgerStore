@@ -1,11 +1,16 @@
-const User = require ('../../models/User')
+const db = require ('../../../database/models')
+//const User = require ('../../models/User')
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 
 
-const postLogin = (req,res) => {
-    let userToLogin = User.findByField('email', req.body.email);
-		
+const postLogin = async	(req,res) => {
+    let userToLogin = await	db.Users.findOne({
+		where: {
+			email: req.body.email
+		}
+	})
+			
 	if(userToLogin) {
 		let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
 		if (correctPassword) {
@@ -16,7 +21,7 @@ const postLogin = (req,res) => {
 				res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 			}
 
-			return res.redirect('userProfile');
+			return res.redirect('/user/profile');
 		} 
 	
 	

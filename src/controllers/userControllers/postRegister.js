@@ -1,7 +1,9 @@
-const bcryptjs = require('bcryptjs');
 const db = require('../../../database/models');
 
+const bcryptjs = require('bcryptjs');
+
 const postRegister = (req,res) => {
+
     db.Users.create({
 		name: req.body.name,
 		surname: req.body.surname,
@@ -13,10 +15,10 @@ const postRegister = (req,res) => {
 		city: req.body.city,
 		state: req.body.state,
 		zipcode: req.body.zipcode,
-		image: req.file.image,
+		image: req.file.filename,
 		idusertype: 2
 	});
-	res.redirect('/login');
+	res.redirect('/user/profile');
 }
 
 module.exports = postRegister;
