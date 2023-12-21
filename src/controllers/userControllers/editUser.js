@@ -22,7 +22,7 @@ const editUser = (req, res) => {
             id: req.params.id
         }
     })
-    res.redirect(`/userProfile/${req.params.id}`)
+    res.redirect(`/user/profile/${req.params.id}`)
 
 }
 

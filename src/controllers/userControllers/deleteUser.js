@@ -10,7 +10,7 @@ const deleteUser = (req, res) => {
     .then(function() {
         res.redirect('/user');
     })
-  
+
     .catch(function (e){
         res.send(e);
     });

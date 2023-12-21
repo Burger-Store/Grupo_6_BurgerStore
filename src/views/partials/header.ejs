@@ -5,7 +5,7 @@
     </div>
     <ul id="nav-menu" class="nav-menu">
       <li class="item"><a href="/home">Home</a></li>
-      <li class="item"><a href="/">Menú</a></li>
+      <li class="item"><a href="/home">Menú</a></li>
     </ul>
     <form class="search-form" action="/product/search" method="get">
       <input type="text" id="search" placeholder="Buscar..."></input>
@@ -17,10 +17,10 @@
       </li>
       <li class="sign">
         <% if(!locals.isLogged){ %>
-          <a href="/userProfile"><i class="fa-regular fa-user"></i></a>
+          <a href="/user/profile"><i class="fa-regular fa-user"></i></a>
           <%} else { %>
             <span class="login-name"><%= locals.userLogged.name %></span>
-            <a class="login-avatar" href="/userProfile"><img src="/img/users/<%= locals.userLogged.image %>"></a>
+            <a class="login-avatar" href="/user/profile"><img src="/img/users/<%= locals.userLogged.image %>"></a>
           <%}%>
       </li>
       <li class="hamburger-icon">

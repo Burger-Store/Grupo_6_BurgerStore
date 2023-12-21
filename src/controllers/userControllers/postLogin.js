@@ -5,16 +5,16 @@ const bcryptjs = require('bcryptjs');
 
 
 const postLogin = async	(req,res) => {
-    let userToLogin = await	db.Users.findOne({
+    let userToLogin = await db.Users.findOne({
 		where: {
 			email: req.body.email
 		}
 	})
-			
+
 	if(userToLogin) {
-		let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+		let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.dataValues.password);
 		if (correctPassword) {
-			delete userToLogin.password;
+			delete userToLogin.dataValues.password;
 			req.session.userLogged = userToLogin;
 
 			if(req.body.remember) {
@@ -23,20 +23,19 @@ const postLogin = async	(req,res) => {
 
 			return res.redirect('/user/profile');
 		} 
-	
-	
-	return res.render('login', {
-		errors: {
-			email: {
-				msg: 'Las credenciales son inválidas'
-			},
-			password:{
-				msg: 'La contraseña no es correcta'
-			}
-		}
-	});
-    }
 
+		return res.render('login', {
+			errors: {
+				email: {
+					msg: 'Las credenciales son inválidas'
+				},
+				password:{
+					msg: 'La contraseña no es correcta'
+				}
+			}
+		});
+	}
+    
 	return res.render('login', {
 		errors: {
 			email: {
