@@ -31,7 +31,7 @@ router.post('/update/:id', uploadImgUser.single('image'), validations, editUser)
 router.get('/login', guestMiddleware, login);
 router.post('/login', validateLogin, postLogin);
 // Perfil de Usuario - READ
-router.get('/profile', userLoggedMiddleware, profile);
+router.get('/profile', authMiddleware, profile);
 // Eliminar usuario - DELETE
 router.delete('/:id/delete', adminMiddleware, deleteUser);
 // Logout
