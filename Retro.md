@@ -26,3 +26,10 @@ Sprint 6:
 3. Continuar haciendo: Mantener el dialogo y la buena predisposición que nos caracteriza, esto nos ayuda en los momentos de mayor aspereza
 4. Hacer menos: Esto últimos tiempo notamos un relajamiento a la hora de abordar las tareas, ya que nos confiamos de que estabamos adelantado
 5. Dejar de hacer: Dejar para último momento las actividades, ya que los demás compañero cuantan con alguna implementación que deberia estar resulta.
+ 
+Sprint 7:
+1. Comenzar a hacer: Una vez hecho un cambio que afecte al proyecto, deberíamos dejar el mismo estable o informar al resto del grupo su estado, de esta manera, quien levante el proyecto luego no tiene que ir revisando de donde salen los errores.
+2. Hacer más: Estar mas pendientes a los cambios del proyecto en GitHub para tener un mayor control de versiones.
+3. Continuar haciendo: Seguir manteniendo la buena predisposición, el respeto y la cordialidad que hay en el grupo, siempre ayudándonos unos a otros y manteniendo el interés en finalizar el proyecto de la mejor manera.
+4. Hacer menos: Esperar a último momento para mostrar nuestros cambios o errores en el proyecto, deberíamos tener mas micro-reuniones siempre y cuando estemos disponibles
+5. Dejar de hacer: Estar únicamente pendientes de las tareas que nos corresponde a cada uno. A esta altura deberíamos tener un buen conocimiento general del proyecto.
