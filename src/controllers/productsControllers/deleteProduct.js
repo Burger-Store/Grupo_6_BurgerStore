@@ -8,7 +8,7 @@ const deleteProduct = (req,res) => {
         }
     })
     .then(function (){
-        res.redirect('/product');
+        res.redirect('/product/');
     })
     .catch(function (e){
         res.send(e);

@@ -5,6 +5,7 @@
 <body>
     <%- include('./partials/header',{user: undefined}) %>
     <main>
+        <h1 class="main-title">Usuarios registrados</h1>
         <div class="section-main">
             <% for(let i=0; i < users.length; i++){%>
             <div class="product">
@@ -18,11 +19,11 @@
                     <div><%= users[i].city %></div>
                     <div><%= users[i].state %></div>
                     <div><%= users[i].zipcode %></div>
-                    <form action="/users/<%= users[i].id %>/delete?_method=DELETE" method="POST">
-                        <button class="delete-button" type="submit">Delete</button>
-                    </form>
-                    
-                    
+                    <div class="add-button">
+                        <form action="/user/<%= users[i].idusers %>/delete?_method=DELETE" method="POST">
+                            <button class="button red descripcion" type="submit">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <%}%> 

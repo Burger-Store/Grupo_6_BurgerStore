@@ -1,7 +1,5 @@
 const profile = (req, res) => {
-    return res.render('userProfile', {
-        users: req.session.userLoggedMiddleware
-    });
+    res.render('userProfile', {users: req.session.userLogged});
 }
 
 module.exports= profile;

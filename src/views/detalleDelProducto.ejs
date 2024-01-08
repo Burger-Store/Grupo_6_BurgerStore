@@ -8,38 +8,40 @@
         <div class="container">
             <main>
                 <h1 class="main-title">Detalle del Producto</h1>
-                <h2><%= burger.name %></h2>
-                <p><%= burger.description %></p>
-                <hr>
+                <h2 class="second-title"><%= burger.name %></h2>
+                <p class="details-descriptions"><%= burger.description %></p>
                 <figure>
                     <img src="/img/products/<%= burger.image %>" alt="">
                     <figcaption>
                         <span class="hide">Burger</span>
                     </figcaption>
                 </figure>
-                <p><%= burger.idcategory %></p>
                 <span class="producto">
-                    
-                    <section>
-                        <p class="descripcion">Extra pasión!</p><br>
-                            <label class="extras" for="checkbox1">Extra 1</label>
-                            <input type="checkbox" name="extras" value="Extra 1"><br>
-
-                            <label class="extras" for="checkbox1">Extra 2</label>
-                            <input type="checkbox" name="extras" value="Extra 2"><br>
-
-                            <label class="extras" for="checkbox1">Extra 3</label>
-                            <input type="checkbox" name="extras" value="Extra 3"><br>
-                            
-                            <label class="extras" for="checkbox1">Extra 4</label>
-                            <input type="checkbox" name="extras" value="Extra 4"><br>
+                    <p class="details-descriptions">¡Extra pasión! Agregar adicionales a tu combo</p>
+                    <section class="details-descriptions">
+                        <input type="checkbox" name="extras" value="Extra 1">
+                        <label class="extras" for="checkbox1">Cebolla</label><br>
+                        
+                        <input type="checkbox" name="extras" value="Extra 2">
+                        <label class="extras" for="checkbox1">Beicon</label>
+                        <br>
+                        
+                        <input type="checkbox" name="extras" value="Extra 3">
+                        <label class="extras" for="checkbox1">Extra Salsa</label>
+                        <br>
+                        
+                        <input type="checkbox" name="extras" value="Extra 4">
+                        <label class="extras" for="checkbox1">Queso</label>
+                        <br>
                     </section>
                 </span>
-                <div class="agregar">
-                    <a href="/detalle"><button class="button" type ="submit">  Agregar  </button> </a>
+                <div class="add-button">
+                    <form action="#" method="get">
+                        <button class="button green descripcion" type="submit">Agregar</button>
+                    </form>
                 </div>
+                
             </main>
-
         </div>
     </div>
     <%- include('./partials/footer') %>

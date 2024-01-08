@@ -22,7 +22,7 @@ const signupController = require('../controllers/signupControllers/signupControl
 //LISTADO
 router.get('/',/*adminMiddleware,*/ getAllUsers);      // ADMIN ruta a vista de todos los usuarios
 //formulario de registro - CREATE
-router.get('/register', register);
+router.get('/register', guestMiddleware, register);
 router.post('/register', uploadImgUser.single('image'), postRegister)
 //EDIT USER 
 router.get('/update/:id', authMiddleware, userEditMiddleware, getUserById) // o editUser?
@@ -31,7 +31,7 @@ router.post('/update/:id', uploadImgUser.single('image'), validations, editUser)
 router.get('/login', guestMiddleware, login);
 router.post('/login', validateLogin, postLogin);
 // Perfil de Usuario - READ
-router.get('/profile', authMiddleware, profile);
+router.get('/profile', /*authMiddleware,*/ profile);
 // Eliminar usuario - DELETE
 router.delete('/:id/delete', adminMiddleware, deleteUser);
 // Logout

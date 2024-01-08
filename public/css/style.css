@@ -2,6 +2,7 @@
   --main-colour: #f3ad2b;
   --red-colour: #FF8080;
   --blue-colour: #39A7FF;
+  --green-colour: #7ec4cf;
   --disabled-color: #EEEEEE;
   --black-mate: #333;
   --gray-border: #d2d2d7;
@@ -215,7 +216,12 @@ h1 {
 .search-form{
   display: flex;
 } 
-
+input{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--black-mate);
+  padding-left: .5rem;
+}
 .search-form input{
   height: 30px;
   width: 240px;
@@ -271,6 +277,7 @@ h1 {
 .producto {
   display: flex;
   flex-direction: column;
+  margin: 1.5rem 0;
 }
 
 .product-description,
@@ -373,6 +380,10 @@ h1 {
   background-color: var(--blue-colour);
 }
 
+.green{
+  background-color: var(--green-colour);
+}
+
 .disabled-color{
   background-color: var(--disabled-color);
 }
@@ -435,7 +446,10 @@ h1 {
   font-size: 16px;
   font-weight: 400;
 }
-
+.details-descriptions{
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
 p.descripcion {
   width: 100%;
   max-height: max-content;
