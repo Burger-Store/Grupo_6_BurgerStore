@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head'); %>
+<%- include('partials/head') %>
 <body>
-	<%- include('partials/header'); %>
+	<%- include('partials/header') %>
 		<div class="container" style="margin-top: 40px;">
 		<div class="row">
 			<h1 class="main-title">Usuario</h1>
 			<div class="col-md-3">
-				<% if(users != null) {%>
+				<% const users=null%>
+				<% if(users != null) { %>
 					<img src="/img/users/<%= users.image %>" alt="img" />
-				<% } %>
-				<p><%= users.name %></p>
 				<p><%= users.surname %></p>
 				<p><%= users.email %></p>
 				<p><%= users.address %></p>
@@ -18,10 +17,12 @@
 				<p><%= users.city %></p>
 				<p><%= users.state %></p>
 				<p><%= users.zipcode %></p>
+					<% } %>
+							
 			</div>
 		</div>
 	</div>
 	
-	<%- include('partials/footer'); %>
+	<% include('partials/footer') %>
 </body>
 </html>

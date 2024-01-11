@@ -1,5 +1,5 @@
 const navbar= (req, res) => {
-    return res.send('partiasls/header', {
+    return res.send('partials/header', {
         user: req.session.userLogged
     });
 }
