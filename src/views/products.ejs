@@ -1,33 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head') %>
     <title>Products</title>
-    <%- include('./partials/head') %>
-<body>
-    <%- include('./partials/header',{user: undefined}) %>
-    <main>
-        <div class="section-main">
-            <% for(let i=0; i < allProducts.length; i++){%>
-            <div class="product">
-                <div class="product-description">
-                    <figure>
-                        <img src="/img/products/<%= allProducts[i].image %>" alt="img">
-                    </figure>
-                    <section>
-                        <div class="product-name"><%= allProducts[i].name%></div>
-                        <div class="price"><%= allProducts[i].price %></div>
-                        <p class="description"><%= allProducts[i].description %></p>
-                        <div class="add-button">
-                            <button class="button " type ="submit"> Agregar </button>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="section-main">
+                <% for(let i=0; i < allProducts.length; i++){%>
+                    <div class="product">
+                        <div class="product-description">
+                            <figure>
+                                <img src="/img/products/<%= allProducts[i].image %>" alt="img">
+                            </figure>
+                            <section>
+                                <div class="product-name">
+                                    <%= allProducts[i].name%>
+                                </div>
+                                <div class="price">
+                                    <%= allProducts[i].price %>
+                                </div>
+                                <p class="description">
+                                    <%= allProducts[i].description %>
+                                </p>
+                                <div class="add-button">
+                                    <button class="button " type="submit"> Agregar </button>
+                                </div>
+                            </section>
+                            <form action="/product/<%= allProducts[i].id %>/delete?_method=DELETE" method="POST">
+                                <button class="delete-button" type="submit">Delete</button>
+                            </form>
                         </div>
-                    </section>
-                    <form action="/product/<%= allProducts[i].id %>/delete?_method=DELETE" method="POST">
-                        <button class="delete-button" type="submit">Delete</button>
-                    </form>
-                </div>
+                    </div>
+                    <%}%>
             </div>
-            <%}%> 
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
-</body>
-</html>
+        </main>
+        <%- include('./partials/footer') %>

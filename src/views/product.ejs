@@ -1,28 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head') %>
     <title>Product Detail</title>
-    <%- include('./partials/head') %>
-<body>
-    <%- include('./partials/header',{user: undefined}) %>
-    <div class="main">
-        <div class="container">
-            <h1 class="main-title">Panel de Edición de Producto</h1>
-            <p><%= msg %></p>
-            <form class= "registration-form" action="/product/<%= product.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" value="<%= product.name %>">
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description" value="<%= product.description %>">
-            <label for="price">Price</label>
-            <input type="text" name="price" id="price" value="<%= product.price %>">
-            <label for="category">Category</label>
-            <input type="text" name="category" id="category" value="<%= product.category %>">
-            <label for="image">Imagen</label>
-            <input type="file" name="image" accept="image/*" id="image">
-            <button type="submit">Editar</button>
-            </form>
+    <%- include('./partials/header') %>
+        <div class="main">
+            <div class="container">
+                <h1 class="main-title">Panel de Edición de Producto</h1>
+                <p>
+                    <%= msg %>
+                </p>
+                <form class="registration-form" action="/product/<%= product.id%>/edit?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="<%= product.name %>">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" value="<%= product.description %>">
+                    <label for="price">Price</label>
+                    <input type="text" name="price" id="price" value="<%= product.price %>">
+                    <label for="category">Category</label>
+                    <input type="text" name="category" id="category" value="<%= product.category %>">
+                    <label for="image">Imagen</label>
+                    <input type="file" name="image" accept="image/*" id="image">
+                    <button type="submit">Editar</button>
+                </form>
+            </div>
         </div>
-    </div>
-<%- include('./partials/footer') %>
-</body>
-</html>
+        <%- include('./partials/footer') %>

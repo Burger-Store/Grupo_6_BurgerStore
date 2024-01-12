@@ -5,7 +5,7 @@ const bcryptjs = require('bcryptjs');
 const postRegister = (req,res) => {
 	let pass= bcryptjs.hashSync(req.body.password, 10);
 	console.log(pass);
-    db.Users.create({
+    db.users.create({
 		name: req.body.name,
 		surname: req.body.surname,
 		email: req.body.email,
@@ -19,7 +19,7 @@ const postRegister = (req,res) => {
 		image: req.file.filename,
 		idusertype: 2
 	});
-	res.redirect('/user/profile');
+	res.redirect('/user/login');
 }
 
 module.exports = postRegister;

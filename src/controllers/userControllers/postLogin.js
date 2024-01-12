@@ -2,7 +2,7 @@ const db = require ('../../../database/models')
 const bcryptjs = require('bcryptjs');
 
 const postLogin = async	(req,res,next) => {
-    let userToLogin = await db.Users.findOne({
+    let userToLogin = await db.users.findOne({
 		where: {
 			email: req.body.email
 		}
@@ -11,14 +11,12 @@ const postLogin = async	(req,res,next) => {
 		let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.dataValues.password);
 		if (correctPassword) {
 			delete userToLogin.dataValues.password;
-			req.session.userLogged = {
-				id: userToLogin.idusers,
-				name: userToLogin.name,
-			}
-			res.locals.users = userLogged
+			req.session.user = userToLogin
+			const user = req.session.user;
 			if(req.body.remember) {
 				res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 			}
+
 			res.redirect('/user/profile');
 		} 
 		return res.render('login', {

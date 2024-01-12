@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head') %>
     <title>Panel de Administrador</title>
-    <%- include('./partials/head') %>
-<body>
-    <%- include('./partials/header',{user: undefined}) %>
-    <div class="main">
-        <div class="container">
-            <h1 class="main-title">Editar producto</h1>
-            <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <label for="name">Nombre del Producto:</label>
-                <input type="text" name="name" id="name" value="<%- burger.name %>" required>
-                <label for="description">Descripción:</label>
-                <input type="text" name="description" value="<%- burger.description %>" id="description" required>
-                <label for="price">Precio:</label>
-                <input type="number" name="price" value="<%- burger.price %>" id="price" required>
-                <label for="category">Categoría:</label>
-                <input type="text" name="category" id="category" value="<%- burger.idcategory %>"required>
-                <label for="image">Imagen:</label>
-                <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
-                
-                <button type="submit">Editar producto</button>
-            </form>
+    <%- include('./partials/header') %>
+        <div class="main">
+            <div class="container">
+                <h1 class="main-title">Editar producto</h1>
+                <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT"
+                    method="POST" enctype="multipart/form-data">
+                    <label for="name">Nombre del Producto:</label>
+                    <input type="text" name="name" id="name" value="<%- burger.name %>" required>
+                    <label for="description">Descripción:</label>
+                    <input type="text" name="description" value="<%- burger.description %>" id="description" required>
+                    <label for="price">Precio:</label>
+                    <input type="number" name="price" value="<%- burger.price %>" id="price" required>
+                    <label for="category">Categoría:</label>
+                    <input type="text" name="category" id="category" value="<%- burger.idcategory %>" required>
+                    <label for="image">Imagen:</label>
+                    <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
+
+                    <button type="submit">Editar producto</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <%- include('./partials/footer') %>
-</body>
-</html>
+        <%- include('./partials/footer') %>

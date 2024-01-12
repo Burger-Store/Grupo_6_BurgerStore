@@ -1,7 +1,10 @@
 const navbar= (req, res) => {
-    return res.send('partials/header', {
-        user: req.session.userLogged
-    });
+    const users = req.session.user;
+    if(users != null){
+    res.render('partials/header', { users });
+    } else {
+        res.render('partials/header', { users: null });
+    }
 }
 
-module.exports= profile;
+module.exports= navbar;

@@ -14,7 +14,7 @@ const userInDBMiddleware = require('../middlewares/userInDBMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
-const userEditMiddleware = require('../middlewares/UserEditMiddleware');
+const userEditMiddleware = require('../middlewares/userEditMiddleware');
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 const signupController = require('../controllers/signupControllers/signupController');
 

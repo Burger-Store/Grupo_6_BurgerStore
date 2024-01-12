@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `burgerstore_db`.`users` (
   `name` VARCHAR(20) NOT NULL,
   `surname` VARCHAR(20) NOT NULL,
   `email` VARCHAR(30) NOT NULL,
-  `password` VARCHAR(20) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   `phone` INT(11) NOT NULL,
   `address` VARCHAR(30) NOT NULL,
   `lift` VARCHAR(20) NOT NULL,

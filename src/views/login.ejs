@@ -1,37 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head') %>
     <title>Log In</title>
-    <%- include('./partials/head') %>
-<body>
     <%- include('./partials/header') %>
         <div class="container">
             <h1 class="main-title">Iniciar Sesion</h1>
-            
-            <form  class="registration-form" action="/user/login" method="post">
+
+            <form class="registration-form" action="/user/login" method="post">
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" class="form-control<%= locals.errors && errors.email ? ' errorAlert' : ''  %>" >
+                <input type="text" name="email" id="email"
+                    class="form-control<%= locals.errors && errors.email ? ' errorAlert' : ''  %>">
                 <% if (locals.errors && errors.email) { %>
-                    <span class="text-danger"><%= errors.email.msg %></span> 
-                <% } %>
-                
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" class="form-control<%= locals.errors && errors.password ? ' errorAlert' : ''  %>">
-                <% if (locals.errors && errors.password) { %>
-                    <span class="text-danger"><%= errors.password.msg %></span> 
-                <% } %>  
+                    <span class="text-danger">
+                        <%= errors.email.msg %>
+                    </span>
+                    <% } %>
 
-                <div class="item align-reminder">
-                    <input type="checkbox" name="remember" value="Extra 4">
-                    <label class="extras" for="checkbox1">Recuerdame</label>
-                </div>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password"
+                            class="form-control<%= locals.errors && errors.password ? ' errorAlert' : ''  %>">
+                        <% if (locals.errors && errors.password) { %>
+                            <span class="text-danger">
+                                <%= errors.password.msg %>
+                            </span>
+                            <% } %>
 
-                <div class="add-button full-button">
-                    <button class="button" type ="submit">Iniciar sesión</button> 
-                </div>
+                                <div class="item align-reminder">
+                                    <input type="checkbox" name="remember" value="Extra 4">
+                                    <label class="extras" for="checkbox1">Recuerdame</label>
+                                </div>
+
+                                <div class="add-button full-button">
+                                    <button class="button" type="submit">Iniciar sesión</button>
+                                </div>
             </form>
-            <h2 class="indications">Todavia no tenes usuario <a class="super-link" href="/user/register/">registrarse</a></h2>
-            <h2 class="indications">Olvidé mi contraseña <a class="super-link"  href="#">recuperar</a></h2>
+            <h2 class="indications">Todavia no tenes usuario <a class="super-link"
+                    href="/user/register/">registrarse</a></h2>
+            <h2 class="indications">Olvidé mi contraseña <a class="super-link" href="#">recuperar</a></h2>
         </div>
-       <%- include('./partials/footer') %>
-</body>
-</html>
+        <%- include('./partials/footer') %>

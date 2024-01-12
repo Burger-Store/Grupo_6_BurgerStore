@@ -1,42 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head') %>
     <title>Edicion de Usuario</title>
-    <%- include('./partials/head') %>
-<body>
-    <%- include('./partials/header',{user: undefined}) %>
-    <div class="main">
-        <div class="container">
-            <h1 class="main-title">Panel de Edicion de Usuario</h1>
-            <form class= "registration-form" action="/users/<%= user.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-            
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="name" value="<%= user.name %>">
-            <label for="surname">Apellido:</label>
-            <input type="text" name="surname" id="surname" value="<%= user.surname %>">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" value="<%= user.email %>">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" value="" onclick="alert('Este usuario ya tiene una contraseña, si quiere modificarla, ingrese la nueva contraseña, si no, envie el campo vacío');"> 
-            <label for="phone">Télefono:</label>
-            <input type="number" name="phone" id="phone" value="<%= user.phone %>">
-            <label for="address">Dirección:</label>
-            <input type="text" name="address" id="address" value="<%= user.address %>">
-            <label for="lift">Departamento/Unidad:</label>
-            <input type="text" name="lift" id="lift" value="<%= user.lift %>">
-            <label for="city">Ciudad:</label>
-            <input type="text" name="city" id="city" value="<%= user.city %>">
-            <label for="state">Provincia:</label>
-            <input type="text" name="state" id="state" value="<%= user.state %>" readonly onmousedown="return false;" onclick="alert('No hacemos envios fuera de Bs As.');">
-            <label for="zipcode">Código postal:</label>
-            <input type="number" name="zipcode" id="zipcode" value="<%= user.zipcode %>">
-            <!-- <label for="phonenumber">Teléfono:</label>
-            <input type="number" name="phonenumber" id="phonenumber" value="<%= user.phonenumber %>"> -->
-            <label for="image">Imagen:</label>
-            <input type="file" name="image" accept="image/*" id="image">
-            <button type="submit">Actualizar Usuario</button>
-            </form>
+    <%- include('./partials/header') %>
+        <div class="main">
+            <div class="container">
+                <h1 class="main-title">Panel de Edicion de Usuario</h1>
+                <form class="registration-form" action="/users/<%= user.id%>/edit?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" value="<%= user.name %>">
+                    <label for="surname">Apellido:</label>
+                    <input type="text" name="surname" id="surname" value="<%= user.surname %>">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" value="<%= user.email %>">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" value=""
+                        onclick="alert('Este usuario ya tiene una contraseña, si quiere modificarla, ingrese la nueva contraseña, si no, envie el campo vacío');">
+                    <label for="phone">Télefono:</label>
+                    <input type="number" name="phone" id="phone" value="<%= user.phone %>">
+                    <label for="address">Dirección:</label>
+                    <input type="text" name="address" id="address" value="<%= user.address %>">
+                    <label for="lift">Departamento/Unidad:</label>
+                    <input type="text" name="lift" id="lift" value="<%= user.lift %>">
+                    <label for="city">Ciudad:</label>
+                    <input type="text" name="city" id="city" value="<%= user.city %>">
+                    <label for="state">Provincia:</label>
+                    <input type="text" name="state" id="state" value="<%= user.state %>" readonly
+                        onmousedown="return false;" onclick="alert('No hacemos envios fuera de Bs As.');">
+                    <label for="zipcode">Código postal:</label>
+                    <input type="number" name="zipcode" id="zipcode" value="<%= user.zipcode %>">
+                    <label for="image">Imagen:</label>
+                    <input type="file" name="image" accept="image/*" id="image">
+                    <button type="submit">Actualizar Usuario</button>
+                </form>
+            </div>
         </div>
-    </div>
-<%- include('./partials/footer') %>
-</body>
-</html>
+        <%- include('./partials/footer') %>
