@@ -3,7 +3,7 @@ const db = require('../../../database/models');
 const bcryptjs = require('bcryptjs');
 
 const editUser = (req, res) => {
-    db.Users.update({
+    db.users.update({
         name: req.body.name,
         surname: req.body.surname,
         email: req.body.email,

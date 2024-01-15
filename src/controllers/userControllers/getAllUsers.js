@@ -1,7 +1,7 @@
 const db = require('../../../database/models');
 
 const getAllUsers = (req,res) => {
-    db.Users.findAll() 
+    db.users.findAll() 
     .then(function(usersList){
         res.render('users',{users: usersList})
     })

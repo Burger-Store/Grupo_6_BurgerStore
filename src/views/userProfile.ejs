@@ -1,35 +1,39 @@
 <%- include('partials/head') %>
 	<title>Profile</title>
 	<%- include('partials/header') %>
-		<div class="container" style="margin-top: 40px;">
-			<div class="row">
-				<h1 class="main-title">Usuario</h1>
-				<div class="col-md-3">
-					<% if(users !=null) { %>
-						<img src="/img/users/<%= users.image %>" alt="img" />
-						<p>
-							<%= users.surname %>
-						</p>
-						<p>
-							<%= users.email %>
-						</p>
-						<p>
-							<%= users.address %>
-						</p>
-						<p>
-							<%= users.lift %>
-						</p>
-						<p>
-							<%= users.city %>
-						</p>
-						<p>
-							<%= users.state %>
-						</p>
-						<p>
-							<%= users.zipcode %>
-						</p>
-						<% } %>
-				</div>
+		<div class="main" >
+			<div class="container">
+				<h1 class="main-title">Editar Usuario</h1>
+				<figure>
+                    <img src="/img/users/<%= users.image %> %>" alt="">
+                    <figcaption>
+                        <span class="hide">usuario</span>
+                    </figcaption>
+                </figure>
+                
+                <form class="registration-form" action="/user/update/<%= users.idusers %>?_method=PUT"
+                    method="POST" enctype="multipart/form-data">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" value="<%= users.name %>" required>
+                    <label for="surname">Apellido:</label>
+                    <input type="text" name="surname" id="surname" value="<%= users.surname %>" required>
+					<label for="email">Email:</label>
+                    <input type="text" name="email" value="<%= users.email %>" id="email" required>
+                    <label for="phone">Telefono:</label>
+                    <input type="number" name="phone" value="<%- users.phone %>" id="phone" required>
+                    <label for="address">Direccion:</label>
+                    <input type="text" name="address" id="address" value="<%- users.address %>" required>
+					<label for="lift">Departamento:</label>
+                    <input type="number" name="lift" value="<%- users.lift %>" id="lift" required>
+					<label for="city">Ciudad:</label>
+                    <input type="text" name="city" id="city" value="<%= users.city %>" required>
+                    <label for="image">Imagen:</label>
+                    <input type="file" name="image" value="<%- users.image %>" accept="image/*" id="image">
+
+                    <div class="add-button" style="width: 100%;">
+                        <button id="detailBtn" class="button yellow descripcion" type="submit">Actualizar</button>
+                    </div>
+                </form>
 			</div>
 		</div>
-		<% include('partials/footer') %>
+		<%- include('partials/footer') %>

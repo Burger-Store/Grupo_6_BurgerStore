@@ -2,7 +2,7 @@ const db = require('../../../database/models');
 
 const deleteProduct = (req,res) => {
     console.log(req.params.id);
-    db.Products.destroy({
+    db.products.destroy({
         where:{
             idproducts: req.params.id
         }

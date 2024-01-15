@@ -1,9 +1,16 @@
 <%- include('./partials/head') %>
-    <title>Panel de Administrador</title>
+    <title>Editar producto</title>
     <%- include('./partials/header') %>
         <div class="main">
             <div class="container">
                 <h1 class="main-title">Editar producto</h1>
+                <figure>
+                    <img src="/img/products/<%= burger.image %>" alt="">
+                    <figcaption>
+                        <span class="hide">Burger</span>
+                    </figcaption>
+                </figure>
+                
                 <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT"
                     method="POST" enctype="multipart/form-data">
                     <label for="name">Nombre del Producto:</label>
@@ -16,8 +23,9 @@
                     <input type="text" name="category" id="category" value="<%- burger.idcategory %>" required>
                     <label for="image">Imagen:</label>
                     <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
-
-                    <button type="submit">Editar producto</button>
+                    <div class="add-button" style="width: 100%;">
+                        <button id="detailBtn" class="button yellow descripcion" type="submit">Actualizar</button>
+                    </div>
                 </form>
             </div>
         </div>

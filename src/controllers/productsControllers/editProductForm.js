@@ -1,15 +1,24 @@
 const db = require('../../../database/models')
 
-const editProductForm = (req,res) => {
-    let burger = db.Products.findByPk(req.params.id)
-    .then(function(burger){
-        res.render('editProduct', {burger: burger})
-    })
-    .catch(function(e){
-        res.send('El producto no existe')
-    })
-    //traer los datos que estan guardado en la base de datos
-    //res.render('editProductForm');
+const editProductForm = async (req,res) => {
+    try {
+        const product = await db.products.findByPk(req.params.id);
+        const categoria = await db.category.findAll();
+        res.render('editProduct',{product, categoria});
+    } catch (error) {
+        res.send(error)
+    }
+    
+    /*db.products.findByPk(req.params.id)
+        .then(function(burger) {
+            return db.category.findAll();
+        })
+        .then(function(categoria) {
+            /*res.render('editProduct', { burger: burger, category: categoria })*/
+            /*res.send({burger, categoria})
+        })*/
+        /*.catch((error) => res.send(error))*/
+    
 }
 
 module.exports = editProductForm;

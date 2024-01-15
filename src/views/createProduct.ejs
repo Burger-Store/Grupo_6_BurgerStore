@@ -1,9 +1,9 @@
 <%- include('./partials/head') %>
-    <title>Panel de Administrador</title>
+    <title>Crear un producto</title>
     <%- include('./partials/header') %>
         <div class="main">
             <div class="container">
-                <h1 class="main-title">Panel de Administrador</h1>
+                <h1 class="main-title">Crear un producto</h1>
                 <form class="registration-form" action="/product/create/" method="POST" enctype="multipart/form-data">
                     <label for="name">Nombre del Producto:</label>
                     <input type="text" name="name" id="name" required>
@@ -12,10 +12,16 @@
                     <label for="price">Precio:</label>
                     <input type="number" name="price" id="price" required>
                     <label for="category">Categoría:</label>
-                    <input type="text" name="category" id="category" required>
+                    <select class="select-style" name="category" required>
+                        <% for(const cat in category){  %>
+                        <option value="<%= category[cat].idcategory %>"> <%= category[cat].name %> </option> 
+                        <%}%>
+                    </select>
                     <label for="image">Imagen:</label>
                     <input type="file" name="image" accept="image/*" id="image">
-                    <button type="submit">Crear Producto</button>
+                    <div class="add-button" style="width: 100%;">
+                        <button class="button amarillo descripcion" type="submit">Crear Producto</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -14,7 +14,7 @@ const postRegister = (req,res) => {
 		address: req.body.address,
 		lift: req.body.lift,
 		city: req.body.city,
-		state: req.body.state,
+		state: req.body.state.toString(),
 		zipcode: req.body.zipcode,
 		image: req.file.filename,
 		idusertype: 2

@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar">
       <div class="brand">
-        <a href="/home"><img src="/img/logo nuevo2.png" alt="" /></a>
+        <a href="/"><img src="/img/logo nuevo2.png" alt="" /></a>
       </div>
       <ul id="nav-menu" class="nav-menu">
         <li class="item"><a href="/">Home</a></li>
@@ -20,6 +20,7 @@
           <% const users = null %>
           <% if(!users){ %>
             <a href="/user/login"><i class="fa-regular fa-user"></i></a>
+            <%- include('./adminMenu') %>
             <%} else { %>
               <span class="login-name">
                 <%= users.name %>

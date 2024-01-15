@@ -4,8 +4,7 @@
         <div class="main">
             <div class="container">
                 <h1 class="main-title">Registrarse</h1>
-                <form class="registration-form" action="/user/register" id="registration-form" method="post"
-                    enctype="multipart/form-data">
+                <form class="registration-form" action="/user/register" id="registration-form" method="post" enctype="multipart/form-data">
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="name"
                         class="form-control <%= locals.errors && errors.name ? ' errorAlert' : ''  %>"
@@ -79,15 +78,15 @@
                                                                         </div>
                                                                         <% } %>
 
-                                                                            <label for="state">PNacionalidad</label>
-                                                                            <select name="state">
+                                                                            <label for="state">Nacionalidad</label>
+                                                                            <select name="state" class="select-style">
                                                                                 <% for(const country in countries){  %>
                                                                                 <option value="<%= countries[country] %>"> <%= countries[country] %> </option> 
                                                                                 <%}%>
                                                                             </select>
-                                                                            <input type="text" name="state" id="state"
+                                                                            <!--<input type="text" name="state" id="state"
                                                                                 class="form-control <%= locals.errors && errors.state ? ' errorAlert' : ''  %>"
-                                                                                value="<%= locals.oldData ? oldData.state : null %>">
+                                                                                value="<%= locals.oldData ? oldData.state : null %>">-->
                                                                             <% if (locals.errors && errors.state) { %>
                                                                                 <div class="text-danger">
                                                                                     <%= errors.state.msg %>

@@ -1,8 +1,8 @@
 const db = require('../../../database/models');
 
 const editProduct = (req, res) => {
-    const product = db.Products.findByPk(req.params.id)
-    db.Products.update({
+    const product = db.products.findByPk(req.params.id)
+    db.products.update({
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
@@ -13,7 +13,7 @@ const editProduct = (req, res) => {
             idproducts: req.params.id
         }
     })
-    res.redirect(`/update/${req.params.id}`)
+    res.redirect(`/product/`)
 }
 
 module.exports = editProduct;

@@ -10,17 +10,23 @@
             <div class="product">
                 <div class="product-description">
                     <img src="/img/users/<%= users[i].image %>" alt="img">
-                    <div><%= users[i].name + ' ' + users[i].surname %></div>    
-                    <div><%= users[i].email %></div>
-                    <div><%= users[i].country %></div>
-                    <div><%= users[i].address %></div>
-                    <div><%= users[i].lift %></div>
-                    <div><%= users[i].city %></div>
-                    <div><%= users[i].state %></div>
-                    <div><%= users[i].zipcode %></div>
+                    <div><span>Nombre: <%= users[i].name + ' ' + users[i].surname %></span></div>    
+                    <div><span>Email: <%= users[i].email %></span></div>
+                    <div><span>Pais: <%= users[i].country %></span></div>
+                    <div><span>Dirección: <%= users[i].address %></span></div>
+                    <div><span>Dtop:<%= users[i].lift %></span></div>
+                    <div><span>Ciudad: <%= users[i].city %></span></div>
+                    <div><span>Pais: <%= users[i].state %></span></div>
+                    <div><span>CP: <%= users[i].zipcode %></span></div>
+                    <div><span>privilegio tipo: <%= users[i].idusertype %></span></div>
+                    <div class="add-button">
+                        <form action="/user/update/<%= users[i].idusers %>/" method="get">
+                            <button class="button blue descripcion" type="submit">Editar</button>
+                        </form>
+                    </div>
                     <div class="add-button">
                         <form action="/user/<%= users[i].idusers %>/delete?_method=DELETE" method="POST">
-                            <button class="button red descripcion" type="submit">Delete</button>
+                            <button class="button red descripcion" type="submit">Eliminar</button>
                         </form>
                     </div>
                 </div>

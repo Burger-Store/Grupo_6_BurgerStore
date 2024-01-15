@@ -1,7 +1,7 @@
 const db = require('../../../database/models');
 
 const postNewProduct = (req,res) => {
-    db.Products.create({
+    db.products.create({
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,

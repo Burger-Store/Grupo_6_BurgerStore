@@ -1,15 +1,15 @@
 <%- include('./partials/head') %>
     <title>Menu</title>
     <%- include('./partials/header') %>
-        <%- include('./partials/productDetails') %>
             <main>
                 <h1 class="main-title">Panel de productos</h1>
                 <div class="section-main">
-                    <p>Crear productos</p>
-                    <div class="add-button">
-                        <form action="/product/create/" method="get">
-                            <button id="detailBtn" class="button blue descripcion" type="submit">Crear producto</button>
-                        </form>
+                    <div class="crear-product">
+                        <div class="add-button">
+                            <form action="/product/create/" method="get">
+                                <button id="detailBtn" class="button blue descripcion" type="submit">Crear producto</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
