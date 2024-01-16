@@ -20,6 +20,9 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "pre_order", //Opcional
         timestamps: false
     }
+
+    //Id user - id product
+    
     const Pre_order = sequelize.define(alias, cols, config);
     return Pre_order;
 }

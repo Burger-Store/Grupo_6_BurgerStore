@@ -2,9 +2,9 @@ const db = require('../../../database/models')
 
 const editProductForm = async (req,res) => {
     try {
-        const product = await db.products.findByPk(req.params.id);
+        const burger = await db.products.findByPk(req.params.id);
         const categoria = await db.category.findAll();
-        res.render('editProduct',{product, categoria});
+        res.render('editProduct',{burger, categoria});
     } catch (error) {
         res.send(error)
     }

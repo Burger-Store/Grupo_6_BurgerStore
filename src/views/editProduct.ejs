@@ -20,6 +20,11 @@
                     <label for="price">Precio:</label>
                     <input type="number" name="price" value="<%- burger.price %>" id="price" required>
                     <label for="category">Categoría:</label>
+                    <select name="state" class="select-style">
+                        <% for(const cat in categoria){  %>
+                        <option value="<%= categoria[cat].idcategory %>"> <%= categoria[cat].name %> </option> 
+                        <%}%>
+                    </select>
                     <input type="text" name="category" id="category" value="<%- burger.idcategory %>" required>
                     <label for="image">Imagen:</label>
                     <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
