@@ -17,15 +17,15 @@
           <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </li>
         <li class="sign">
-          <% const users = null %>
-          <% if(!users){ %>
+          <% if(!locals.isLogged){ %>
             <a href="/user/login"><i class="fa-regular fa-user"></i></a>
             <%- include('./adminMenu') %>
             <%} else { %>
               <span class="login-name">
-                <%= users.name %>
+                <%= locals.userLogged.name %>
               </span>
-              <a class="login-avatar" href="/user/profile"><img src="/img/users/<%= users.image %>"></a>
+              <a class="login-avatar" href="/user/profile"><img src="/img/users/<%= locals.userLogged.image %>"></a>
+              <%- include('./adminMenu') %>
               <%}%>
         </li>
         <li class="hamburger-icon">

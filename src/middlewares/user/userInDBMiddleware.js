@@ -2,7 +2,7 @@ function userInDBMiddleware(req, res, next) {
     const resultValidation = validationResult(req.body.email);
 
 if (resultValidation.errors.length > 0) {
-    return res.render('signup', {
+    return res.render('register', {
         errors: resultValidation.mapped(),
         oldData: req.body
     });
@@ -11,7 +11,7 @@ if (resultValidation.errors.length > 0) {
 let userInDB = ('email', req.body.email);
 
 if (userInDB) {
-    return res.render('signup', {
+    return res.render('register', {
         errors: {
             email: {
                 msg: 'Este email ya está registrado' 
