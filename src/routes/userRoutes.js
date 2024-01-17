@@ -15,7 +15,7 @@ const guestMiddleware = require('../middlewares/user/guestMiddleware');
 const authMiddleware = require('../middlewares/user/authMiddleware');
 const adminMiddleware = require('../middlewares/user/adminMiddleware');
 const userEditMiddleware = require('../middlewares/user/userEditMiddleware');
-const userLoggedMiddleware = require('../middlewares/user/userLoggedMiddleware');
+/*const userLoggedMiddleware = require('../middlewares/user/userLoggedMiddleware');*/
 
 
 //localhost:3001/user/
@@ -35,7 +35,7 @@ router.get('/profile', authMiddleware, profile);
 // Eliminar usuario - DELETE
 router.delete('/:id/delete', adminMiddleware, deleteUser);
 // Logout
-router.post('/logout', logout);
+router.get('/logout', logout);
 
 
 module.exports = router;

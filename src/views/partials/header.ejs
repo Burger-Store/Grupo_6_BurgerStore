@@ -17,16 +17,24 @@
           <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </li>
         <li class="sign">
-          <% if(!locals.isLogged){ %>
-            <a href="/user/login"><i class="fa-regular fa-user"></i></a>
-            <%- include('./adminMenu') %>
-            <%} else { %>
+          <% if(locals.users){ %>
+            <% if(locals.users.idusertype == 1){ %>
               <span class="login-name">
-                <%= locals.userLogged.name %>
+              <%= locals.users.name %>
               </span>
-              <a class="login-avatar" href="/user/profile"><img src="/img/users/<%= locals.userLogged.image %>"></a>
-              <%- include('./adminMenu') %>
-              <%}%>
+              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.users.image %>"></a>
+            <%- include('./adminMenu') %>
+            <%}%>
+            <%if(locals.users.idusertype == 2){%>
+              <span class="login-name">
+              <%= locals.users.name %>
+              </span>
+              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.users.image %>"></a>
+            <%- include('./userMenu') %>
+            <%}%>
+          <%} else { %>
+            <a href="/user/login"><i class="fa-regular fa-user"></i></a>              
+          <%}%>
         </li>
         <li class="hamburger-icon">
           <a href="#"><i class="fa-solid fa-bars"></i></a>

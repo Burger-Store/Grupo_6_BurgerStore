@@ -8,16 +8,18 @@ const postLogin = async	(req,res,next) => {
 		}
 	})
 	if(userToLogin) {
+		
 		let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.dataValues.password);
 		if (correctPassword) {
 			delete userToLogin.dataValues.password;
+
 			req.session.user = userToLogin
-			const user = req.session.user;
+			
 			if(req.body.remember) {
 				res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 			}
-
-			res.redirect('/user/profile');
+			
+			return res.redirect('/user/profile');
 		} 
 		return res.render('login', {
 			errors: {

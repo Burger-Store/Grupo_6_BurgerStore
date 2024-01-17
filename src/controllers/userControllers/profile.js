@@ -1,11 +1,6 @@
 const profile = (req, res) => {
-    if(req.session.user){
-        const users = req.session.user;
-        res.render('userProfile', { users });
-    } else {
-        res.redirect('/user/login');
-    }
-    
+    const users = req.session.user;
+    res.render('userProfile', { users });
 }
 
 module.exports= profile;
