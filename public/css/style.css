@@ -179,6 +179,15 @@ h1 {
   color: var(--black-mate);
 }
 /*Register y Login*/
+div.errores{
+  width: 350px;
+  height: 50px;
+  color: red;
+}
+.erroresUl{
+  width: 350px;
+  height: 50px;
+}
 
 .container {
   display: flex;
