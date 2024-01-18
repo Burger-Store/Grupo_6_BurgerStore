@@ -5,7 +5,7 @@
 			<div class="container">
 				<h1 class="main-title">Editar Usuario</h1>
 				<figure>
-                    <img src="/img/users/<%= users.image %> %>" alt="">
+                    <img src="/img/users/<%= users.image%>" alt="">
                     <figcaption>
                         <span class="hide">usuario</span>
                     </figcaption>
@@ -27,12 +27,8 @@
                     <input type="number" name="lift" value="<%- users.lift %>" id="lift" required>
 					<label for="city">Ciudad:</label>
                     <input type="text" name="city" id="city" value="<%= users.city %>" required>
-                    <label for="country">Nacionalidad:</label>
-                    <select name="state" class="select-style">
-                        <% for(const country in countries){  %>
-                        <option value="<%= countries[country] %>"> <%= countries[country] %> </option> 
-                        <%}%>
-                    </select>
+                    <label for="state">Nacionalidad:</label>
+                    <input type="text" name="state" id="state" value="<%= users.state %>" required>
                     <label for="zipcode">Código Postal:</label>
                     <input type="number" name="zipcode" id="zipcode" value="<%= users.zipcode %>" required>
                     <label for="image">Imagen:</label>

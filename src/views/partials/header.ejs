@@ -17,19 +17,19 @@
           <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </li>
         <li class="sign">
-          <% if(locals.users){ %>
-            <% if(locals.users.idusertype == 1){ %>
+          <% if(locals.userLogged){ %>
+            <% if(locals.userLogged.idusertype == 1){ %>
               <span class="login-name">
-              <%= locals.users.name %>
+              <%= locals.userLogged.name %>
               </span>
-              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.users.image %>"></a>
+              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.userLogged.image %>"></a>
             <%- include('./adminMenu') %>
             <%}%>
-            <%if(locals.users.idusertype == 2){%>
+            <%if(locals.userLogged.idusertype == 2){%>
               <span class="login-name">
-              <%= locals.users.name %>
+              <%= locals.userLogged.name %>
               </span>
-              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.users.image %>"></a>
+              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.userLogged.image %>"></a>
             <%- include('./userMenu') %>
             <%}%>
           <%} else { %>

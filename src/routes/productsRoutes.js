@@ -4,9 +4,8 @@ const router = express.Router();
 /**
  * Middleware
  */
-const adminMiddleware = require('../middlewares/product/productDataValidations');
+const productDataValidations = require('../middlewares/product/productDataValidations');
 const uploadImgProduct = require('../middlewares/product/uploadProductImage');
-const isUserAdmin = require('../middlewares/product/isUserAdmin');
 /**
  * Controller
  */
@@ -18,20 +17,21 @@ const editProductForm = require('../controllers/productsControllers/editProductF
 const editProduct = require('../controllers/productsControllers/editProduct');
 const deleteProduct = require('../controllers/productsControllers/deleteProduct');
 const seekerProduct = require('../controllers/productsControllers/seekerProduct');
+const adminMiddleware= require('../middlewares/user/adminMiddleware');
 
 //page
 router.get('/', productList);
 //Registrar CREAR
-router.get('/create', createProductForm);
-router.post('/create', adminMiddleware, uploadImgProduct.single('image'), createProduct)
+router.get('/create', adminMiddleware, createProductForm);
+router.post('/create', adminMiddleware, productDataValidations, uploadImgProduct.single('image'), createProduct)
 //Motrar los usuarios READ
 router.get('/details/:id', detailsProduct);
 //Actualizar los datos del usuario UPDATE
-router.get('/update/:id', editProductForm);
-router.put('/update/:id',uploadImgProduct.single('image'), editProduct);
+router.get('/update/:id', adminMiddleware, editProductForm);
+router.put('/update/:id', adminMiddleware, uploadImgProduct.single('image'), editProduct);
 //Eliminar producto DELETE
-router.delete('/delete/:id', deleteProduct)
+router.delete('/delete/:id', adminMiddleware, deleteProduct)
 //Buscador
-router.get('/search?' ,seekerProduct)
+router.get('/search?', seekerProduct)
 
 module.exports = router;
