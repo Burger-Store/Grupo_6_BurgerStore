@@ -6,13 +6,13 @@
                 <h1 class="main-title">Crear un producto</h1>
                 <form class="registration-form" action="/product/create" method="POST" enctype="multipart/form-data">
                     <label for="name">Nombre del Producto:</label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name">
                     <label for="description">Descripción:</label>
-                    <input type="text" name="description" id="description" required>
+                    <input type="text" name="description" id="description">
                     <label for="price">Precio:</label>
-                    <input type="number" name="price" id="price" required>
+                    <input type="number" name="price" id="price">
                     <label for="category">Categoría:</label>
-                    <select class="select-style" name="category" required>
+                    <select class="select-style" name="category">
                         <% for(const cat in category){  %>
                         <option value="<%= category[cat].idcategory %>"> <%= category[cat].name %> </option> 
                         <%}%>
@@ -24,5 +24,6 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> 
+        <script src='../js/productValidate.js'></script>
         <%- include('./partials/footer') %>
