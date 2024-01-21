@@ -1,6 +1,7 @@
+const db = require("../../../database/models");
 const {validationResult} = require('express-validator');
 
-function userInDBMiddleware(req, res, next) {
+async function userInDBMiddleware(req, res, next) {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
@@ -10,9 +11,13 @@ function userInDBMiddleware(req, res, next) {
         });
     }
 
-    let userInDB = ({'email' : req.body.email});
+    let userInDB = await db.users.findOne({ 
+        where: {
+            email: req.body.email || null
+        },
+    });
 
-    if (userInDB) {
+    if (userInDB !== null) {
         return res.render('register', {
             errors: {
                 email: {
