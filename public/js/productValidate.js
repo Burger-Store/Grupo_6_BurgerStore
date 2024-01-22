@@ -1,38 +1,45 @@
-window.addEventListener('load', function() {
-    let body = document.body;
-    body.style.backgroundColor = '#E6A4B4';
-    let formulario = document.querySelector('form.registration-form');
-    formulario.addEventListener('submit', function(evento) {
-      evento.preventDefault();
-  
-      const name = document.querySelector('#name');
-  
-      if (name.value.trim() === '') {
-        console.log('Hubo un error en el nombre');
-      }
-  
-      const description = document.querySelector('#description');
-  
-      if (description.value.trim() === '') {
-        console.log('Hubo un error en la descripción');
-      }
-  
-      const price = document.querySelector('#price');
-  
-      if (price.value.trim() === '') {
-        console.log('Hubo un error en el precio');
-      }
-  
-      const category = document.querySelector('#category');
-  
-      if (category.value.trim() === '') {
-        console.log('Hubo un error en la categoría');
-      }
-  
-      const image = document.querySelector('#image');
-  
-      if (image.value.trim() === '') {
-        console.log('Hubo un error en la imagen');
-      }
-    }); 
-  });
+window.addEventListener('load', function(){
+  let formulario = document.querySelector('form.registration-form');
+  let errores = [];
+
+  formulario.addEventListener('submit', function(e) {
+      let ulErrores = document.querySelector('div.errores ul');
+      ulErrores.innerHTML = '';
+
+      let campoName = document.querySelector('input.form-control');       
+      if (campoName.value == '') {
+          errores.push('- El campo nombre no puede estar vacío')};  
+
+      let campoDescription = document.querySelector('input.form-control');
+      if (campoDescription.value == '') {
+          errores.push('- El campo descripción no puede estar vacío')};
+
+      let campoPrice = document.querySelector('input.form-control');
+      if (campoPrice.value == '') {
+          errores.push('- El campo precio no puede estar vacío')};
+
+      let campoCategory = document.querySelector('input.form-control');
+      if (campoCategory.value == '') {
+          errores.push('- El campo categoría no puede estar vacío');
+
+      let campoImage = document.querySelector('input.form-control');
+      if (campoImage.value == '') {
+          errores.push('- El campo imagen no puede estar vacío')};
+          
+      } 
+
+      if (errores.length > 0) {
+          e.preventDefault();
+
+          let ulErrores = document.querySelector('div.errores ul');
+
+          for (let i = 0; i < errores.length; i++) {
+              
+              ulErrores.innerHTML += <li>${errores[i]}</li>
+                  
+          }}
+          
+      
+      
+  })
+})
