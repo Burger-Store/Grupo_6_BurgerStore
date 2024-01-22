@@ -23,17 +23,17 @@ const userEditMiddleware = require('../middlewares/user/userEditMiddleware');
 router.get('/', adminMiddleware, getAllUsers);      // ADMIN ruta a vista de todos los usuarios
 //formulario de registro - CREATE
 router.get('/register', guestMiddleware, register);
-router.post('/register', uploadImgUser.single('image'), postRegister);
+router.post('/register', uploadImgUser.single('image'), userInDBMiddleware, postRegister);
 //EDIT USER 
 router.get('/update/:id', authMiddleware, userEditMiddleware, getUserById); 
-router.post('/update/:id', uploadImgUser.single('image'), validations, editUser);  
+router.put('/update/:id', uploadImgUser.single('image'), validations, editUser);  
 // Formulario de login
 router.get('/login', guestMiddleware, login);
 router.post('/login', validateLogin, postLogin);
 // Perfil de Usuario - READ
 router.get('/profile', authMiddleware, profile);
 // Eliminar usuario - DELETE
-router.delete('/:id/delete', adminMiddleware, deleteUser);
+router.delete('/:id/delete', authMiddleware, deleteUser);
 // Logout
 router.get('/logout', logout);
 

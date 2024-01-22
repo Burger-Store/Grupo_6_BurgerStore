@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head'); %>
+<%- include('partials/head') %>
 <title>Profile</title>
 <body>
-	<%- include('partials/header'); %>
+	<%- include('partials/header') %>
+	<%- include('./partials/productCart') %>
 		<div class="container" style="margin-top: 40px;">
 		<div class="row">
 			<h1 class="main-title">Mi Usuario</h1>
@@ -18,13 +19,15 @@
 				<p><%= users.city %></p>
 			</div>
             <div class="add-button">
-                <form>
-                    <button
-                        class="button blue descripcion" type="submit">
-                        <a href="/user/update/<%= users.idusers %>">Editar mi usuario</a>
-                    </button> 
+                <form action="/user/update/<%= users.idusers %>" method="get">
+                    <button class="button blue descripcion" type="submit">Editar mi usuario</button> 
                 </form>
             </div>
+			<div class="add-button">
+				<form action="/user/<%= users.idusers %>/delete?_method=DELETE" method="POST">
+					<button class="button red descripcion" type="submit" alert="Desea eliminar este usuario?">Eliminar</button>
+				</form>
+			</div>
 		</div>
 	</div>
 	

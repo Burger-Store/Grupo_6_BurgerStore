@@ -13,8 +13,8 @@
         <button onclick="buscar()"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
       <ul class="desktop-option">
-        <li class="shop">
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        <li class="shop" >
+          <a id="shop-icon" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </li>
         <li class="sign">
           <% if(locals.userLogged){ %>
@@ -22,14 +22,14 @@
               <span class="login-name">
               <%= locals.userLogged.name %>
               </span>
-              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.userLogged.image %>"></a>
+              <a id="avatar-option" class="login-avatar" href="#"><img src="/img/users/<%= locals.userLogged.image %>"></a>
             <%- include('./adminMenu') %>
             <%}%>
             <%if(locals.userLogged.idusertype == 2){%>
               <span class="login-name">
               <%= locals.userLogged.name %>
               </span>
-              <a class="login-avatar" href="#"><img src="/img/users/<%= locals.userLogged.image %>"></a>
+              <a id="avatar-option" class="login-avatar" href="#"><img src="/img/users/<%= locals.userLogged.image %>"></a>
             <%- include('./userMenu') %>
             <%}%>
           <%} else { %>
@@ -42,4 +42,4 @@
       </ul>
     </nav>
   </header>
-  
+  <%- include('./productCart') %>

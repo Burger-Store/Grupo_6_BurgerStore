@@ -1,25 +1,37 @@
-function userInDBMiddleware(req, res, next) {
-    const resultValidation = validationResult(req.body.email);
+const db = require("../../../database/models");
+const countries = require('../../data/countries.json');
+const {validationResult} = require('express-validator');
 
-if (resultValidation.errors.length > 0) {
-    return res.render('register', {
-        errors: resultValidation.mapped(),
-        oldData: req.body
-    });
-}
+async function userInDBMiddleware(req, res, next) {
+    const resultValidation = validationResult(req);
 
-let userInDB = ('email', req.body.email);
+    if (resultValidation.errors.length > 0) {
+        return res.render('register', {
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+            countries: countries.paises
+        });
+    }
 
-if (userInDB) {
-    return res.render('register', {
-        errors: {
-            email: {
-                msg: 'Este email ya está registrado' 
-            }
+    let userInDB = await db.users.findOne({ 
+        where: {
+            email: req.body.email || null
         },
-        oldData: req.body
     });
-   }
-next();
+
+    if (userInDB !== null) {
+        return res.render('register', {
+            errors: {
+                email: {
+                    msg: 'Este email ya está registrado' 
+                }
+            },
+            oldData: req.body,
+            countries: countries.paises
+        });
+    }
+
+    next();
+
 }
 module.exports= userInDBMiddleware

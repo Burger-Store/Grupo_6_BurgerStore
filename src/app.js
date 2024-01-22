@@ -45,9 +45,9 @@ const productRoutes = require('./routes/productsRoutes');
 
 
 // Ruta a usuarios
-server.use('/user/',userRoutes);
+server.use('/user/', userRoutes);
 // Ruta a productos
-server.use('/product/',productRoutes);
+server.use('/product/', productRoutes);
 // Ruta al Home
 server.use ('/', storeRoute)
 //middleware de error
