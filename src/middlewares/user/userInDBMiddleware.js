@@ -1,25 +1,31 @@
-function userInDBMiddleware(req, res, next) {
-    const resultValidation = validationResult(req.body.email);
+const db = require('../../../database/models');
 
-if (resultValidation.errors.length > 0) {
-    return res.render('register', {
-        errors: resultValidation.mapped(),
-        oldData: req.body
-    });
+const userInDBMiddleware = async (req, res, next) => {
+    console.log(req.body.email)
+    const userLookingFor = await db.users.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    console.log(userLookingFor)
+    /*if (resultValidation.errors.length > 0) {
+        return res.render('register', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+    }*/
+
+    /*if (userLookingFor) {
+        return res.redirect('user/register', {
+            errors: {
+                email: {
+                    msg: 'Este email ya está registrado' 
+                }
+            },
+        });
+    }*/
+
+    next();
 }
 
-let userInDB = ('email', req.body.email);
-
-if (userInDB) {
-    return res.render('register', {
-        errors: {
-            email: {
-                msg: 'Este email ya está registrado' 
-            }
-        },
-        oldData: req.body
-    });
-   }
-next();
-}
-module.exports= userInDBMiddleware
+module.exports = userInDBMiddleware;
