@@ -22,9 +22,9 @@ window.addEventListener('load', function(){
       if (campoCategory.value == '') {
           errores.push('- El campo categoría no puede estar vacío');
 
-     /* let campoImage = document.querySelector('input.form-control');
+      let campoImage = document.querySelector('input.form-control');
       if (campoImage.value == '') {
-          errores.push('- El campo imagen no puede estar vacío')}; */
+          errores.push('- El campo imagen no puede estar vacío')}; 
           
       } 
 
