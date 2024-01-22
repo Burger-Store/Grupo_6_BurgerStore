@@ -25,7 +25,7 @@
                     </div>
                     <div class="add-button">
                         <form action="/user/<%= users[i].idusers %>/delete?_method=DELETE" method="POST">
-                            <button class="button red descripcion" type="submit" onclick="alert('Desea eliminar este usuario?');">Eliminar</button>
+                            <button class="button red descripcion" type="submit" onclick="return confirm( 'Desea eliminar este usuario?');">Eliminar</button>
                         </form>
                     </div>
                 </div>
