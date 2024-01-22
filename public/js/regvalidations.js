@@ -10,10 +10,12 @@ window.addEventListener("load", () => {
         const imageInput = document.getElementById('image');
         
         // Validaciones regulares
-        const nameRegex = /^[a-zA-Z ]{2,20}$/;
-        const surnameRegex = /^[a-zA-Z ]{2,20}$/;
+        const nameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
+        const surnameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
         const passwordRegex = /^.{8,}$/;
+
+        
               
         // Validacion de Nombre
         if (!nameRegex.test(nameInput.value)) {
