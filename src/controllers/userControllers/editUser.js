@@ -23,7 +23,12 @@ const editUser = (req, res) => {
             idusers: req.params.id
         }
     })
-    res.redirect(`/user/profile/${req.params.id}`)
+
+    if(req.session.user.idusertype === 1 && req.session.user.idusers != req.params.id){
+        res.redirect('/user')
+    }else{
+        res.redirect('/user/profile')
+    }
 
 }
 
