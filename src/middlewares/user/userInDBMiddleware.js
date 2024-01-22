@@ -1,4 +1,5 @@
 const db = require("../../../database/models");
+const countries = require('../../data/countries.json');
 const {validationResult} = require('express-validator');
 
 async function userInDBMiddleware(req, res, next) {
@@ -7,7 +8,8 @@ async function userInDBMiddleware(req, res, next) {
     if (resultValidation.errors.length > 0) {
         return res.render('register', {
             errors: resultValidation.mapped(),
-            oldData: req.body
+            oldData: req.body,
+            countries: countries.paises
         });
     }
 
@@ -24,7 +26,8 @@ async function userInDBMiddleware(req, res, next) {
                     msg: 'Este email ya está registrado' 
                 }
             },
-            oldData: req.body
+            oldData: req.body,
+            countries: countries.paises
         });
     }
 

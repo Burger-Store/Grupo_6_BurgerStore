@@ -19,11 +19,8 @@
 				<p><%= users.city %></p>
 			</div>
             <div class="add-button">
-                <form>
-                    <button
-                        class="button blue descripcion" type="submit">
-                        <a href="/user/update/<%= users.idusers %>">Editar mi usuario</a>
-                    </button> 
+                <form action="/user/update/<%= users.idusers %>" method="get">
+                    <button class="button blue descripcion" type="submit">Editar mi usuario</button> 
                 </form>
             </div>
 		</div>
