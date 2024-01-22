@@ -33,7 +33,7 @@ router.post('/login', validateLogin, postLogin);
 // Perfil de Usuario - READ
 router.get('/profile', authMiddleware, profile);
 // Eliminar usuario - DELETE
-router.delete('/:id/delete', adminMiddleware, deleteUser);
+router.delete('/:id/delete', authMiddleware, deleteUser);
 // Logout
 router.get('/logout', logout);
 

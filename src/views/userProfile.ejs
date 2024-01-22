@@ -23,6 +23,11 @@
                     <button class="button blue descripcion" type="submit">Editar mi usuario</button> 
                 </form>
             </div>
+			<div class="add-button">
+				<form action="/user/<%= users.idusers %>/delete?_method=DELETE" method="POST">
+					<button class="button red descripcion" type="submit" alert="Desea eliminar este usuario?">Eliminar</button>
+				</form>
+			</div>
 		</div>
 	</div>
 	

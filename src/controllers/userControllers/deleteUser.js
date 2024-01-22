@@ -1,28 +1,17 @@
 const db = require('../../../database/models');
 
 const deleteUser = (req, res) => {
-    //Necesito obtener el userType
-    let userprivileges = Object.values( db.users.findOne({
-        where:{
-            idusers: req.params.id
-        }
-    }))
     db.users.destroy({
         where: {
             idusers: req.params.id
-        }
-    })
-    .then(function() {
-        if(userprivileges == 2){
-            res.redirect('/user/');
-        } else {
-            res.redirect('/');
-        }
-        
-    })
-    .catch(function (e){
-        res.send(e);
+        },
     });
+    if(req.session.user.idusertype === 1 && req.session.user.idusers != req.params.id){
+        res.redirect('/user')
+    }else{
+        req.session.destroy();
+        res.redirect('/');
+    }
 }
 
 module.exports = deleteUser;
