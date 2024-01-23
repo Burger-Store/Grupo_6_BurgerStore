@@ -34,6 +34,14 @@
                     <input type="number" name="zipcode" id="zipcode" value="<%= users.zipcode %>" required>
                     <label for="image">Imagen:</label>
                     <input type="file" name="image" value="<%- users.image %>" accept="image/*" id="image">
+                    <% if(locals.userLogged.idusertype === 1){ %>
+                    <label for="idusertype">Tipo de Usuario:</label>
+                    <select name="idusertype" class="select-style">
+                        <% for(const tipo in tipoUsuario){  %>
+                        <option value="<%= tipoUsuario[tipo].idusertype %>"> <%= tipoUsuario[tipo].type %> </option> 
+                        <%}%>
+                    </select>
+                    <%}%>
 
                     <div class="add-button" style="width: 100%;">
                         <button id="detailBtn" class="button yellow descripcion" type="submit">Actualizar</button>
