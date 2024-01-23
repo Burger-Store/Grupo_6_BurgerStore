@@ -1,43 +1,39 @@
 <%- include('./partials/head') %>
-    <title>Search</title>
-    <%- include('./partials/header') %>
-    <%- include('./partials/productCart') %>
-        <div class="main">
-            <div class="container">
-                <% if(burger==null){ %>
-                    <h1 class="main-title">No se encuentra el producto</h1>
-                    <% } else { %>
-                        <% for(let i=0; i < burger.length; i++){ %>
-                            <div class="product">
-                                <figure>
-                                    <img src="/img/products/<%= burger[i].image %>" alt="img">
-                                    <figcaption>
-                                        <span class="hide">Hambugesa con chedar</span>
-                                    </figcaption>
-                                </figure>
-                                <div class="product-description">
-                                    <div class="product-name">
-                                        <%= burger[i].name%>
-                                    </div>
-                                    <p class="description">
-                                        <%= burger[i].description %>
-                                    </p>
-                                    <div class="price">$ <%= burger[i].price %>
-                                    </div>
-                                    <div class="add-button">
-                                        <form action="#" method="get" enctype="multipart/form-data">
-                                            <button id="detailBtn" class="button yellow descripcion"
-                                                type="submit">Agregar al carrito</button>
-                                        </form>
-                                        <form action="/product/details/<%= burger[i].idproducts %>" method="get">
-                                            <button id="detailBtn" class="button blue descripcion"
-                                                type="submit">Detalles</button>
-                                        </form>
-                                    </div>
-                                </div>
+<%- include('./partials/header') %>
+<%- include('./partials/productCart') %>
+        <main>
+            <h1 class="main-title">Nuestras Burgers</h1>
+            <div class="section-main">
+                <% for(let i=0; i < burger.length; i++){ %>
+                    <div class="product">
+                        <figure>
+                            <img src="/img/products/<%= burger[i].image %>" alt="img">
+                            <figcaption>
+                                <span class="hide">Hambugesa con chedar</span>
+                            </figcaption>
+                        </figure>
+                        <div class="product-description">
+                            <div class="product-name">
+                                <%= burger[i].name%>
                             </div>
-                            <%}%>
-                                <%}%>
+                            <p class="description">
+                                <%= burger[i].description %>
+                            </p>
+                            <div class="price">$ <%= burger[i].price %>
+                            </div>
+                            <div class="add-button">
+                                <form action="#" method="get" enctype="multipart/form-data">
+                                    <button id="detailBtn" class="button yellow descripcion" type="submit">Agregar al
+                                        carrito</button>
+                                </form>
+                                <form action="/product/details/<%= burger[i].idproducts %>" method="get">
+                                    <button id="detailBtn" class="button blue descripcion"
+                                        type="submit">Detalles</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <%}%>
             </div>
-        </div>
+        </main>
         <%- include('./partials/footer') %>

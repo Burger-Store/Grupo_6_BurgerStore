@@ -23,15 +23,15 @@ const adminMiddleware= require('../middlewares/user/adminMiddleware');
 router.get('/', productList);
 //Registrar CREAR
 router.get('/create', adminMiddleware, createProductForm);
-router.post('/create', adminMiddleware, productDataValidations, uploadImgProduct.single('image'), createProduct)
+router.post('/create', adminMiddleware, productDataValidations, uploadImgProduct.single('image'), createProduct);
 //Motrar los usuarios READ
 router.get('/details/:id', detailsProduct);
 //Actualizar los datos del usuario UPDATE
 router.get('/update/:id', adminMiddleware, editProductForm);
 router.put('/update/:id', adminMiddleware, uploadImgProduct.single('image'), editProduct);
 //Eliminar producto DELETE
-router.delete('/delete/:id', adminMiddleware, deleteProduct)
+router.delete('/delete/:id', adminMiddleware, deleteProduct);
 //Buscador
-router.get('/search?', seekerProduct)
+router.get('/search/?', seekerProduct);
 
 module.exports = router;

@@ -1,15 +1,17 @@
 const db = require('../../../database/models');
+const { Op } = require('sequelize');
 
 const seekerProduct = async (req,res) => {
-    const products = await db.Products.findAll({ 
+    const consulta = req.query.search
+    const burger = await db.products.findAll({ 
         where: {
-            name: req.body.search 
+            name:{ [Op.like]: `%${consulta}%` }
         } 
     })
-    if (!products) {
-        console.log('Not found!');
+    if (burger.length == 0) {
+        res.render('404notfound', {message: `${consulta} Not Found!`});
     } else {
-        res.render('products', {product : product})
+        res.render('search', {burger})
     }
 }
 
