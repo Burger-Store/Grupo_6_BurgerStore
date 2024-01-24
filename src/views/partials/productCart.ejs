@@ -1,0 +1,53 @@
+<div id="cart" class="cartContainer hide">
+    <main class="">
+        <div class="detailsProductHead">
+            <i class="fa-solid fa-xmark" id="detailsClose"></i>
+            <h1 class="second-title">Carrito</h1>
+        </div>
+        <!--Productos-->
+        <% for (let i=0; i < 5; i++) { %>
+
+            <div class="pedido">
+                <div class="img-container">
+                    <figure>
+                        <img src="/img/products/cheeseburger_triple.jpg" alt="Cheeseburger Triple">
+                        <figcaption>
+                            <span class="hide">Hamburgesa</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="center">
+                    <p class="descripcion">Lorem ipsum, dolor sit amet consectetur </p>
+                    <div class="descyagregar">
+                        <button class="menos" type="button"><i class="fa-solid fa-minus"></i></button>
+                        <input class="sumaresta" type="text" value="1">
+                        <button class="mas" type="button"><i class="fa-regular fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="elPrecio">
+                    <button class="quitar" type="reset"><i class="fa-solid fa-trash"></i></button>
+                    <span class="precio"> $0</span>
+                </div>
+            </div>
+            <% } %>
+                <!--Productos-->
+                <div class="totales">
+                    <div class="sub">
+                        <p class="subtotal"> Subtotal </p>
+                        <p precio2>$0</p>
+                    </div>
+                    <div class="sub">
+                        <p class="total">Total</p>
+                        <p class="precio3">$0</p>
+                    </div>
+                </div>
+                <div class="comentarios">
+                    <p>Comentarios</p>
+                    <textarea name="espacio" id="espacio" cols="20" rows="6"></textarea>
+                </div>
+
+                <div class="add-button">
+                    <button type="submit" class="button confirmar">CONFIRMAR PEDIDO</button>
+                </div>
+    </main>
+</div>

@@ -1,35 +1,19 @@
-const products = require('../../database/products.json');
-const fs = require('fs');
-const path = require ('path');
+const db = require('../../../database/models');
 
 const editProduct = (req, res) => {
-
-    const { id } = req.params;
-
-    const { name, description, price, category } = req.body;
-
-    products.forEach((product)=>{
-        if (product.id == id){
-            product.id = parseInt(id);
-            product.name = name;
-            product.description = description;
-            product.price = price;
-            product.category = category;
-            product.image = req.file ? req.file.filename : product.image;
-        }
-    });
-
-    const productPath = path.join(__dirname, '../../database/products.json')
-
-    const data =JSON.stringify(products);
-
-    fs.writeFile(productPath, data, (error)=>{
-        if (error){
-            res.send(`Error: ${error}`);
-        }else{
-            res.redirect('/products')
+    const product = db.products.findByPk(req.params.id)
+    db.products.update({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        idcategory: req.body.category,
+        image: req.file ? req.file.filename : product.image
+    },{
+        where:{
+            idproducts: req.params.id
         }
     })
+    res.redirect('/product')
 }
 
 module.exports = editProduct;
