@@ -5,10 +5,7 @@
         <div class="container">
             <h1 class="main-title">Iniciar Sesion</h1>
              
-            <div class="errores">
-                <ul class="errorLog">                    
-                </ul>
-            </div>
+        
             
             <form class="registration-form" action="/user/login"  method="post" id="loginForm">
                 <label for="email">Email:</label>
@@ -35,6 +32,10 @@
                                     <input type="checkbox" name="remember" value="Extra 4" id="checkbox">
                                     <label class="extras" for="checkbox">Recuerdame</label>
                                 </div>
+                                <div class="errores">
+                                    <ul class="errorLog">                    
+                                    </ul>
+                                </div>
 
                                 <div class="add-button full-button">
                                     <button class="button" type="submit">Iniciar sesión</button>
@@ -45,7 +46,7 @@
             <h2 class="indications">Todavia no tenes usuario <a class="super-link"
                     href="/user/register">registrarse</a></h2>
             <h2 class="indications">Olvidé mi contraseña <a class="super-link" href="#">recuperar</a></h2>
-           
+            
             
         </div>
         <%- include('./partials/footer') %>

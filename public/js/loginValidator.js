@@ -32,7 +32,8 @@ window.addEventListener('load', function(){
                     
             }}
             
-        
+            
+     errores= [];   
         
     })
 })
