@@ -13,7 +13,7 @@ const editProduct = (req, res) => {
             idproducts: req.params.id
         }
     })
-    res.redirect(`/product/`)
+    res.redirect('/product')
 }
 
 module.exports = editProduct;

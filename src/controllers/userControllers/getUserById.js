@@ -1,13 +1,13 @@
 const db = require('../../../database/models')
 
-const getUserById = (req,res) => {
-    db.users.findByPk(req.params.id)
-    .then(function(user) {
-        if(!user){
-            return res.send('User not found');
-        }
-        res.render('editprofile', {users: user});
-    })
+const getUserById = async (req,res) => {
+    try{
+        const users = await db.users.findByPk(req.params.id);
+        const tipoUsuario = await db.usertype.findAll();
+        res.render('editprofile', {users, tipoUsuario});
+    }catch(error){
+        res.send(error)
+    }
 }
 
 module.exports = getUserById;

@@ -3,6 +3,7 @@ const db = require('../../../database/models');
 const bcryptjs = require('bcryptjs');
 
 const editUser = (req, res) => {
+    const usuario = req.session.user;
     const user = db.users.findByPk(req.params.id)
     db.users.update({
         name: req.body.name,
@@ -27,7 +28,8 @@ const editUser = (req, res) => {
     if(req.session.user.idusertype === 1 && req.session.user.idusers != req.params.id){
         res.redirect('/user')
     }else{
-        res.redirect('/user/profile')
+        req.session.user.image = req.file ? req.file.filename : usuario.image,
+        res.render('userProfile', {users: usuario})
     }
 
 }
