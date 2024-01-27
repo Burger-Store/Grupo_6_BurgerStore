@@ -1,10 +1,11 @@
 const db = require('../../../database/models');
-const createProductForm = (req,res) => {
-    let category = db.category.findAll()
-    .then(function(category){
-        res.render('createProduct', {category});
-    })
-    
-}
-
+const createProductForm = async (req,res) => {
+    try {
+        let categoria = await db.category.findAll();
+        res.render('createProduct', {categoria});
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+};
 module.exports = createProductForm;

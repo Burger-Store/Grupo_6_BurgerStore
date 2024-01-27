@@ -20,7 +20,7 @@ const seekerProduct = require('../controllers/productsControllers/seekerProduct'
 const adminMiddleware= require('../middlewares/user/adminMiddleware');
 
 //page
-router.get('/', productList);
+router.get('/', adminMiddleware, productList);
 //Registrar CREAR
 router.get('/create', adminMiddleware, createProductForm);
 router.post('/create', adminMiddleware, productDataValidations, uploadImgProduct.single('image'), createProduct);

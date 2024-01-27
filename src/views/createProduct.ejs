@@ -32,20 +32,15 @@
                         </span>
                         <% } %>
                     <label for="category">Categoría:</label>
-                    <select class="select-style <%= locals.errors && errors.category ? ' errorAlert' : ''  %> category">
-                        <% for(const cat in category){  %>
-                        <option value="<%= category[cat].idcategory %>"> <%= category[cat].name %> </option> 
+                    <select name="category" class="select-style <%= locals.errors && errors.category ? ' errorAlert' : ''  %>category">
+                        <% for(const cat in categoria){  %>
+                        <option value="<%= categoria[cat].idcategory %>"> <%= categoria[cat].name %> </option> 
                         <%}%>
                     </select>
-                    <% if (locals.errors && errors.category) { %>
-                        <span class="text-danger">
-                            <%= errors.category.msg %>
-                        </span>
-                        <% } %>
                     <label for="image">Imagen:</label>
                     <input type="file" name="image" accept="image/*" id="image"
                     class="form-control<%= locals.errors && errors.image ? ' errorAlert' : ''  %> image">
-                    <% if (locals.errors && errors.eimage) { %>
+                    <% if (locals.errors && errors.image) { %>
                         <span class="text-danger">
                             <%= errors.image.msg %>
                         </span>
