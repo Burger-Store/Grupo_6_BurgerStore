@@ -1,4 +1,6 @@
 window.addEventListener('load', function(){
+    const body = document.body;
+    body.style.backgroundColor = "#c999af"
   let formulario = document.querySelector('form.registration-form');
   let errores = [];
 
