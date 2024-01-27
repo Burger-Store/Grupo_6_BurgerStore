@@ -33,16 +33,13 @@
                                 <div class="price">$ <%= burger[i].price %>
                                 </div>
                                 <div class="add-button">
-                                    <form action="/product/update/<%= burger[i].idproducts %>" method="get">
-                                        <button id="detailBtn" class="button blue descripcion"
-                                            type="submit">Editar</button>
+                                    <form action="/product/update/<%= burger[i].idproducts %>?_method=get" method="get">
+                                        <button id="detailBtn" class="button blue descripcion" type="submit">Editar</button>
                                     </form>
                                 </div>
                                 <div class="add-button">
-                                    <form action="/product/delete/<%= burger[i].idproducts %>?_method=DELETE"
-                                        method="POST">
-                                        <button id="detailBtn" class="button red descripcion"
-                                            type="submit">Eliminar</button>
+                                    <form action="/product/delete/<%= burger[i].idproducts %>?_method=DELETE" method="POST">
+                                        <button class="button red descripcion" type="submit" onclick=" return confirm('Desea eliminar este producto?');">Eliminar</button>
                                     </form>
                                 </div>
                             </div>

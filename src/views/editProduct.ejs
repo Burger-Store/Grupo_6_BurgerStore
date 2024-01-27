@@ -17,7 +17,7 @@
                     <label for="name">Nombre del Producto:</label>
                     <input type="text" name="name" id="name" 
                     class="form-control<%= locals.errors && errors.name ? ' errorAlert' : ''  %> name" 
-                    value="<%- burger.name %>" required >
+                    value="<%- burger.name %>" required>
                     <% if (locals.errors && errors.name) { %>
                         <span class="text-danger">
                             <%= errors.name.msg %>
