@@ -15,11 +15,11 @@
                 <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" id="editproduct"
                     method="POST" enctype="multipart/form-data">
                     <label for="name">Nombre del Producto:</label>
-                    <input type="text" name="name" id="name" value="<%- burger.name %>" required>
+                    <input type="text" name="name" id="name" value="<%- burger.name %>">
                     <label for="description">Descripción:</label>
-                    <input type="text" name="description" value="<%- burger.description %>" id="description" required>
+                    <input type="text" name="description" value="<%- burger.description %>" id="description">
                     <label for="price">Precio:</label>
-                    <input type="number" name="price" value="<%- burger.price %>" id="price" required>
+                    <input type="number" name="price" value="<%- burger.price %>" id="price" >
                     <label for="category">Categoría:</label>
                     <select name="category" class="select-style">
                         <% for(const cat in categoria){  %>
