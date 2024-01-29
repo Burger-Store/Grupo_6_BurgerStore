@@ -12,35 +12,14 @@
                     </figcaption>
                 </figure>
                 
-                <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT"
+                <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" id="editproduct"
                     method="POST" enctype="multipart/form-data">
                     <label for="name">Nombre del Producto:</label>
-                    <input type="text" name="name" id="name" 
-                    class="form-control<%= locals.errors && errors.name ? ' errorAlert' : ''  %> name" 
-                    value="<%- burger.name %>" required>
-                    <% if (locals.errors && errors.name) { %>
-                        <span class="text-danger">
-                            <%= errors.name.msg %>
-                        </span>
-                        <% } %>
+                    <input type="text" name="name" id="name" value="<%- burger.name %>" required>
                     <label for="description">Descripción:</label>
-                    <input type="text" name="description" 
-                    class="form-control<%= locals.errors && errors.description ? ' errorAlert' : ''  %> description" 
-                    value="<%- burger.description %>" id="description" required>
-                    <% if (locals.errors && errors.description) { %>
-                        <span class="text-danger">
-                            <%= errors.description.msg %>
-                        </span>
-                        <% } %>
+                    <input type="text" name="description" value="<%- burger.description %>" id="description" required>
                     <label for="price">Precio:</label>
-                    <input type="number" name="price" 
-                    class="form-control<%= locals.errors && errors.price ? ' errorAlert' : ''  %> price" 
-                    value="<%- burger.price %>" id="price" required>
-                    <% if (locals.errors && errors.price) { %>
-                        <span class="text-danger">
-                            <%= errors.price.msg %>
-                        </span>
-                        <% } %>
+                    <input type="number" name="price" value="<%- burger.price %>" id="price" required>
                     <label for="category">Categoría:</label>
                     <select name="category" class="select-style">
                         <% for(const cat in categoria){  %>
@@ -48,23 +27,12 @@
                         <%}%>
                     </select>
                     <label for="image">Imagen:</label>
-                    <input type="file" name="image" 
-                    class="form-control<%= locals.errors && errors.image ? ' errorAlert' : ''  %> image"
-                    value="<%- burger.image %>" accept="image/*" id="image">
-                    <% if (locals.errors && errors.image) { %>
-                        <span class="text-danger">
-                            <%= errors.image.msg %>
-                        </span>
-                        <% } %>
-                        <div class="errores">
-                            <ul class="errorLog">                    
-                            </ul>
-                        </div>
+                    <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
                     <div class="add-button" style="width: 100%;">
                         <button id="detailBtn" class="button yellow descripcion" type="submit">Actualizar</button>
                     </div>
                 </form>
-                <script src='../js/productValidate.js'></script>
             </div>
         </div>
+        <script src="../../js/editValidator.js"></script>
         <%- include('./partials/footer') %>
