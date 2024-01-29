@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
             
       // Validaciones regulares
       const nameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
-      const descriptionRegex = /^.{10}$/;
+      const descriptionRegex = /^.{10,}$/;
       const priceRegex = /\d{3,}/;
            
             

@@ -23,7 +23,7 @@ const adminMiddleware= require('../middlewares/user/adminMiddleware');
 router.get('/', adminMiddleware, productList);
 //Registrar CREAR
 router.get('/create', adminMiddleware, createProductForm);
-router.post('/create', adminMiddleware, productDataValidations, uploadImgProduct.single('image'), createProduct);
+router.post('/create', adminMiddleware, uploadImgProduct.single('image'), productDataValidations, createProduct);
 //Motrar los usuarios READ
 router.get('/details/:id', detailsProduct);
 //Actualizar los datos del usuario UPDATE

@@ -1,45 +1,45 @@
-window.addEventListener('load', function(){
-  let formulario = document.querySelector('form.registration-form');
-  let errores = [];
+window.addEventListener("load", () => {
+    const form = document.getElementById("createProductForm");
+  
+    form.addEventListener('submit', (e) => {
+        let isValid = true;
+        const nameInput = document.getElementById('name');
+        const descriptionInput = document.getElementById('description');
+        const priceInput = document.getElementById('price');
+        const imageInput = document.getElementById('image');
 
-  formulario.addEventListener('submit', function(e) {
-      let ulErrores = document.querySelector('div.errores ul');
-      ulErrores.innerHTML = '';
-
-      let campoName = document.querySelector('input.form-control');       
-      if (campoName.value == '') {
-          errores.push('- El campo nombre no puede estar vacío')};  
-
-      let campoDescription = document.querySelector('input.form-control');
-      if (campoDescription.value == '') {
-          errores.push('- El campo descripción no puede estar vacío')};
-
-      let campoPrice = document.querySelector('input.form-control');
-      if (campoPrice.value == '') {
-          errores.push('- El campo precio no puede estar vacío')};
-
-      let campoCategory = document.querySelector('input.form-control');
-      if (campoCategory.value == '') {
-          errores.push('- El campo categoría no puede estar vacío');
-
-      let campoImage = document.querySelector('input.form-control');
-      if (campoImage.value == '') {
-          errores.push('- El campo imagen no puede estar vacío')}; 
-          
-      } 
-
-      if (errores.length > 0) {
-          e.preventDefault();
-
-          let ulErrores = document.querySelector('div.errores ul');
-
-          for (let i = 0; i < errores.length; i++) {
+        // Validaciones regulares
+        const nameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
+        const descriptionRegex = /^.{10,}$/;
+        const priceRegex = /\d{3,}/;
+             
               
-              ulErrores.innerHTML += `<li>${errores[i]}</li>`
-                  
-          }}
-errores = []         
-      
-      
-  })
-})
+        // Validacion de Nombre
+        if (!nameRegex.test(nameInput.value)) {
+            alert('El Nombre debe ser solo letras y tener entre 2-20 caracteres');
+            isValid = false;
+        }
+        
+        // Validacion de Apellido
+        if (!descriptionRegex.test(descriptionInput.value)) {
+            alert('La descripcion debe tener mas de 10 caracteres');
+            isValid = false;
+        }
+  
+        // Validacion Email
+        if (!priceRegex.test(priceInput.value)) {
+            alert('Ingresar un Precio valido');
+            isValid = false;
+        }
+        // Validacion carga de Imagen
+        if (imageInput.files.length === 0) {
+            alert('Por favor seleccione una imagen');
+            isValid = false;
+        }
+        
+        // Si la validacion falla
+        if (!isValid) {
+            e.preventDefault();
+        }
+    });
+  });

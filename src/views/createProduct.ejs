@@ -6,7 +6,7 @@
             <div class="container">
                 <h1 class="main-title">Crear un producto</h1>
 
-                <form class="registration-form" action="/product/create" method="POST" enctype="multipart/form-data">
+                <form class="registration-form" action="/product/create" method="POST" enctype="multipart/form-data" id="createProductForm">
                     <label for="name">Nombre del Producto:</label>
                     <input type="text" name="name" id="name"
                     class="form-control<%= locals.errors && errors.name ? ' errorAlert' : ''  %> name">
@@ -39,7 +39,7 @@
                     </select>
                     <label for="image">Imagen:</label>
                     <input type="file" name="image" accept="image/*" id="image"
-                    class="form-control<%= locals.errors && errors.image ? ' errorAlert' : ''  %> image" required>
+                    class="form-control<%= locals.errors && errors.image ? ' errorAlert' : ''  %> image" >
                     <% if (locals.errors && errors.image) { %>
                         <span class="text-danger">
                             <%= errors.image.msg %>

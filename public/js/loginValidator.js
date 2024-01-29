@@ -1,41 +1,32 @@
-window.addEventListener('load', function(){
-    let formulario = document.querySelector('form.registration-form');
-    let errores = [];
+window.addEventListener("load", () => {
+    const form = document.getElementById("loginForm");
 
-    formulario.addEventListener('submit', function(e) {
-        let ulErrores = document.querySelector('div.errores ul');
-        ulErrores.innerHTML = '';
+    form.addEventListener('submit', (e) => {
+        let isValid = true;
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+               
+        // Validaciones regulares
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        const passwordRegex = /^.{8,}$/;
 
-        let campoEmail = document.querySelector('input.form-control');       
-        if (campoEmail.value == '') {
-            errores.push('- El campo email debe estar completo')   
-                   
-        } else if (!campoEmail.value.includes('@')) {
-            errores.push('- Debe ingresar un email válido')   
-                     
-        }
-        let campoPassword = document.querySelector('input.form-control');
-
-        if (campoPassword.value == '') {
-            errores.push('- Debe ingresar una contraseña')
-            
-        } 
-
-        if (errores.length > 0) {
-            e.preventDefault();
-
-            let ulErrores = document.querySelector('div.errores ul');
-
-            for (let i = 0; i < errores.length; i++) {
-                
-                ulErrores.innerHTML += `<li>${errores[i]}</li>`
-                    
-            }}
-            
-            
-     errores= [];   
         
-    })
-})
+              
+        // Validacion Email
+        if (!emailRegex.test(emailInput.value)) {
+            alert('Ingresar un Email valido');
+            isValid = false;
+        }
+        
+        // Validacion Password
+        if (!passwordRegex.test(passwordInput.value)) {
+            alert('La contraseña debe tener al menos 8 caracteres');
+            isValid = false;
+        }
 
-
+        // Si la validacion falla
+        if (!isValid) {
+            e.preventDefault();
+        }
+    });
+});

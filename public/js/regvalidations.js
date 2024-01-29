@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
         // Validacion carga de Imagen
         if (imageInput.files.length === 0) {
-            alert('Please select an image file.');
+            alert('Por favor seleccione una imagen');
             isValid = false;
         }
         // Si la validacion falla

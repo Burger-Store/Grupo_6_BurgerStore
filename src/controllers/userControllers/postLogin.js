@@ -37,9 +37,6 @@ const postLogin = async	(req,res,next) => {
 			email: {
 				msg: 'No se encuentra este email en nuestra base de datos'
 			},
-			password:{
-				msg: 'El campo no debe estar vacio'
-			}
 		}
 	});
 }
