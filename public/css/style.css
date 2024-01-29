@@ -300,26 +300,6 @@ input{
   cursor: pointer;
 }
 
-input{
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--black-mate);
-  padding-left: .5rem;
-}
-.search-form input{
-  height: 30px;
-  width: 240px;
-  border: solid 2px #f3ad2b;
-  font-size: 20px;
-   
-}
-.search-form button{
-  height: 30px;
-  width: 25px;
-  border: solid 2px #f3ad2b; 
-  cursor: pointer;
-}
-
 /*Footer*/
 
 .footer-style {
