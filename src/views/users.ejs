@@ -9,15 +9,15 @@
             <div class="product">
                 <div class="product-description">
                     <img src="/img/users/<%= users[i].image %>" alt="img">
-                    <div><span>Nombre: <%= users[i].name + ' ' + users[i].surname %></span></div>    
-                    <div><span>Email: <%= users[i].email %></span></div>
-                    <div><span>Telefono: <%= users[i].phone %></span></div>
-                    <div><span>Dirección: <%= users[i].address %></span></div>
-                    <div><span>Departamento:<%= users[i].lift %></span></div>
-                    <div><span>Ciudad: <%= users[i].city %></span></div>
-                    <div><span>Nacionalidad: <%= users[i].country %></span></div>
-                    <div><span>Codigo Postal: <%= users[i].zipcode %></span></div>
-                    <div><span>privilegio tipo: <%= users[i].idusertype %></span></div>
+                    <div class="price">Nombre: <%= users[i].name + ' ' + users[i].surname %></div>    
+                    <div class="price">Email: <%= users[i].email %></div>
+                    <div class="price">Telefono: <%= users[i].phone %></div>
+                    <div class="price">Dirección: <%= users[i].address %></div>
+                    <div class="price">Departamento:<%= users[i].lift %></div>
+                    <div class="price">Ciudad: <%= users[i].city %></div>
+                    <div class="price">Nacionalidad: <%= users[i].country %></div>
+                    <div class="price">Codigo Postal: <%= users[i].zipcode %></div>
+                    <div class="price">privilegio tipo: <%= users[i].idusertype %></div>
                     <div class="add-button">
                         <form action="/user/update/<%= users[i].idusers %>" method="get">
                             <button class="button blue descripcion" type="submit">Editar</button>

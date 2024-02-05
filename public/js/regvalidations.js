@@ -10,8 +10,8 @@ window.addEventListener("load", () => {
         const imageInput = document.getElementById('image');
         
         // Validaciones regulares
-        const nameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
-        const surnameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
+        const nameRegex = /^[a-zA-ZÑñ ]{2,30}$/;
+        const surnameRegex = /^[a-zA-ZÑñ ]{2,30}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
         const passwordRegex = /^.{8,}$/;
 
@@ -19,13 +19,13 @@ window.addEventListener("load", () => {
               
         // Validacion de Nombre
         if (!nameRegex.test(nameInput.value)) {
-            alert('El Nombre debe tener entre 2 y 20 caracteres');
+            alert('El Nombre debe tener entre 2 y 30 caracteres');
             isValid = false;
         }
         
         // Validacion de Apellido
         if (!surnameRegex.test(surnameInput.value)) {
-            alert('El Apellido debe tener entre 2 y 20 caracteres');
+            alert('El Apellido debe tener entre 2 y 30 caracteres');
             isValid = false;
         }
 

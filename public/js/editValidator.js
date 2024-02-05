@@ -8,14 +8,14 @@ window.addEventListener("load", () => {
       const priceInput = document.getElementById('price');
             
       // Validaciones regulares
-      const nameRegex = /^[a-zA-ZÑñ ]{2,20}$/;
+      const nameRegex = /^[a-zA-ZÑñ ]{2,30}$/;
       const descriptionRegex = /^.{10,}$/;
       const priceRegex = /\d{3,}/;
            
             
       // Validacion de Nombre
       if (!nameRegex.test(nameInput.value)) {
-          alert('El Nombre debe ser solo letras y tener entre 2-20 caracteres');
+          alert('El Nombre debe ser solo letras y tener entre 2-30 caracteres');
           isValid = false;
       }
       
