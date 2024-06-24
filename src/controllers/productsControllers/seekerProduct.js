@@ -9,7 +9,7 @@ const seekerProduct = async (req,res) => {
         } 
     })
     if (burger.length == 0) {
-        res.render('404notfound', {message: `${consulta} Not Found!`});
+        res.render('searchNotFound', {message: `${consulta} Not Found!`});
     } else {
         res.render('search', {burger})
     }
