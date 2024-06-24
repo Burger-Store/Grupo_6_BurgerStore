@@ -12,11 +12,11 @@
 				<% if(users != null) {%>
 					<img src="/img/users/<%= users.image %>" alt="img" />
                 <% } %>
-				<p><%= users.name + ' ' + users.surname %></p>
-				<p><%= users.email %></p>
-                <p><%= users.phone %></p>
-				<p><%= users.address %></p>
-				<p><%= users.city %></p>
+				<p class="price"><%= users.name + ' ' + users.surname %></p>
+				<p class="price"><%= users.email %></p>
+                <p class="price"><%= users.phone %></p>
+				<p class="price"><%= users.address %></p>
+				<p class="price"><%= users.city %></p>
 			</div>
             <div class="add-button">
                 <form action="/user/update/<%= users.idusers %>" method="get">
