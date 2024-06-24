@@ -1,0 +1,49 @@
+<%- include('./partials/head') %>
+    <title>Detalle de Producto</title>
+    <%- include('./partials/header') %>
+    <%- include('./partials/productCart') %>
+        <div class="main">
+            <div class="container">
+                <main>
+                    <h1 class="main-title">Detalle del Producto</h1>
+                    <h2 class="second-title">
+                        <%= burger.name %>
+                    </h2>
+                    <p class="details-descriptions">
+                        <%= burger.description %>
+                    </p>
+                    <figure>
+                        <img src="/img/products/<%= burger.image %>" alt="">
+                        <figcaption>
+                            <span class="hide">Burger</span>
+                        </figcaption>
+                    </figure>
+                    <span class="producto">
+                        <p class="details-descriptions">¡Extra pasión! Agregar adicionales a tu combo</p>
+                        <section class="details-descriptions">
+                            <input type="checkbox" name="extras" value="Extra 1">
+                            <label class="extras" for="checkbox1">Cebolla</label><br>
+
+                            <input type="checkbox" name="extras" value="Extra 2">
+                            <label class="extras" for="checkbox1">Bacon</label>
+                            <br>
+
+                            <input type="checkbox" name="extras" value="Extra 3">
+                            <label class="extras" for="checkbox1">Extra Salsa</label>
+                            <br>
+
+                            <input type="checkbox" name="extras" value="Extra 4">
+                            <label class="extras" for="checkbox1">Queso</label>
+                            <br>
+                        </section>
+                    </span>
+                    <div class="add-button">
+                        <form action="#" method="get">
+                            <button class="button green descripcion" type="submit">Agregar</button>
+                        </form>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+        <%- include('./partials/footer') %>

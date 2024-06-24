@@ -1,32 +1,37 @@
 const express = require('express');
-const multer = require('multer');
-const path = require ('path');
-
 const router = express.Router();
 
-const storage = multer.diskStorage({        //para subir imagenes
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../public/img/products'))
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.originalname)                                             //crea con nombre original de la imagen
-        //cb(null, `${Date.now()}_product${path.extname(file.originalname)}`)   //crea con un nombre distinto para no pisar los archivos
-    }
-});
+/**
+ * Middleware
+ */
+const productDataValidations = require('../middlewares/product/productDataValidations');
+const uploadImgProduct = require('../middlewares/product/uploadProductImage');
+/**
+ * Controller
+ */
+const productList = require('../controllers/productsControllers/productList');
+const createProductForm = require('../controllers/productsControllers/createProductForm');
+const createProduct = require('../controllers/productsControllers/postNewProduct');
+const detailsProduct = require('../controllers/productsControllers/detailProduct');
+const editProductForm = require('../controllers/productsControllers/editProductForm');
+const editProduct = require('../controllers/productsControllers/editProduct');
+const deleteProduct = require('../controllers/productsControllers/deleteProduct');
+const seekerProduct = require('../controllers/productsControllers/seekerProduct');
+const adminMiddleware= require('../middlewares/user/adminMiddleware');
 
-const uploadImgProduct = multer({ storage });
-
-const { getAllProducts, getProductById, formCreateProduct, postNewProduct, deleteProduct, editProduct } = require('../controllers/productsControllers');
-
-router.get('/products', getAllProducts);        // ACA PARA VER EL LISTADO DE PRODUCTOS
-router.get('/product/:id', getProductById);     // ACA PARA OBTENER UN PRODUCTO X ID
-
-router.get('/products/create', formCreateProduct);    // ACA PARA CREAR PRODUCTOS
-router.post('/products', uploadImgProduct.single('image'), postNewProduct);       
-
-// router.get('/product/:id/edit', getProductById);        //get de edicion de productos
-
-router.put('/product/:id/edit', uploadImgProduct.single('image'), editProduct);     //put de edicion de productos )
-router.delete('/product/:id/delete', deleteProduct);
+//page
+router.get('/', adminMiddleware, productList);
+//Registrar CREAR
+router.get('/create', adminMiddleware, createProductForm);
+router.post('/create', adminMiddleware, uploadImgProduct.single('image'), productDataValidations, createProduct);
+//Motrar los usuarios READ
+router.get('/details/:id', detailsProduct);
+//Actualizar los datos del usuario UPDATE
+router.get('/update/:id', adminMiddleware, editProductForm);
+router.put('/update/:id', adminMiddleware, uploadImgProduct.single('image'), editProduct);
+//Eliminar producto DELETE
+router.delete('/delete/:id', adminMiddleware, deleteProduct);
+//Buscador
+router.get('/search/?', seekerProduct);
 
 module.exports = router;

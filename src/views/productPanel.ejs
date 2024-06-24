@@ -1,0 +1,50 @@
+<%- include('./partials/head') %>
+    <title>Menu</title>
+    <%- include('./partials/header') %>
+    <%- include('./partials/productCart') %>
+            <main>
+                <h1 class="main-title">Panel de productos</h1>
+                <div class="section-main">
+                    <div class="crear-product">
+                        <div class="add-button">
+                            <form action="/product/create" method="get">
+                                <button id="detailBtn" class="button blue descripcion" type="submit">Crear producto</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-main">
+                    <% for(let i=0; i < burger.length; i++){ %>
+                        <div class="product">
+                            <figure>
+                                <img src="/img/products/<%= burger[i].image %>" alt="img">
+                                <figcaption>
+                                    <span class="hide">Hambugesa con chedar</span>
+                                </figcaption>
+                            </figure>
+                            <div class="product-description">
+                                <div class="product-name">
+                                    <%= burger[i].name%>
+                                </div>
+                                <p class="description">
+                                    <%= burger[i].description %>
+                                </p>
+                                <div class="price">$ <%= burger[i].price %>
+                                </div>
+                                <div class="add-button">
+                                    <form action="/product/update/<%= burger[i].idproducts %>?_method=get" method="get">
+                                        <button id="detailBtn" class="button blue descripcion" type="submit">Editar</button>
+                                    </form>
+                                </div>
+                                <div class="add-button">
+                                    <form action="/product/delete/<%= burger[i].idproducts %>?_method=DELETE" method="POST">
+                                        <button class="button red descripcion" type="submit" onclick=" return confirm('Desea eliminar este producto?');">Eliminar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>

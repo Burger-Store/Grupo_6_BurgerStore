@@ -1,0 +1,60 @@
+<%- include('./partials/head') %>
+    <title>Crear un producto</title>
+    <%- include('./partials/header') %>
+    <%- include('./partials/productCart') %>
+        <div class="main">
+            <div class="container">
+                <h1 class="main-title">Crear un producto</h1>
+
+                <form class="registration-form" action="/product/create" method="POST" enctype="multipart/form-data" id="createProductForm">
+                    <label for="name">Nombre del Producto:</label>
+                    <input type="text" name="name" id="name"
+                    class="form-control<%= locals.errors && errors.name ? ' errorAlert' : ''  %> name">
+                    <% if (locals.errors && errors.name) { %>
+                        <span class="text-danger">
+                            <%= errors.name.msg %>
+                        </span>
+                        <% } %>
+                    <label for="description">Descripción:</label>
+                    <input type="text" name="description" id="description"
+                    class="form-control<%= locals.errors && errors.description ? ' errorAlert' : ''  %> description">
+                    <% if (locals.errors && errors.description) { %>
+                        <span class="text-danger">
+                            <%= errors.description.msg %>
+                        </span>
+                        <% } %>
+                    <label for="price">Precio:</label>
+                    <input type="number" name="price" id="price"
+                    class="form-control<%= locals.errors && errors.price ? ' errorAlert' : ''  %> price">
+                    <% if (locals.errors && errors.price) { %>
+                        <span class="text-danger">
+                            <%= errors.price.msg %>
+                        </span>
+                        <% } %>
+                    <label for="category">Categoría:</label>
+                    <select name="category" class="select-style <%= locals.errors && errors.category ? ' errorAlert' : ''  %>category">
+                        <% for(const cat in categoria){  %>
+                        <option value="<%= categoria[cat].idcategory %>"> <%= categoria[cat].name %> </option> 
+                        <%}%>
+                    </select>
+                    <label for="image">Imagen:</label>
+                    <input type="file" name="image" accept="image/*" id="image"
+                    class="form-control<%= locals.errors && errors.image ? ' errorAlert' : ''  %> image" >
+                    <% if (locals.errors && errors.image) { %>
+                        <span class="text-danger">
+                            <%= errors.image.msg %>
+                        </span>
+                        <% } %>
+                        <div class="errores">
+                            <ul class="errorLog">                    
+                            </ul>
+                        </div>
+                    <div class="add-button" style="width: 100%;">
+                        <button class="button amarillo descripcion" type="submit">Crear Producto</button>
+                    </div>
+                </form>
+                <script src='../js/productValidate.js'></script>
+            </div>
+        </div> 
+        
+        <%- include('./partials/footer') %>

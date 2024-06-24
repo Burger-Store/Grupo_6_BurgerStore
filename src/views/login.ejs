@@ -1,22 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("./partials/head") %>
     <title>Log In</title>
-    <%- include('./partials/head') %>
-<body>
     <%- include('./partials/header') %>
-
-    <div class="main">
+    <%- include('./partials/productCart') %>
         <div class="container">
-            <form  class="registration-form" action="#" method="post">
-                <h1>Iniciar Sesion</h1>
+            <h1 class="main-title">Iniciar Sesion</h1>
+             
+        
+            
+            <form class="registration-form" action="/user/login"  method="post" id="loginForm">
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" required>
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" required>
-                <button type="submit">Ingresar</button>
-            </form>
+                <input type="text" name="email" id="email"
+
+
+                
+                    class="form-control<%= locals.errors && errors.email ? ' errorAlert' : ''  %> email">
+                <% if (locals.errors && errors.email) { %>
+                    <span class="text-danger">
+                        <%= errors.email.msg %>
+                    </span>
+                    <% } %>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password" 
+                            class="form-control<%= locals.errors && errors.password ? ' errorAlert' : ''  %> password">
+                        <% if (locals.errors && errors.password) { %>
+                            <span class="text-danger">
+                                <%= errors.password.msg %>
+                            </span>
+                            <% } %>
+
+                                <div class="item align-reminder">
+                                    <input type="checkbox" name="remember" value="Extra 4" id="checkbox">
+                                    <label class="extras" for="checkbox">Recuerdame</label>
+                                </div>
+                                <div class="errores">
+                                    <ul class="errorLog">                    
+                                    </ul>
+                                </div>
+
+                                <div class="add-button full-button">
+                                    <button class="button" type="submit">Iniciar sesión</button>
+                                </div>
+                                
+            </form> 
+            <script src= '../js/loginValidator.js'></script>
+            <h2 class="indications">Todavia no tenes usuario <a class="super-link"
+                    href="/user/register">registrarse</a></h2>
+            <h2 class="indications">Olvidé mi contraseña <a class="super-link" href="#">recuperar</a></h2>
+            
+            
         </div>
-    </div>
-    <%- include('./partials/footer') %>
-</body>
-</html>
+        <%- include('./partials/footer') %>

@@ -1,0 +1,38 @@
+<%- include('./partials/head') %>
+    <title>Editar producto</title>
+    <%- include('./partials/header') %>
+    <%- include('./partials/productCart') %>
+        <div class="main">
+            <div class="container">
+                <h1 class="main-title">Editar producto</h1>
+                <figure>
+                    <img src="/img/products/<%= burger.image %>" alt="">
+                    <figcaption>
+                        <span class="hide">Burger</span>
+                    </figcaption>
+                </figure>
+                
+                <form class="registration-form" action="/product/update/<%= burger.idproducts %>?_method=PUT" id="editproduct"
+                    method="POST" enctype="multipart/form-data">
+                    <label for="name">Nombre del Producto:</label>
+                    <input type="text" name="name" id="name" value="<%- burger.name %>">
+                    <label for="description">Descripción:</label>
+                    <input type="text" name="description" value="<%- burger.description %>" id="description">
+                    <label for="price">Precio:</label>
+                    <input type="number" name="price" value="<%- burger.price %>" id="price" >
+                    <label for="category">Categoría:</label>
+                    <select name="category" class="select-style">
+                        <% for(const cat in categoria){  %>
+                        <option value="<%= categoria[cat].idcategory %>"> <%= categoria[cat].name %> </option> 
+                        <%}%>
+                    </select>
+                    <label for="image">Imagen:</label>
+                    <input type="file" name="image" value="<%- burger.image %>" accept="image/*" id="image">
+                    <div class="add-button" style="width: 100%;">
+                        <button id="detailBtn" class="button yellow descripcion" type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="../../js/editValidator.js"></script>
+        <%- include('./partials/footer') %>

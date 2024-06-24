@@ -5,6 +5,9 @@
 ## Introducción
 
 Nuestra idea es hacer una Web de una hamburgueseria de la Zona que vende en su local y por delivery. Su nombre es Burger Store. La propuesta apunta a todo el publico en general. Esta haburgueseria por el momento solo ofrece distintas variedades de hamburguesas y las combina con papas fritas. Hay hamburguesas pre-armadas pero tambien se pueden agregar extras y armarla a gusto. Se ofreceran las opciones de comer en el local, take-away, delivery propio y Pedidos-ya.
+### Nuestro público
+Son todas aquellas personas que le gusten disfrutar de unas buenas hamburguesa en familia o solo, apuntamos aquellas personas mayor de 18 que pueda realizar la compra por nuestra web o en el local.
+
 ## Ejecutar aplicación
 - Si es la primera vez que se va a usar la aplicación ejecutar los siguentes comandos:
 ```
@@ -50,11 +53,21 @@ Los integrantes del Equipo somos:
 
 ### Login
 ![Home](public/asset/Login.png)
-### Menu
+### Home
 ![Menu](public/asset/Menu.png)
 ### Registro
 ![Registro](public/asset/Registro.png)
 ### Carrito
 ![Sidebar](public/asset/Carrito-Right-Sidebar.png)
-### Detalle de Productos
+### Detalle del Producto
 ![Detalle](public/asset/Detalle-de-producto.png)
+
+## DATOS BD
+
+```
+"username": "root",
+"password": "",
+"database": "burgerstore_db",
+"host" : "localhost"
+"dialect" : "mysql"
+```
